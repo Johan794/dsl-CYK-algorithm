@@ -110,22 +110,22 @@ public class MyFNCGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.cyk.mydsl.MyFNC.Lambda");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Assignment cRigthAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final Keyword cRigth_Keyword_0_0 = (Keyword)cRigthAssignment_0.eContents().get(0);
+		private final Keyword cRigthAmpersandKeyword_0_0 = (Keyword)cRigthAssignment_0.eContents().get(0);
 		private final RuleCall cRigthParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//Lambda:
-		//    rigth= '_' | Rigth
+		//    rigth= '&' | Rigth
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//rigth= '_' | Rigth
+		//rigth= '&' | Rigth
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//rigth= '_'
+		//rigth= '&'
 		public Assignment getRigthAssignment_0() { return cRigthAssignment_0; }
 		
-		//'_'
-		public Keyword getRigth_Keyword_0_0() { return cRigth_Keyword_0_0; }
+		//'&'
+		public Keyword getRigthAmpersandKeyword_0_0() { return cRigthAmpersandKeyword_0_0; }
 		
 		//Rigth
 		public RuleCall getRigthParserRuleCall_1() { return cRigthParserRuleCall_1; }
@@ -849,20 +849,20 @@ public class MyFNCGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	public class InputStringElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.cyk.mydsl.MyFNC.InputString");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cInputKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cCheckKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cInputAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cInputSTRINGTerminalRuleCall_1_0 = (RuleCall)cInputAssignment_1.eContents().get(0);
 		
 		//InputString:
-		//    'Input' input = STRING
+		//    'Check' input = STRING
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Input' input = STRING
+		//'Check' input = STRING
 		public Group getGroup() { return cGroup; }
 		
-		//'Input'
-		public Keyword getInputKeyword_0() { return cInputKeyword_0; }
+		//'Check'
+		public Keyword getCheckKeyword_0() { return cCheckKeyword_0; }
 		
 		//input = STRING
 		public Assignment getInputAssignment_1() { return cInputAssignment_1; }
@@ -951,7 +951,7 @@ public class MyFNCGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//Lambda:
-	//    rigth= '_' | Rigth
+	//    rigth= '&' | Rigth
 	//;
 	public LambdaElements getLambdaAccess() {
 		return pLambda;
@@ -1019,7 +1019,7 @@ public class MyFNCGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//InputString:
-	//    'Input' input = STRING
+	//    'Check' input = STRING
 	//;
 	public InputStringElements getInputStringAccess() {
 		return pInputString;

@@ -237,15 +237,15 @@ ruleLambda returns [EObject current=null]
 	(
 		(
 			(
-				lv_rigth_0_0='_'
+				lv_rigth_0_0='&'
 				{
-					newLeafNode(lv_rigth_0_0, grammarAccess.getLambdaAccess().getRigth_Keyword_0_0());
+					newLeafNode(lv_rigth_0_0, grammarAccess.getLambdaAccess().getRigthAmpersandKeyword_0_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getLambdaRule());
 					}
-					setWithLastConsumed($current, "rigth", lv_rigth_0_0, "_");
+					setWithLastConsumed($current, "rigth", lv_rigth_0_0, "&");
 				}
 			)
 		)
@@ -1196,9 +1196,9 @@ ruleInputString returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='Input'
+		otherlv_0='Check'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getInputStringAccess().getInputKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getInputStringAccess().getCheckKeyword_0());
 		}
 		(
 			(

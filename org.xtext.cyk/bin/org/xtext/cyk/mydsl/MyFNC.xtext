@@ -11,7 +11,7 @@ Initial:
 	left= 'S' '->' rigth+=(Lambda)('|' + rigth+=Rigth)*;
 	
 Lambda:
-	rigth= '_' | Rigth
+	rigth= '&' | Rigth
 ;
 Production:
 	left=NonTerminal '->' rigth+=(Rigth)('|' + rigth+=Rigth)*
@@ -37,5 +37,5 @@ Binary:
 
 
 InputString:
-	'Input' input = STRING
+	'Check' input = STRING
 ;

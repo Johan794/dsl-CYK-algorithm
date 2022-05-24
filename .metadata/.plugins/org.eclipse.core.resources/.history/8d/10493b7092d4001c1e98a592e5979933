@@ -1,0 +1,41 @@
+grammar org.xtext.cyk.mydsl.MyFNC with org.eclipse.xtext.common.Terminals
+
+generate myFNC "http://www.xtext.org/cyk/mydsl/MyFNC"
+
+GNFC:
+	init = Initial productions+=Production* final = InputString
+;
+
+	
+Initial:
+	left= 'S' '->' rigth+=(Lambda)('|' + rigth+=Rigth)*;
+	
+Lambda:
+	rigth= '&' 
+;
+Production:
+	left=NonTerminal '->' rigth+=(Rigth)('|' + rigth+=Rigth)*
+;
+
+Rigth: 
+	Simple | Binary
+;
+
+Simple:
+	alpha= 'a'|{Simple} 'b'|{Simple} 'c'|{Simple} 'd'|{Simple} 'e'|{Simple} 'f'|{Simple} 'g'|{Simple} 'h'|{Simple} 'i'|{Simple} 'j'|{Simple} 'k'|{Simple} 'l'|
+	{Simple} 'm'|{Simple} 'n'|{Simple} 'o'|{Simple} 'p'|{Simple} 'q'|{Simple} 'r'|{Simple} 's'|{Simple} 't'|{Simple} 'v'|{Simple} 'w'|{Simple} 'x'|{Simple} 'y'|{Simple} 'z'
+;
+
+NonTerminal:
+	var= 'A'|{NonTerminal} 'B'|{NonTerminal} 'C'|{NonTerminal} 'D'|{NonTerminal} 'E'|{NonTerminal} 'F'|{NonTerminal} 'G'|{NonTerminal} 'H'|{NonTerminal} 'I'|{NonTerminal} 'J'|{NonTerminal} 'K'|{NonTerminal} 'L'|
+	{NonTerminal} 'M'|{NonTerminal} 'N'|{NonTerminal} 'O'|{NonTerminal} 'P'|{NonTerminal} 'Q'|{NonTerminal} 'R'|{NonTerminal} 'T'|{NonTerminal} 'U'|{NonTerminal} 'V'|{NonTerminal} 'W'|{NonTerminal} 'X'|{NonTerminal} 'Y'|{NonTerminal} 'Z'
+;
+
+Binary:
+	first=NonTerminal second=NonTerminal
+;
+
+
+InputString:
+	'Check' input = STRING
+;

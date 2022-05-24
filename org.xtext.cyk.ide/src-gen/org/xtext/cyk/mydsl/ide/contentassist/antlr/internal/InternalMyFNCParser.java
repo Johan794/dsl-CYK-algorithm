@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMyFNCParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'->'", "'|'", "'b'", "'c'", "'d'", "'e'", "'f'", "'g'", "'h'", "'i'", "'j'", "'k'", "'l'", "'m'", "'n'", "'o'", "'p'", "'q'", "'r'", "'s'", "'t'", "'v'", "'w'", "'x'", "'y'", "'z'", "'B'", "'C'", "'D'", "'E'", "'F'", "'G'", "'H'", "'I'", "'J'", "'K'", "'L'", "'M'", "'N'", "'O'", "'P'", "'Q'", "'R'", "'T'", "'U'", "'V'", "'W'", "'X'", "'Y'", "'Z'", "'Input'", "'S'", "'_'", "'a'", "'A'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'->'", "'|'", "'b'", "'c'", "'d'", "'e'", "'f'", "'g'", "'h'", "'i'", "'j'", "'k'", "'l'", "'m'", "'n'", "'o'", "'p'", "'q'", "'r'", "'s'", "'t'", "'v'", "'w'", "'x'", "'y'", "'z'", "'B'", "'C'", "'D'", "'E'", "'F'", "'G'", "'H'", "'I'", "'J'", "'K'", "'L'", "'M'", "'N'", "'O'", "'P'", "'Q'", "'R'", "'T'", "'U'", "'V'", "'W'", "'X'", "'Y'", "'Z'", "'Check'", "'S'", "'&'", "'a'", "'A'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -11068,21 +11068,21 @@ public class InternalMyFNCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputString__Group__0__Impl"
-    // InternalMyFNC.g:3714:1: rule__InputString__Group__0__Impl : ( 'Input' ) ;
+    // InternalMyFNC.g:3714:1: rule__InputString__Group__0__Impl : ( 'Check' ) ;
     public final void rule__InputString__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFNC.g:3718:1: ( ( 'Input' ) )
-            // InternalMyFNC.g:3719:1: ( 'Input' )
+            // InternalMyFNC.g:3718:1: ( ( 'Check' ) )
+            // InternalMyFNC.g:3719:1: ( 'Check' )
             {
-            // InternalMyFNC.g:3719:1: ( 'Input' )
-            // InternalMyFNC.g:3720:2: 'Input'
+            // InternalMyFNC.g:3719:1: ( 'Check' )
+            // InternalMyFNC.g:3720:2: 'Check'
             {
-             before(grammarAccess.getInputStringAccess().getInputKeyword_0()); 
+             before(grammarAccess.getInputStringAccess().getCheckKeyword_0()); 
             match(input,61,FOLLOW_2); 
-             after(grammarAccess.getInputStringAccess().getInputKeyword_0()); 
+             after(grammarAccess.getInputStringAccess().getCheckKeyword_0()); 
 
             }
 
@@ -11435,29 +11435,29 @@ public class InternalMyFNCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Lambda__RigthAssignment_0"
-    // InternalMyFNC.g:3850:1: rule__Lambda__RigthAssignment_0 : ( ( '_' ) ) ;
+    // InternalMyFNC.g:3850:1: rule__Lambda__RigthAssignment_0 : ( ( '&' ) ) ;
     public final void rule__Lambda__RigthAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFNC.g:3854:1: ( ( ( '_' ) ) )
-            // InternalMyFNC.g:3855:2: ( ( '_' ) )
+            // InternalMyFNC.g:3854:1: ( ( ( '&' ) ) )
+            // InternalMyFNC.g:3855:2: ( ( '&' ) )
             {
-            // InternalMyFNC.g:3855:2: ( ( '_' ) )
-            // InternalMyFNC.g:3856:3: ( '_' )
+            // InternalMyFNC.g:3855:2: ( ( '&' ) )
+            // InternalMyFNC.g:3856:3: ( '&' )
             {
-             before(grammarAccess.getLambdaAccess().getRigth_Keyword_0_0()); 
-            // InternalMyFNC.g:3857:3: ( '_' )
-            // InternalMyFNC.g:3858:4: '_'
+             before(grammarAccess.getLambdaAccess().getRigthAmpersandKeyword_0_0()); 
+            // InternalMyFNC.g:3857:3: ( '&' )
+            // InternalMyFNC.g:3858:4: '&'
             {
-             before(grammarAccess.getLambdaAccess().getRigth_Keyword_0_0()); 
+             before(grammarAccess.getLambdaAccess().getRigthAmpersandKeyword_0_0()); 
             match(input,63,FOLLOW_2); 
-             after(grammarAccess.getLambdaAccess().getRigth_Keyword_0_0()); 
+             after(grammarAccess.getLambdaAccess().getRigthAmpersandKeyword_0_0()); 
 
             }
 
-             after(grammarAccess.getLambdaAccess().getRigth_Keyword_0_0()); 
+             after(grammarAccess.getLambdaAccess().getRigthAmpersandKeyword_0_0()); 
 
             }
 

@@ -3717,9 +3717,9 @@ rule__InputString__Group__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getInputStringAccess().getInputKeyword_0()); }
-	'Input'
-	{ after(grammarAccess.getInputStringAccess().getInputKeyword_0()); }
+	{ before(grammarAccess.getInputStringAccess().getCheckKeyword_0()); }
+	'Check'
+	{ after(grammarAccess.getInputStringAccess().getCheckKeyword_0()); }
 )
 ;
 finally {
@@ -3853,13 +3853,13 @@ rule__Lambda__RigthAssignment_0
 	}
 :
 	(
-		{ before(grammarAccess.getLambdaAccess().getRigth_Keyword_0_0()); }
+		{ before(grammarAccess.getLambdaAccess().getRigthAmpersandKeyword_0_0()); }
 		(
-			{ before(grammarAccess.getLambdaAccess().getRigth_Keyword_0_0()); }
-			'_'
-			{ after(grammarAccess.getLambdaAccess().getRigth_Keyword_0_0()); }
+			{ before(grammarAccess.getLambdaAccess().getRigthAmpersandKeyword_0_0()); }
+			'&'
+			{ after(grammarAccess.getLambdaAccess().getRigthAmpersandKeyword_0_0()); }
 		)
-		{ after(grammarAccess.getLambdaAccess().getRigth_Keyword_0_0()); }
+		{ after(grammarAccess.getLambdaAccess().getRigthAmpersandKeyword_0_0()); }
 	)
 ;
 finally {

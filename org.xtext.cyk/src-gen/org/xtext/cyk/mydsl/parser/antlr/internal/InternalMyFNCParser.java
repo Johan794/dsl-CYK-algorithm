@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMyFNCParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'S'", "'->'", "'|'", "'_'", "'a'", "'b'", "'c'", "'d'", "'e'", "'f'", "'g'", "'h'", "'i'", "'j'", "'k'", "'l'", "'m'", "'n'", "'o'", "'p'", "'q'", "'r'", "'s'", "'t'", "'v'", "'w'", "'x'", "'y'", "'z'", "'A'", "'B'", "'C'", "'D'", "'E'", "'F'", "'G'", "'H'", "'I'", "'J'", "'K'", "'L'", "'M'", "'N'", "'O'", "'P'", "'Q'", "'R'", "'T'", "'U'", "'V'", "'W'", "'X'", "'Y'", "'Z'", "'Input'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'S'", "'->'", "'|'", "'&'", "'a'", "'b'", "'c'", "'d'", "'e'", "'f'", "'g'", "'h'", "'i'", "'j'", "'k'", "'l'", "'m'", "'n'", "'o'", "'p'", "'q'", "'r'", "'s'", "'t'", "'v'", "'w'", "'x'", "'y'", "'z'", "'A'", "'B'", "'C'", "'D'", "'E'", "'F'", "'G'", "'H'", "'I'", "'J'", "'K'", "'L'", "'M'", "'N'", "'O'", "'P'", "'Q'", "'R'", "'T'", "'U'", "'V'", "'W'", "'X'", "'Y'", "'Z'", "'Check'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -580,7 +580,7 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLambda"
-    // InternalMyFNC.g:230:1: ruleLambda returns [EObject current=null] : ( ( (lv_rigth_0_0= '_' ) ) | this_Rigth_1= ruleRigth ) ;
+    // InternalMyFNC.g:230:1: ruleLambda returns [EObject current=null] : ( ( (lv_rigth_0_0= '&' ) ) | this_Rigth_1= ruleRigth ) ;
     public final EObject ruleLambda() throws RecognitionException {
         EObject current = null;
 
@@ -592,10 +592,10 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMyFNC.g:236:2: ( ( ( (lv_rigth_0_0= '_' ) ) | this_Rigth_1= ruleRigth ) )
-            // InternalMyFNC.g:237:2: ( ( (lv_rigth_0_0= '_' ) ) | this_Rigth_1= ruleRigth )
+            // InternalMyFNC.g:236:2: ( ( ( (lv_rigth_0_0= '&' ) ) | this_Rigth_1= ruleRigth ) )
+            // InternalMyFNC.g:237:2: ( ( (lv_rigth_0_0= '&' ) ) | this_Rigth_1= ruleRigth )
             {
-            // InternalMyFNC.g:237:2: ( ( (lv_rigth_0_0= '_' ) ) | this_Rigth_1= ruleRigth )
+            // InternalMyFNC.g:237:2: ( ( (lv_rigth_0_0= '&' ) ) | this_Rigth_1= ruleRigth )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -613,23 +613,23 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalMyFNC.g:238:3: ( (lv_rigth_0_0= '_' ) )
+                    // InternalMyFNC.g:238:3: ( (lv_rigth_0_0= '&' ) )
                     {
-                    // InternalMyFNC.g:238:3: ( (lv_rigth_0_0= '_' ) )
-                    // InternalMyFNC.g:239:4: (lv_rigth_0_0= '_' )
+                    // InternalMyFNC.g:238:3: ( (lv_rigth_0_0= '&' ) )
+                    // InternalMyFNC.g:239:4: (lv_rigth_0_0= '&' )
                     {
-                    // InternalMyFNC.g:239:4: (lv_rigth_0_0= '_' )
-                    // InternalMyFNC.g:240:5: lv_rigth_0_0= '_'
+                    // InternalMyFNC.g:239:4: (lv_rigth_0_0= '&' )
+                    // InternalMyFNC.g:240:5: lv_rigth_0_0= '&'
                     {
                     lv_rigth_0_0=(Token)match(input,14,FOLLOW_2); 
 
-                    					newLeafNode(lv_rigth_0_0, grammarAccess.getLambdaAccess().getRigth_Keyword_0_0());
+                    					newLeafNode(lv_rigth_0_0, grammarAccess.getLambdaAccess().getRigthAmpersandKeyword_0_0());
                     				
 
                     					if (current==null) {
                     						current = createModelElement(grammarAccess.getLambdaRule());
                     					}
-                    					setWithLastConsumed(current, "rigth", lv_rigth_0_0, "_");
+                    					setWithLastConsumed(current, "rigth", lv_rigth_0_0, "&");
                     				
 
                     }
@@ -3037,7 +3037,7 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInputString"
-    // InternalMyFNC.g:1191:1: ruleInputString returns [EObject current=null] : (otherlv_0= 'Input' ( (lv_input_1_0= RULE_STRING ) ) ) ;
+    // InternalMyFNC.g:1191:1: ruleInputString returns [EObject current=null] : (otherlv_0= 'Check' ( (lv_input_1_0= RULE_STRING ) ) ) ;
     public final EObject ruleInputString() throws RecognitionException {
         EObject current = null;
 
@@ -3048,15 +3048,15 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMyFNC.g:1197:2: ( (otherlv_0= 'Input' ( (lv_input_1_0= RULE_STRING ) ) ) )
-            // InternalMyFNC.g:1198:2: (otherlv_0= 'Input' ( (lv_input_1_0= RULE_STRING ) ) )
+            // InternalMyFNC.g:1197:2: ( (otherlv_0= 'Check' ( (lv_input_1_0= RULE_STRING ) ) ) )
+            // InternalMyFNC.g:1198:2: (otherlv_0= 'Check' ( (lv_input_1_0= RULE_STRING ) ) )
             {
-            // InternalMyFNC.g:1198:2: (otherlv_0= 'Input' ( (lv_input_1_0= RULE_STRING ) ) )
-            // InternalMyFNC.g:1199:3: otherlv_0= 'Input' ( (lv_input_1_0= RULE_STRING ) )
+            // InternalMyFNC.g:1198:2: (otherlv_0= 'Check' ( (lv_input_1_0= RULE_STRING ) ) )
+            // InternalMyFNC.g:1199:3: otherlv_0= 'Check' ( (lv_input_1_0= RULE_STRING ) )
             {
             otherlv_0=(Token)match(input,65,FOLLOW_9); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getInputStringAccess().getInputKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getInputStringAccess().getCheckKeyword_0());
             		
             // InternalMyFNC.g:1203:3: ( (lv_input_1_0= RULE_STRING ) )
             // InternalMyFNC.g:1204:4: (lv_input_1_0= RULE_STRING )

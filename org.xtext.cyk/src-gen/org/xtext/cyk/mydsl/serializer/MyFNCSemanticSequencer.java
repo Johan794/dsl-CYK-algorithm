@@ -147,7 +147,7 @@ public class MyFNCSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Lambda returns Lambda
 	 *
 	 * Constraint:
-	 *     rigth='_'
+	 *     rigth='&'
 	 * </pre>
 	 */
 	protected void sequence_Lambda(ISerializationContext context, Lambda semanticObject) {
@@ -156,7 +156,7 @@ public class MyFNCSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyFNCPackage.Literals.LAMBDA__RIGTH));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getLambdaAccess().getRigth_Keyword_0_0(), semanticObject.getRigth());
+		feeder.accept(grammarAccess.getLambdaAccess().getRigthAmpersandKeyword_0_0(), semanticObject.getRigth());
 		feeder.finish();
 	}
 	

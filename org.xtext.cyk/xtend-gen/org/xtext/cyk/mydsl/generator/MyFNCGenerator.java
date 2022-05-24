@@ -35,6 +35,6 @@ public class MyFNCGenerator extends AbstractGenerator {
   }
 
   public String get(final GNFC grammar) {
-    return grammar.getFinal().toString();
+    return grammar.getFinal().getInput();
   }
 }

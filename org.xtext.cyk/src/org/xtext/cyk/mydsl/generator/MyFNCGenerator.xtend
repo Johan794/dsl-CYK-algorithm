@@ -25,10 +25,11 @@ class MyFNCGenerator extends AbstractGenerator {
 		'''
 		«get(grammar)»
 		'''
+		
 	}
 	
 	def get(GNFC grammar){
-		grammar.final.toString()
+		grammar.final.input
 	}
 	
 	
