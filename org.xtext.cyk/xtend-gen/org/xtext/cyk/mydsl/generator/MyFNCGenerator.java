@@ -25,7 +25,7 @@ public class MyFNCGenerator extends AbstractGenerator {
     final GNFC grammar = ((GNFC) _head);
     fsa.generateFile("result.txt", this.runCYK(grammar));
   }
-
+  
   public CharSequence runCYK(final GNFC grammar) {
     StringConcatenation _builder = new StringConcatenation();
     String _get = this.get(grammar);
@@ -33,7 +33,7 @@ public class MyFNCGenerator extends AbstractGenerator {
     _builder.newLineIfNotEmpty();
     return _builder;
   }
-
+  
   public String get(final GNFC grammar) {
     return grammar.getFinal().toString();
   }
