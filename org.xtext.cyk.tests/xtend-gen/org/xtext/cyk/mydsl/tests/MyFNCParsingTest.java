@@ -23,7 +23,7 @@ import org.xtext.cyk.mydsl.myFNC.GNFC;
 public class MyFNCParsingTest {
   @Inject
   private ParseHelper<GNFC> parseHelper;
-
+  
   @Test
   public void loadModel() {
     try {
