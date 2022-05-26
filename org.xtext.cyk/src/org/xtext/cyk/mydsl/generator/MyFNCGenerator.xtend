@@ -8,10 +8,13 @@ import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import org.xtext.cyk.mydsl.myFNC.GNFC
+import java.util.ArrayList
+import java.util.TreeMap
+
 
 /**
  * Generates code from your model files on save.
- * 
+ * this class has the responsibility of create the interaction between model and ui for xtext 
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class MyFNCGenerator extends AbstractGenerator {
@@ -22,15 +25,78 @@ class MyFNCGenerator extends AbstractGenerator {
 	}
 	
 	def runCYK(GNFC grammar){
+		var cyk = setCYK(grammar)
 		'''
-		«get(grammar)»
+		«cyk.doSteps()»
 		'''
 		
 	}
 	
-	def get(GNFC grammar){
-		grammar.final.input
+	def setCYK(GNFC grammar){
+		var cyk = new CYK()
+		cyk.setWord(grammar.final.input)
+		cyk.setStartingSymbol(grammar.init.left)
+		cyk.setNonTerminals(getNonTerminals(grammar))
+		cyk.setTerminals(getTerminals(grammar))
+		cyk.setGrammar(setGrammarData(grammar))
+		
+		
+		cyk
 	}
+	
+	def getNonTerminals(GNFC grammar){
+		var nonTerminals = new ArrayList()
+		for(production: grammar.productions){
+			nonTerminals.add(production.left.^var)
+		
+		}
+		nonTerminals;
+	}
+	
+	def getTerminals(GNFC grammar){
+		var terminals = new ArrayList()
+		for(production: grammar.productions){
+			for(rigth: production.rigth){
+				 if(rigth.simple !== null){
+						terminals.add(rigth.simple.^alpha)
+				}	
+			}
+		}
+		
+		terminals // an array with all the terminals
+		
+	}
+	
+	def setGrammarData(GNFC grammar){
+		var map = new TreeMap<String,ArrayList<String>>
+		map.put(grammar.init.left,new ArrayList())
+		for(rigth: grammar.init.rigth){
+			 if(rigth.simple !== null){
+					map.get(grammar.init.left).add(rigth.simple.^alpha) 	
+				 }else if(rigth.binary!==null){
+				 	map.get(grammar.init.left).add(rigth.binary.first.^var+rigth.binary.second.^var)
+				 }
+		}
+		for(production: grammar.productions){
+			map.put(production.left.^var,new ArrayList())
+			for(rigth: production.rigth){
+				 if(rigth.simple !== null){
+					map.get(production.left.^var).add(rigth.simple.^alpha) 	
+				 }else if(rigth.binary!==null){
+				 	map.get(production.left.^var).add(rigth.binary.first.^var+rigth.binary.second.^var)
+				 }
+					
+			}
+		
+		}
+		
+		
+		
+		
+		map
+	}
+	
+	
 	
 	
 }

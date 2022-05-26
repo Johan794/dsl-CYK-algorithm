@@ -9,6 +9,13 @@ package org.xtext.cyk.mydsl.myFNC;
  * A representation of the model object '<em><b>Rigth</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.xtext.cyk.mydsl.myFNC.Rigth#getSimple <em>Simple</em>}</li>
+ *   <li>{@link org.xtext.cyk.mydsl.myFNC.Rigth#getBinary <em>Binary</em>}</li>
+ * </ul>
  *
  * @see org.xtext.cyk.mydsl.myFNC.MyFNCPackage#getRigth()
  * @model
@@ -16,4 +23,48 @@ package org.xtext.cyk.mydsl.myFNC;
  */
 public interface Rigth extends Lambda
 {
+  /**
+   * Returns the value of the '<em><b>Simple</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Simple</em>' containment reference.
+   * @see #setSimple(Simple)
+   * @see org.xtext.cyk.mydsl.myFNC.MyFNCPackage#getRigth_Simple()
+   * @model containment="true"
+   * @generated
+   */
+  Simple getSimple();
+
+  /**
+   * Sets the value of the '{@link org.xtext.cyk.mydsl.myFNC.Rigth#getSimple <em>Simple</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Simple</em>' containment reference.
+   * @see #getSimple()
+   * @generated
+   */
+  void setSimple(Simple value);
+
+  /**
+   * Returns the value of the '<em><b>Binary</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Binary</em>' containment reference.
+   * @see #setBinary(Binary)
+   * @see org.xtext.cyk.mydsl.myFNC.MyFNCPackage#getRigth_Binary()
+   * @model containment="true"
+   * @generated
+   */
+  Binary getBinary();
+
+  /**
+   * Sets the value of the '{@link org.xtext.cyk.mydsl.myFNC.Rigth#getBinary <em>Binary</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Binary</em>' containment reference.
+   * @see #getBinary()
+   * @generated
+   */
+  void setBinary(Binary value);
+
 } // Rigth

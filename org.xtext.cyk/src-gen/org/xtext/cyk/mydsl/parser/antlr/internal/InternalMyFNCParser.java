@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMyFNCParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'S'", "'->'", "'|'", "'&'", "'a'", "'b'", "'c'", "'d'", "'e'", "'f'", "'g'", "'h'", "'i'", "'j'", "'k'", "'l'", "'m'", "'n'", "'o'", "'p'", "'q'", "'r'", "'s'", "'t'", "'v'", "'w'", "'x'", "'y'", "'z'", "'A'", "'B'", "'C'", "'D'", "'E'", "'F'", "'G'", "'H'", "'I'", "'J'", "'K'", "'L'", "'M'", "'N'", "'O'", "'P'", "'Q'", "'R'", "'T'", "'U'", "'V'", "'W'", "'X'", "'Y'", "'Z'", "'Check'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'S'", "'->'", "'|'", "'a'", "'b'", "'c'", "'d'", "'e'", "'f'", "'g'", "'h'", "'i'", "'j'", "'k'", "'l'", "'m'", "'n'", "'o'", "'p'", "'q'", "'r'", "'s'", "'t'", "'v'", "'w'", "'x'", "'y'", "'z'", "'A'", "'B'", "'C'", "'D'", "'E'", "'F'", "'G'", "'H'", "'I'", "'J'", "'K'", "'L'", "'M'", "'N'", "'O'", "'P'", "'Q'", "'R'", "'T'", "'U'", "'V'", "'W'", "'X'", "'Y'", "'Z'", "'Check'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -60,7 +60,6 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
     public static final int T__20=20;
     public static final int T__64=64;
     public static final int T__21=21;
-    public static final int T__65=65;
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
     public static final int T__37=37;
@@ -221,7 +220,7 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( ((LA1_0>=40 && LA1_0<=64)) ) {
+                if ( ((LA1_0>=39 && LA1_0<=63)) ) {
                     alt1=1;
                 }
 
@@ -354,7 +353,7 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInitial"
-    // InternalMyFNC.g:147:1: ruleInitial returns [EObject current=null] : ( ( (lv_left_0_0= 'S' ) ) otherlv_1= '->' ( (lv_rigth_2_0= ruleLambda ) ) ( (otherlv_3= '|' )+ ( (lv_rigth_4_0= ruleRigth ) ) )* ) ;
+    // InternalMyFNC.g:147:1: ruleInitial returns [EObject current=null] : ( ( (lv_left_0_0= 'S' ) ) otherlv_1= '->' ( (lv_rigth_2_0= ruleRigth ) ) ( (otherlv_3= '|' )+ ( (lv_rigth_4_0= ruleRigth ) ) )* ) ;
     public final EObject ruleInitial() throws RecognitionException {
         EObject current = null;
 
@@ -370,11 +369,11 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMyFNC.g:153:2: ( ( ( (lv_left_0_0= 'S' ) ) otherlv_1= '->' ( (lv_rigth_2_0= ruleLambda ) ) ( (otherlv_3= '|' )+ ( (lv_rigth_4_0= ruleRigth ) ) )* ) )
-            // InternalMyFNC.g:154:2: ( ( (lv_left_0_0= 'S' ) ) otherlv_1= '->' ( (lv_rigth_2_0= ruleLambda ) ) ( (otherlv_3= '|' )+ ( (lv_rigth_4_0= ruleRigth ) ) )* )
+            // InternalMyFNC.g:153:2: ( ( ( (lv_left_0_0= 'S' ) ) otherlv_1= '->' ( (lv_rigth_2_0= ruleRigth ) ) ( (otherlv_3= '|' )+ ( (lv_rigth_4_0= ruleRigth ) ) )* ) )
+            // InternalMyFNC.g:154:2: ( ( (lv_left_0_0= 'S' ) ) otherlv_1= '->' ( (lv_rigth_2_0= ruleRigth ) ) ( (otherlv_3= '|' )+ ( (lv_rigth_4_0= ruleRigth ) ) )* )
             {
-            // InternalMyFNC.g:154:2: ( ( (lv_left_0_0= 'S' ) ) otherlv_1= '->' ( (lv_rigth_2_0= ruleLambda ) ) ( (otherlv_3= '|' )+ ( (lv_rigth_4_0= ruleRigth ) ) )* )
-            // InternalMyFNC.g:155:3: ( (lv_left_0_0= 'S' ) ) otherlv_1= '->' ( (lv_rigth_2_0= ruleLambda ) ) ( (otherlv_3= '|' )+ ( (lv_rigth_4_0= ruleRigth ) ) )*
+            // InternalMyFNC.g:154:2: ( ( (lv_left_0_0= 'S' ) ) otherlv_1= '->' ( (lv_rigth_2_0= ruleRigth ) ) ( (otherlv_3= '|' )+ ( (lv_rigth_4_0= ruleRigth ) ) )* )
+            // InternalMyFNC.g:155:3: ( (lv_left_0_0= 'S' ) ) otherlv_1= '->' ( (lv_rigth_2_0= ruleRigth ) ) ( (otherlv_3= '|' )+ ( (lv_rigth_4_0= ruleRigth ) ) )*
             {
             // InternalMyFNC.g:155:3: ( (lv_left_0_0= 'S' ) )
             // InternalMyFNC.g:156:4: (lv_left_0_0= 'S' )
@@ -402,17 +401,17 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getInitialAccess().getHyphenMinusGreaterThanSignKeyword_1());
             		
-            // InternalMyFNC.g:173:3: ( (lv_rigth_2_0= ruleLambda ) )
-            // InternalMyFNC.g:174:4: (lv_rigth_2_0= ruleLambda )
+            // InternalMyFNC.g:173:3: ( (lv_rigth_2_0= ruleRigth ) )
+            // InternalMyFNC.g:174:4: (lv_rigth_2_0= ruleRigth )
             {
-            // InternalMyFNC.g:174:4: (lv_rigth_2_0= ruleLambda )
-            // InternalMyFNC.g:175:5: lv_rigth_2_0= ruleLambda
+            // InternalMyFNC.g:174:4: (lv_rigth_2_0= ruleRigth )
+            // InternalMyFNC.g:175:5: lv_rigth_2_0= ruleRigth
             {
 
-            					newCompositeNode(grammarAccess.getInitialAccess().getRigthLambdaParserRuleCall_2_0());
+            					newCompositeNode(grammarAccess.getInitialAccess().getRigthRigthParserRuleCall_2_0());
             				
             pushFollow(FOLLOW_6);
-            lv_rigth_2_0=ruleLambda();
+            lv_rigth_2_0=ruleRigth();
 
             state._fsp--;
 
@@ -424,7 +423,7 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
             						current,
             						"rigth",
             						lv_rigth_2_0,
-            						"org.xtext.cyk.mydsl.MyFNC.Lambda");
+            						"org.xtext.cyk.mydsl.MyFNC.Rigth");
             					afterParserOrEnumRuleCall();
             				
 
@@ -543,145 +542,8 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleInitial"
 
 
-    // $ANTLR start "entryRuleLambda"
-    // InternalMyFNC.g:223:1: entryRuleLambda returns [EObject current=null] : iv_ruleLambda= ruleLambda EOF ;
-    public final EObject entryRuleLambda() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleLambda = null;
-
-
-        try {
-            // InternalMyFNC.g:223:47: (iv_ruleLambda= ruleLambda EOF )
-            // InternalMyFNC.g:224:2: iv_ruleLambda= ruleLambda EOF
-            {
-             newCompositeNode(grammarAccess.getLambdaRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleLambda=ruleLambda();
-
-            state._fsp--;
-
-             current =iv_ruleLambda; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleLambda"
-
-
-    // $ANTLR start "ruleLambda"
-    // InternalMyFNC.g:230:1: ruleLambda returns [EObject current=null] : ( ( (lv_rigth_0_0= '&' ) ) | this_Rigth_1= ruleRigth ) ;
-    public final EObject ruleLambda() throws RecognitionException {
-        EObject current = null;
-
-        Token lv_rigth_0_0=null;
-        EObject this_Rigth_1 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalMyFNC.g:236:2: ( ( ( (lv_rigth_0_0= '&' ) ) | this_Rigth_1= ruleRigth ) )
-            // InternalMyFNC.g:237:2: ( ( (lv_rigth_0_0= '&' ) ) | this_Rigth_1= ruleRigth )
-            {
-            // InternalMyFNC.g:237:2: ( ( (lv_rigth_0_0= '&' ) ) | this_Rigth_1= ruleRigth )
-            int alt4=2;
-            int LA4_0 = input.LA(1);
-
-            if ( (LA4_0==14) ) {
-                alt4=1;
-            }
-            else if ( ((LA4_0>=15 && LA4_0<=64)) ) {
-                alt4=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 4, 0, input);
-
-                throw nvae;
-            }
-            switch (alt4) {
-                case 1 :
-                    // InternalMyFNC.g:238:3: ( (lv_rigth_0_0= '&' ) )
-                    {
-                    // InternalMyFNC.g:238:3: ( (lv_rigth_0_0= '&' ) )
-                    // InternalMyFNC.g:239:4: (lv_rigth_0_0= '&' )
-                    {
-                    // InternalMyFNC.g:239:4: (lv_rigth_0_0= '&' )
-                    // InternalMyFNC.g:240:5: lv_rigth_0_0= '&'
-                    {
-                    lv_rigth_0_0=(Token)match(input,14,FOLLOW_2); 
-
-                    					newLeafNode(lv_rigth_0_0, grammarAccess.getLambdaAccess().getRigthAmpersandKeyword_0_0());
-                    				
-
-                    					if (current==null) {
-                    						current = createModelElement(grammarAccess.getLambdaRule());
-                    					}
-                    					setWithLastConsumed(current, "rigth", lv_rigth_0_0, "&");
-                    				
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalMyFNC.g:253:3: this_Rigth_1= ruleRigth
-                    {
-
-                    			newCompositeNode(grammarAccess.getLambdaAccess().getRigthParserRuleCall_1());
-                    		
-                    pushFollow(FOLLOW_2);
-                    this_Rigth_1=ruleRigth();
-
-                    state._fsp--;
-
-
-                    			current = this_Rigth_1;
-                    			afterParserOrEnumRuleCall();
-                    		
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleLambda"
-
-
     // $ANTLR start "entryRuleProduction"
-    // InternalMyFNC.g:265:1: entryRuleProduction returns [EObject current=null] : iv_ruleProduction= ruleProduction EOF ;
+    // InternalMyFNC.g:223:1: entryRuleProduction returns [EObject current=null] : iv_ruleProduction= ruleProduction EOF ;
     public final EObject entryRuleProduction() throws RecognitionException {
         EObject current = null;
 
@@ -689,8 +551,8 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMyFNC.g:265:51: (iv_ruleProduction= ruleProduction EOF )
-            // InternalMyFNC.g:266:2: iv_ruleProduction= ruleProduction EOF
+            // InternalMyFNC.g:223:51: (iv_ruleProduction= ruleProduction EOF )
+            // InternalMyFNC.g:224:2: iv_ruleProduction= ruleProduction EOF
             {
              newCompositeNode(grammarAccess.getProductionRule()); 
             pushFollow(FOLLOW_1);
@@ -717,7 +579,7 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProduction"
-    // InternalMyFNC.g:272:1: ruleProduction returns [EObject current=null] : ( ( (lv_left_0_0= ruleNonTerminal ) ) otherlv_1= '->' ( (lv_rigth_2_0= ruleRigth ) ) ( (otherlv_3= '|' )+ ( (lv_rigth_4_0= ruleRigth ) ) )* ) ;
+    // InternalMyFNC.g:230:1: ruleProduction returns [EObject current=null] : ( ( (lv_left_0_0= ruleNonTerminal ) ) otherlv_1= '->' ( (lv_rigth_2_0= ruleRigth ) ) ( (otherlv_3= '|' )+ ( (lv_rigth_4_0= ruleRigth ) ) )* ) ;
     public final EObject ruleProduction() throws RecognitionException {
         EObject current = null;
 
@@ -734,17 +596,17 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMyFNC.g:278:2: ( ( ( (lv_left_0_0= ruleNonTerminal ) ) otherlv_1= '->' ( (lv_rigth_2_0= ruleRigth ) ) ( (otherlv_3= '|' )+ ( (lv_rigth_4_0= ruleRigth ) ) )* ) )
-            // InternalMyFNC.g:279:2: ( ( (lv_left_0_0= ruleNonTerminal ) ) otherlv_1= '->' ( (lv_rigth_2_0= ruleRigth ) ) ( (otherlv_3= '|' )+ ( (lv_rigth_4_0= ruleRigth ) ) )* )
+            // InternalMyFNC.g:236:2: ( ( ( (lv_left_0_0= ruleNonTerminal ) ) otherlv_1= '->' ( (lv_rigth_2_0= ruleRigth ) ) ( (otherlv_3= '|' )+ ( (lv_rigth_4_0= ruleRigth ) ) )* ) )
+            // InternalMyFNC.g:237:2: ( ( (lv_left_0_0= ruleNonTerminal ) ) otherlv_1= '->' ( (lv_rigth_2_0= ruleRigth ) ) ( (otherlv_3= '|' )+ ( (lv_rigth_4_0= ruleRigth ) ) )* )
             {
-            // InternalMyFNC.g:279:2: ( ( (lv_left_0_0= ruleNonTerminal ) ) otherlv_1= '->' ( (lv_rigth_2_0= ruleRigth ) ) ( (otherlv_3= '|' )+ ( (lv_rigth_4_0= ruleRigth ) ) )* )
-            // InternalMyFNC.g:280:3: ( (lv_left_0_0= ruleNonTerminal ) ) otherlv_1= '->' ( (lv_rigth_2_0= ruleRigth ) ) ( (otherlv_3= '|' )+ ( (lv_rigth_4_0= ruleRigth ) ) )*
+            // InternalMyFNC.g:237:2: ( ( (lv_left_0_0= ruleNonTerminal ) ) otherlv_1= '->' ( (lv_rigth_2_0= ruleRigth ) ) ( (otherlv_3= '|' )+ ( (lv_rigth_4_0= ruleRigth ) ) )* )
+            // InternalMyFNC.g:238:3: ( (lv_left_0_0= ruleNonTerminal ) ) otherlv_1= '->' ( (lv_rigth_2_0= ruleRigth ) ) ( (otherlv_3= '|' )+ ( (lv_rigth_4_0= ruleRigth ) ) )*
             {
-            // InternalMyFNC.g:280:3: ( (lv_left_0_0= ruleNonTerminal ) )
-            // InternalMyFNC.g:281:4: (lv_left_0_0= ruleNonTerminal )
+            // InternalMyFNC.g:238:3: ( (lv_left_0_0= ruleNonTerminal ) )
+            // InternalMyFNC.g:239:4: (lv_left_0_0= ruleNonTerminal )
             {
-            // InternalMyFNC.g:281:4: (lv_left_0_0= ruleNonTerminal )
-            // InternalMyFNC.g:282:5: lv_left_0_0= ruleNonTerminal
+            // InternalMyFNC.g:239:4: (lv_left_0_0= ruleNonTerminal )
+            // InternalMyFNC.g:240:5: lv_left_0_0= ruleNonTerminal
             {
 
             					newCompositeNode(grammarAccess.getProductionAccess().getLeftNonTerminalParserRuleCall_0_0());
@@ -775,11 +637,11 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getProductionAccess().getHyphenMinusGreaterThanSignKeyword_1());
             		
-            // InternalMyFNC.g:303:3: ( (lv_rigth_2_0= ruleRigth ) )
-            // InternalMyFNC.g:304:4: (lv_rigth_2_0= ruleRigth )
+            // InternalMyFNC.g:261:3: ( (lv_rigth_2_0= ruleRigth ) )
+            // InternalMyFNC.g:262:4: (lv_rigth_2_0= ruleRigth )
             {
-            // InternalMyFNC.g:304:4: (lv_rigth_2_0= ruleRigth )
-            // InternalMyFNC.g:305:5: lv_rigth_2_0= ruleRigth
+            // InternalMyFNC.g:262:4: (lv_rigth_2_0= ruleRigth )
+            // InternalMyFNC.g:263:5: lv_rigth_2_0= ruleRigth
             {
 
             					newCompositeNode(grammarAccess.getProductionAccess().getRigthRigthParserRuleCall_2_0());
@@ -806,36 +668,36 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalMyFNC.g:322:3: ( (otherlv_3= '|' )+ ( (lv_rigth_4_0= ruleRigth ) ) )*
-            loop6:
+            // InternalMyFNC.g:280:3: ( (otherlv_3= '|' )+ ( (lv_rigth_4_0= ruleRigth ) ) )*
+            loop5:
             do {
-                int alt6=2;
-                int LA6_0 = input.LA(1);
+                int alt5=2;
+                int LA5_0 = input.LA(1);
 
-                if ( (LA6_0==13) ) {
-                    alt6=1;
+                if ( (LA5_0==13) ) {
+                    alt5=1;
                 }
 
 
-                switch (alt6) {
+                switch (alt5) {
             	case 1 :
-            	    // InternalMyFNC.g:323:4: (otherlv_3= '|' )+ ( (lv_rigth_4_0= ruleRigth ) )
+            	    // InternalMyFNC.g:281:4: (otherlv_3= '|' )+ ( (lv_rigth_4_0= ruleRigth ) )
             	    {
-            	    // InternalMyFNC.g:323:4: (otherlv_3= '|' )+
-            	    int cnt5=0;
-            	    loop5:
+            	    // InternalMyFNC.g:281:4: (otherlv_3= '|' )+
+            	    int cnt4=0;
+            	    loop4:
             	    do {
-            	        int alt5=2;
-            	        int LA5_0 = input.LA(1);
+            	        int alt4=2;
+            	        int LA4_0 = input.LA(1);
 
-            	        if ( (LA5_0==13) ) {
-            	            alt5=1;
+            	        if ( (LA4_0==13) ) {
+            	            alt4=1;
             	        }
 
 
-            	        switch (alt5) {
+            	        switch (alt4) {
             	    	case 1 :
-            	    	    // InternalMyFNC.g:324:5: otherlv_3= '|'
+            	    	    // InternalMyFNC.g:282:5: otherlv_3= '|'
             	    	    {
             	    	    otherlv_3=(Token)match(input,13,FOLLOW_7); 
 
@@ -846,19 +708,19 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
             	    	    break;
 
             	    	default :
-            	    	    if ( cnt5 >= 1 ) break loop5;
+            	    	    if ( cnt4 >= 1 ) break loop4;
             	                EarlyExitException eee =
-            	                    new EarlyExitException(5, input);
+            	                    new EarlyExitException(4, input);
             	                throw eee;
             	        }
-            	        cnt5++;
+            	        cnt4++;
             	    } while (true);
 
-            	    // InternalMyFNC.g:329:4: ( (lv_rigth_4_0= ruleRigth ) )
-            	    // InternalMyFNC.g:330:5: (lv_rigth_4_0= ruleRigth )
+            	    // InternalMyFNC.g:287:4: ( (lv_rigth_4_0= ruleRigth ) )
+            	    // InternalMyFNC.g:288:5: (lv_rigth_4_0= ruleRigth )
             	    {
-            	    // InternalMyFNC.g:330:5: (lv_rigth_4_0= ruleRigth )
-            	    // InternalMyFNC.g:331:6: lv_rigth_4_0= ruleRigth
+            	    // InternalMyFNC.g:288:5: (lv_rigth_4_0= ruleRigth )
+            	    // InternalMyFNC.g:289:6: lv_rigth_4_0= ruleRigth
             	    {
 
             	    						newCompositeNode(grammarAccess.getProductionAccess().getRigthRigthParserRuleCall_3_1_0());
@@ -890,7 +752,7 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop6;
+            	    break loop5;
                 }
             } while (true);
 
@@ -917,7 +779,7 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRigth"
-    // InternalMyFNC.g:353:1: entryRuleRigth returns [EObject current=null] : iv_ruleRigth= ruleRigth EOF ;
+    // InternalMyFNC.g:311:1: entryRuleRigth returns [EObject current=null] : iv_ruleRigth= ruleRigth EOF ;
     public final EObject entryRuleRigth() throws RecognitionException {
         EObject current = null;
 
@@ -925,8 +787,8 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMyFNC.g:353:46: (iv_ruleRigth= ruleRigth EOF )
-            // InternalMyFNC.g:354:2: iv_ruleRigth= ruleRigth EOF
+            // InternalMyFNC.g:311:46: (iv_ruleRigth= ruleRigth EOF )
+            // InternalMyFNC.g:312:2: iv_ruleRigth= ruleRigth EOF
             {
              newCompositeNode(grammarAccess.getRigthRule()); 
             pushFollow(FOLLOW_1);
@@ -953,72 +815,110 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRigth"
-    // InternalMyFNC.g:360:1: ruleRigth returns [EObject current=null] : (this_Simple_0= ruleSimple | this_Binary_1= ruleBinary ) ;
+    // InternalMyFNC.g:318:1: ruleRigth returns [EObject current=null] : ( ( (lv_simple_0_0= ruleSimple ) ) | ( (lv_binary_1_0= ruleBinary ) ) ) ;
     public final EObject ruleRigth() throws RecognitionException {
         EObject current = null;
 
-        EObject this_Simple_0 = null;
+        EObject lv_simple_0_0 = null;
 
-        EObject this_Binary_1 = null;
+        EObject lv_binary_1_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalMyFNC.g:366:2: ( (this_Simple_0= ruleSimple | this_Binary_1= ruleBinary ) )
-            // InternalMyFNC.g:367:2: (this_Simple_0= ruleSimple | this_Binary_1= ruleBinary )
+            // InternalMyFNC.g:324:2: ( ( ( (lv_simple_0_0= ruleSimple ) ) | ( (lv_binary_1_0= ruleBinary ) ) ) )
+            // InternalMyFNC.g:325:2: ( ( (lv_simple_0_0= ruleSimple ) ) | ( (lv_binary_1_0= ruleBinary ) ) )
             {
-            // InternalMyFNC.g:367:2: (this_Simple_0= ruleSimple | this_Binary_1= ruleBinary )
-            int alt7=2;
-            int LA7_0 = input.LA(1);
+            // InternalMyFNC.g:325:2: ( ( (lv_simple_0_0= ruleSimple ) ) | ( (lv_binary_1_0= ruleBinary ) ) )
+            int alt6=2;
+            int LA6_0 = input.LA(1);
 
-            if ( ((LA7_0>=15 && LA7_0<=39)) ) {
-                alt7=1;
+            if ( ((LA6_0>=14 && LA6_0<=38)) ) {
+                alt6=1;
             }
-            else if ( ((LA7_0>=40 && LA7_0<=64)) ) {
-                alt7=2;
+            else if ( ((LA6_0>=39 && LA6_0<=63)) ) {
+                alt6=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 7, 0, input);
+                    new NoViableAltException("", 6, 0, input);
 
                 throw nvae;
             }
-            switch (alt7) {
+            switch (alt6) {
                 case 1 :
-                    // InternalMyFNC.g:368:3: this_Simple_0= ruleSimple
+                    // InternalMyFNC.g:326:3: ( (lv_simple_0_0= ruleSimple ) )
+                    {
+                    // InternalMyFNC.g:326:3: ( (lv_simple_0_0= ruleSimple ) )
+                    // InternalMyFNC.g:327:4: (lv_simple_0_0= ruleSimple )
+                    {
+                    // InternalMyFNC.g:327:4: (lv_simple_0_0= ruleSimple )
+                    // InternalMyFNC.g:328:5: lv_simple_0_0= ruleSimple
                     {
 
-                    			newCompositeNode(grammarAccess.getRigthAccess().getSimpleParserRuleCall_0());
-                    		
+                    					newCompositeNode(grammarAccess.getRigthAccess().getSimpleSimpleParserRuleCall_0_0());
+                    				
                     pushFollow(FOLLOW_2);
-                    this_Simple_0=ruleSimple();
+                    lv_simple_0_0=ruleSimple();
 
                     state._fsp--;
 
 
-                    			current = this_Simple_0;
-                    			afterParserOrEnumRuleCall();
-                    		
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getRigthRule());
+                    					}
+                    					set(
+                    						current,
+                    						"simple",
+                    						lv_simple_0_0,
+                    						"org.xtext.cyk.mydsl.MyFNC.Simple");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
 
                     }
                     break;
                 case 2 :
-                    // InternalMyFNC.g:377:3: this_Binary_1= ruleBinary
+                    // InternalMyFNC.g:346:3: ( (lv_binary_1_0= ruleBinary ) )
+                    {
+                    // InternalMyFNC.g:346:3: ( (lv_binary_1_0= ruleBinary ) )
+                    // InternalMyFNC.g:347:4: (lv_binary_1_0= ruleBinary )
+                    {
+                    // InternalMyFNC.g:347:4: (lv_binary_1_0= ruleBinary )
+                    // InternalMyFNC.g:348:5: lv_binary_1_0= ruleBinary
                     {
 
-                    			newCompositeNode(grammarAccess.getRigthAccess().getBinaryParserRuleCall_1());
-                    		
+                    					newCompositeNode(grammarAccess.getRigthAccess().getBinaryBinaryParserRuleCall_1_0());
+                    				
                     pushFollow(FOLLOW_2);
-                    this_Binary_1=ruleBinary();
+                    lv_binary_1_0=ruleBinary();
 
                     state._fsp--;
 
 
-                    			current = this_Binary_1;
-                    			afterParserOrEnumRuleCall();
-                    		
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getRigthRule());
+                    					}
+                    					set(
+                    						current,
+                    						"binary",
+                    						lv_binary_1_0,
+                    						"org.xtext.cyk.mydsl.MyFNC.Binary");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
 
                     }
                     break;
@@ -1045,7 +945,7 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSimple"
-    // InternalMyFNC.g:389:1: entryRuleSimple returns [EObject current=null] : iv_ruleSimple= ruleSimple EOF ;
+    // InternalMyFNC.g:369:1: entryRuleSimple returns [EObject current=null] : iv_ruleSimple= ruleSimple EOF ;
     public final EObject entryRuleSimple() throws RecognitionException {
         EObject current = null;
 
@@ -1053,8 +953,8 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMyFNC.g:389:47: (iv_ruleSimple= ruleSimple EOF )
-            // InternalMyFNC.g:390:2: iv_ruleSimple= ruleSimple EOF
+            // InternalMyFNC.g:369:47: (iv_ruleSimple= ruleSimple EOF )
+            // InternalMyFNC.g:370:2: iv_ruleSimple= ruleSimple EOF
             {
              newCompositeNode(grammarAccess.getSimpleRule()); 
             pushFollow(FOLLOW_1);
@@ -1081,855 +981,608 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSimple"
-    // InternalMyFNC.g:396:1: ruleSimple returns [EObject current=null] : ( ( (lv_alpha_0_0= 'a' ) ) | ( () otherlv_2= 'b' ) | ( () otherlv_4= 'c' ) | ( () otherlv_6= 'd' ) | ( () otherlv_8= 'e' ) | ( () otherlv_10= 'f' ) | ( () otherlv_12= 'g' ) | ( () otherlv_14= 'h' ) | ( () otherlv_16= 'i' ) | ( () otherlv_18= 'j' ) | ( () otherlv_20= 'k' ) | ( () otherlv_22= 'l' ) | ( () otherlv_24= 'm' ) | ( () otherlv_26= 'n' ) | ( () otherlv_28= 'o' ) | ( () otherlv_30= 'p' ) | ( () otherlv_32= 'q' ) | ( () otherlv_34= 'r' ) | ( () otherlv_36= 's' ) | ( () otherlv_38= 't' ) | ( () otherlv_40= 'v' ) | ( () otherlv_42= 'w' ) | ( () otherlv_44= 'x' ) | ( () otherlv_46= 'y' ) | ( () otherlv_48= 'z' ) ) ;
+    // InternalMyFNC.g:376:1: ruleSimple returns [EObject current=null] : ( () ( ( (lv_alpha_1_1= 'a' | lv_alpha_1_2= 'b' | lv_alpha_1_3= 'c' | lv_alpha_1_4= 'd' | lv_alpha_1_5= 'e' | lv_alpha_1_6= 'f' | lv_alpha_1_7= 'g' | lv_alpha_1_8= 'h' | lv_alpha_1_9= 'i' | lv_alpha_1_10= 'j' | lv_alpha_1_11= 'k' | lv_alpha_1_12= 'l' | lv_alpha_1_13= 'm' | lv_alpha_1_14= 'n' | lv_alpha_1_15= 'o' | lv_alpha_1_16= 'p' | lv_alpha_1_17= 'q' | lv_alpha_1_18= 'r' | lv_alpha_1_19= 's' | lv_alpha_1_20= 't' | lv_alpha_1_21= 'v' | lv_alpha_1_22= 'w' | lv_alpha_1_23= 'x' | lv_alpha_1_24= 'y' | lv_alpha_1_25= 'z' ) ) ) ) ;
     public final EObject ruleSimple() throws RecognitionException {
         EObject current = null;
 
-        Token lv_alpha_0_0=null;
-        Token otherlv_2=null;
-        Token otherlv_4=null;
-        Token otherlv_6=null;
-        Token otherlv_8=null;
-        Token otherlv_10=null;
-        Token otherlv_12=null;
-        Token otherlv_14=null;
-        Token otherlv_16=null;
-        Token otherlv_18=null;
-        Token otherlv_20=null;
-        Token otherlv_22=null;
-        Token otherlv_24=null;
-        Token otherlv_26=null;
-        Token otherlv_28=null;
-        Token otherlv_30=null;
-        Token otherlv_32=null;
-        Token otherlv_34=null;
-        Token otherlv_36=null;
-        Token otherlv_38=null;
-        Token otherlv_40=null;
-        Token otherlv_42=null;
-        Token otherlv_44=null;
-        Token otherlv_46=null;
-        Token otherlv_48=null;
+        Token lv_alpha_1_1=null;
+        Token lv_alpha_1_2=null;
+        Token lv_alpha_1_3=null;
+        Token lv_alpha_1_4=null;
+        Token lv_alpha_1_5=null;
+        Token lv_alpha_1_6=null;
+        Token lv_alpha_1_7=null;
+        Token lv_alpha_1_8=null;
+        Token lv_alpha_1_9=null;
+        Token lv_alpha_1_10=null;
+        Token lv_alpha_1_11=null;
+        Token lv_alpha_1_12=null;
+        Token lv_alpha_1_13=null;
+        Token lv_alpha_1_14=null;
+        Token lv_alpha_1_15=null;
+        Token lv_alpha_1_16=null;
+        Token lv_alpha_1_17=null;
+        Token lv_alpha_1_18=null;
+        Token lv_alpha_1_19=null;
+        Token lv_alpha_1_20=null;
+        Token lv_alpha_1_21=null;
+        Token lv_alpha_1_22=null;
+        Token lv_alpha_1_23=null;
+        Token lv_alpha_1_24=null;
+        Token lv_alpha_1_25=null;
 
 
         	enterRule();
 
         try {
-            // InternalMyFNC.g:402:2: ( ( ( (lv_alpha_0_0= 'a' ) ) | ( () otherlv_2= 'b' ) | ( () otherlv_4= 'c' ) | ( () otherlv_6= 'd' ) | ( () otherlv_8= 'e' ) | ( () otherlv_10= 'f' ) | ( () otherlv_12= 'g' ) | ( () otherlv_14= 'h' ) | ( () otherlv_16= 'i' ) | ( () otherlv_18= 'j' ) | ( () otherlv_20= 'k' ) | ( () otherlv_22= 'l' ) | ( () otherlv_24= 'm' ) | ( () otherlv_26= 'n' ) | ( () otherlv_28= 'o' ) | ( () otherlv_30= 'p' ) | ( () otherlv_32= 'q' ) | ( () otherlv_34= 'r' ) | ( () otherlv_36= 's' ) | ( () otherlv_38= 't' ) | ( () otherlv_40= 'v' ) | ( () otherlv_42= 'w' ) | ( () otherlv_44= 'x' ) | ( () otherlv_46= 'y' ) | ( () otherlv_48= 'z' ) ) )
-            // InternalMyFNC.g:403:2: ( ( (lv_alpha_0_0= 'a' ) ) | ( () otherlv_2= 'b' ) | ( () otherlv_4= 'c' ) | ( () otherlv_6= 'd' ) | ( () otherlv_8= 'e' ) | ( () otherlv_10= 'f' ) | ( () otherlv_12= 'g' ) | ( () otherlv_14= 'h' ) | ( () otherlv_16= 'i' ) | ( () otherlv_18= 'j' ) | ( () otherlv_20= 'k' ) | ( () otherlv_22= 'l' ) | ( () otherlv_24= 'm' ) | ( () otherlv_26= 'n' ) | ( () otherlv_28= 'o' ) | ( () otherlv_30= 'p' ) | ( () otherlv_32= 'q' ) | ( () otherlv_34= 'r' ) | ( () otherlv_36= 's' ) | ( () otherlv_38= 't' ) | ( () otherlv_40= 'v' ) | ( () otherlv_42= 'w' ) | ( () otherlv_44= 'x' ) | ( () otherlv_46= 'y' ) | ( () otherlv_48= 'z' ) )
+            // InternalMyFNC.g:382:2: ( ( () ( ( (lv_alpha_1_1= 'a' | lv_alpha_1_2= 'b' | lv_alpha_1_3= 'c' | lv_alpha_1_4= 'd' | lv_alpha_1_5= 'e' | lv_alpha_1_6= 'f' | lv_alpha_1_7= 'g' | lv_alpha_1_8= 'h' | lv_alpha_1_9= 'i' | lv_alpha_1_10= 'j' | lv_alpha_1_11= 'k' | lv_alpha_1_12= 'l' | lv_alpha_1_13= 'm' | lv_alpha_1_14= 'n' | lv_alpha_1_15= 'o' | lv_alpha_1_16= 'p' | lv_alpha_1_17= 'q' | lv_alpha_1_18= 'r' | lv_alpha_1_19= 's' | lv_alpha_1_20= 't' | lv_alpha_1_21= 'v' | lv_alpha_1_22= 'w' | lv_alpha_1_23= 'x' | lv_alpha_1_24= 'y' | lv_alpha_1_25= 'z' ) ) ) ) )
+            // InternalMyFNC.g:383:2: ( () ( ( (lv_alpha_1_1= 'a' | lv_alpha_1_2= 'b' | lv_alpha_1_3= 'c' | lv_alpha_1_4= 'd' | lv_alpha_1_5= 'e' | lv_alpha_1_6= 'f' | lv_alpha_1_7= 'g' | lv_alpha_1_8= 'h' | lv_alpha_1_9= 'i' | lv_alpha_1_10= 'j' | lv_alpha_1_11= 'k' | lv_alpha_1_12= 'l' | lv_alpha_1_13= 'm' | lv_alpha_1_14= 'n' | lv_alpha_1_15= 'o' | lv_alpha_1_16= 'p' | lv_alpha_1_17= 'q' | lv_alpha_1_18= 'r' | lv_alpha_1_19= 's' | lv_alpha_1_20= 't' | lv_alpha_1_21= 'v' | lv_alpha_1_22= 'w' | lv_alpha_1_23= 'x' | lv_alpha_1_24= 'y' | lv_alpha_1_25= 'z' ) ) ) )
             {
-            // InternalMyFNC.g:403:2: ( ( (lv_alpha_0_0= 'a' ) ) | ( () otherlv_2= 'b' ) | ( () otherlv_4= 'c' ) | ( () otherlv_6= 'd' ) | ( () otherlv_8= 'e' ) | ( () otherlv_10= 'f' ) | ( () otherlv_12= 'g' ) | ( () otherlv_14= 'h' ) | ( () otherlv_16= 'i' ) | ( () otherlv_18= 'j' ) | ( () otherlv_20= 'k' ) | ( () otherlv_22= 'l' ) | ( () otherlv_24= 'm' ) | ( () otherlv_26= 'n' ) | ( () otherlv_28= 'o' ) | ( () otherlv_30= 'p' ) | ( () otherlv_32= 'q' ) | ( () otherlv_34= 'r' ) | ( () otherlv_36= 's' ) | ( () otherlv_38= 't' ) | ( () otherlv_40= 'v' ) | ( () otherlv_42= 'w' ) | ( () otherlv_44= 'x' ) | ( () otherlv_46= 'y' ) | ( () otherlv_48= 'z' ) )
-            int alt8=25;
+            // InternalMyFNC.g:383:2: ( () ( ( (lv_alpha_1_1= 'a' | lv_alpha_1_2= 'b' | lv_alpha_1_3= 'c' | lv_alpha_1_4= 'd' | lv_alpha_1_5= 'e' | lv_alpha_1_6= 'f' | lv_alpha_1_7= 'g' | lv_alpha_1_8= 'h' | lv_alpha_1_9= 'i' | lv_alpha_1_10= 'j' | lv_alpha_1_11= 'k' | lv_alpha_1_12= 'l' | lv_alpha_1_13= 'm' | lv_alpha_1_14= 'n' | lv_alpha_1_15= 'o' | lv_alpha_1_16= 'p' | lv_alpha_1_17= 'q' | lv_alpha_1_18= 'r' | lv_alpha_1_19= 's' | lv_alpha_1_20= 't' | lv_alpha_1_21= 'v' | lv_alpha_1_22= 'w' | lv_alpha_1_23= 'x' | lv_alpha_1_24= 'y' | lv_alpha_1_25= 'z' ) ) ) )
+            // InternalMyFNC.g:384:3: () ( ( (lv_alpha_1_1= 'a' | lv_alpha_1_2= 'b' | lv_alpha_1_3= 'c' | lv_alpha_1_4= 'd' | lv_alpha_1_5= 'e' | lv_alpha_1_6= 'f' | lv_alpha_1_7= 'g' | lv_alpha_1_8= 'h' | lv_alpha_1_9= 'i' | lv_alpha_1_10= 'j' | lv_alpha_1_11= 'k' | lv_alpha_1_12= 'l' | lv_alpha_1_13= 'm' | lv_alpha_1_14= 'n' | lv_alpha_1_15= 'o' | lv_alpha_1_16= 'p' | lv_alpha_1_17= 'q' | lv_alpha_1_18= 'r' | lv_alpha_1_19= 's' | lv_alpha_1_20= 't' | lv_alpha_1_21= 'v' | lv_alpha_1_22= 'w' | lv_alpha_1_23= 'x' | lv_alpha_1_24= 'y' | lv_alpha_1_25= 'z' ) ) )
+            {
+            // InternalMyFNC.g:384:3: ()
+            // InternalMyFNC.g:385:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getSimpleAccess().getSimpleAction_0(),
+            					current);
+            			
+
+            }
+
+            // InternalMyFNC.g:391:3: ( ( (lv_alpha_1_1= 'a' | lv_alpha_1_2= 'b' | lv_alpha_1_3= 'c' | lv_alpha_1_4= 'd' | lv_alpha_1_5= 'e' | lv_alpha_1_6= 'f' | lv_alpha_1_7= 'g' | lv_alpha_1_8= 'h' | lv_alpha_1_9= 'i' | lv_alpha_1_10= 'j' | lv_alpha_1_11= 'k' | lv_alpha_1_12= 'l' | lv_alpha_1_13= 'm' | lv_alpha_1_14= 'n' | lv_alpha_1_15= 'o' | lv_alpha_1_16= 'p' | lv_alpha_1_17= 'q' | lv_alpha_1_18= 'r' | lv_alpha_1_19= 's' | lv_alpha_1_20= 't' | lv_alpha_1_21= 'v' | lv_alpha_1_22= 'w' | lv_alpha_1_23= 'x' | lv_alpha_1_24= 'y' | lv_alpha_1_25= 'z' ) ) )
+            // InternalMyFNC.g:392:4: ( (lv_alpha_1_1= 'a' | lv_alpha_1_2= 'b' | lv_alpha_1_3= 'c' | lv_alpha_1_4= 'd' | lv_alpha_1_5= 'e' | lv_alpha_1_6= 'f' | lv_alpha_1_7= 'g' | lv_alpha_1_8= 'h' | lv_alpha_1_9= 'i' | lv_alpha_1_10= 'j' | lv_alpha_1_11= 'k' | lv_alpha_1_12= 'l' | lv_alpha_1_13= 'm' | lv_alpha_1_14= 'n' | lv_alpha_1_15= 'o' | lv_alpha_1_16= 'p' | lv_alpha_1_17= 'q' | lv_alpha_1_18= 'r' | lv_alpha_1_19= 's' | lv_alpha_1_20= 't' | lv_alpha_1_21= 'v' | lv_alpha_1_22= 'w' | lv_alpha_1_23= 'x' | lv_alpha_1_24= 'y' | lv_alpha_1_25= 'z' ) )
+            {
+            // InternalMyFNC.g:392:4: ( (lv_alpha_1_1= 'a' | lv_alpha_1_2= 'b' | lv_alpha_1_3= 'c' | lv_alpha_1_4= 'd' | lv_alpha_1_5= 'e' | lv_alpha_1_6= 'f' | lv_alpha_1_7= 'g' | lv_alpha_1_8= 'h' | lv_alpha_1_9= 'i' | lv_alpha_1_10= 'j' | lv_alpha_1_11= 'k' | lv_alpha_1_12= 'l' | lv_alpha_1_13= 'm' | lv_alpha_1_14= 'n' | lv_alpha_1_15= 'o' | lv_alpha_1_16= 'p' | lv_alpha_1_17= 'q' | lv_alpha_1_18= 'r' | lv_alpha_1_19= 's' | lv_alpha_1_20= 't' | lv_alpha_1_21= 'v' | lv_alpha_1_22= 'w' | lv_alpha_1_23= 'x' | lv_alpha_1_24= 'y' | lv_alpha_1_25= 'z' ) )
+            // InternalMyFNC.g:393:5: (lv_alpha_1_1= 'a' | lv_alpha_1_2= 'b' | lv_alpha_1_3= 'c' | lv_alpha_1_4= 'd' | lv_alpha_1_5= 'e' | lv_alpha_1_6= 'f' | lv_alpha_1_7= 'g' | lv_alpha_1_8= 'h' | lv_alpha_1_9= 'i' | lv_alpha_1_10= 'j' | lv_alpha_1_11= 'k' | lv_alpha_1_12= 'l' | lv_alpha_1_13= 'm' | lv_alpha_1_14= 'n' | lv_alpha_1_15= 'o' | lv_alpha_1_16= 'p' | lv_alpha_1_17= 'q' | lv_alpha_1_18= 'r' | lv_alpha_1_19= 's' | lv_alpha_1_20= 't' | lv_alpha_1_21= 'v' | lv_alpha_1_22= 'w' | lv_alpha_1_23= 'x' | lv_alpha_1_24= 'y' | lv_alpha_1_25= 'z' )
+            {
+            // InternalMyFNC.g:393:5: (lv_alpha_1_1= 'a' | lv_alpha_1_2= 'b' | lv_alpha_1_3= 'c' | lv_alpha_1_4= 'd' | lv_alpha_1_5= 'e' | lv_alpha_1_6= 'f' | lv_alpha_1_7= 'g' | lv_alpha_1_8= 'h' | lv_alpha_1_9= 'i' | lv_alpha_1_10= 'j' | lv_alpha_1_11= 'k' | lv_alpha_1_12= 'l' | lv_alpha_1_13= 'm' | lv_alpha_1_14= 'n' | lv_alpha_1_15= 'o' | lv_alpha_1_16= 'p' | lv_alpha_1_17= 'q' | lv_alpha_1_18= 'r' | lv_alpha_1_19= 's' | lv_alpha_1_20= 't' | lv_alpha_1_21= 'v' | lv_alpha_1_22= 'w' | lv_alpha_1_23= 'x' | lv_alpha_1_24= 'y' | lv_alpha_1_25= 'z' )
+            int alt7=25;
             switch ( input.LA(1) ) {
+            case 14:
+                {
+                alt7=1;
+                }
+                break;
             case 15:
                 {
-                alt8=1;
+                alt7=2;
                 }
                 break;
             case 16:
                 {
-                alt8=2;
+                alt7=3;
                 }
                 break;
             case 17:
                 {
-                alt8=3;
+                alt7=4;
                 }
                 break;
             case 18:
                 {
-                alt8=4;
+                alt7=5;
                 }
                 break;
             case 19:
                 {
-                alt8=5;
+                alt7=6;
                 }
                 break;
             case 20:
                 {
-                alt8=6;
+                alt7=7;
                 }
                 break;
             case 21:
                 {
-                alt8=7;
+                alt7=8;
                 }
                 break;
             case 22:
                 {
-                alt8=8;
+                alt7=9;
                 }
                 break;
             case 23:
                 {
-                alt8=9;
+                alt7=10;
                 }
                 break;
             case 24:
                 {
-                alt8=10;
+                alt7=11;
                 }
                 break;
             case 25:
                 {
-                alt8=11;
+                alt7=12;
                 }
                 break;
             case 26:
                 {
-                alt8=12;
+                alt7=13;
                 }
                 break;
             case 27:
                 {
-                alt8=13;
+                alt7=14;
                 }
                 break;
             case 28:
                 {
-                alt8=14;
+                alt7=15;
                 }
                 break;
             case 29:
                 {
-                alt8=15;
+                alt7=16;
                 }
                 break;
             case 30:
                 {
-                alt8=16;
+                alt7=17;
                 }
                 break;
             case 31:
                 {
-                alt8=17;
+                alt7=18;
                 }
                 break;
             case 32:
                 {
-                alt8=18;
+                alt7=19;
                 }
                 break;
             case 33:
                 {
-                alt8=19;
+                alt7=20;
                 }
                 break;
             case 34:
                 {
-                alt8=20;
+                alt7=21;
                 }
                 break;
             case 35:
                 {
-                alt8=21;
+                alt7=22;
                 }
                 break;
             case 36:
                 {
-                alt8=22;
+                alt7=23;
                 }
                 break;
             case 37:
                 {
-                alt8=23;
+                alt7=24;
                 }
                 break;
             case 38:
                 {
-                alt8=24;
-                }
-                break;
-            case 39:
-                {
-                alt8=25;
+                alt7=25;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 8, 0, input);
+                    new NoViableAltException("", 7, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt8) {
+            switch (alt7) {
                 case 1 :
-                    // InternalMyFNC.g:404:3: ( (lv_alpha_0_0= 'a' ) )
+                    // InternalMyFNC.g:394:6: lv_alpha_1_1= 'a'
                     {
-                    // InternalMyFNC.g:404:3: ( (lv_alpha_0_0= 'a' ) )
-                    // InternalMyFNC.g:405:4: (lv_alpha_0_0= 'a' )
-                    {
-                    // InternalMyFNC.g:405:4: (lv_alpha_0_0= 'a' )
-                    // InternalMyFNC.g:406:5: lv_alpha_0_0= 'a'
-                    {
-                    lv_alpha_0_0=(Token)match(input,15,FOLLOW_2); 
+                    lv_alpha_1_1=(Token)match(input,14,FOLLOW_2); 
 
-                    					newLeafNode(lv_alpha_0_0, grammarAccess.getSimpleAccess().getAlphaAKeyword_0_0());
-                    				
+                    						newLeafNode(lv_alpha_1_1, grammarAccess.getSimpleAccess().getAlphaAKeyword_1_0_0());
+                    					
 
-                    					if (current==null) {
-                    						current = createModelElement(grammarAccess.getSimpleRule());
-                    					}
-                    					setWithLastConsumed(current, "alpha", lv_alpha_0_0, "a");
-                    				
-
-                    }
-
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getSimpleRule());
+                    						}
+                    						setWithLastConsumed(current, "alpha", lv_alpha_1_1, null);
+                    					
 
                     }
                     break;
                 case 2 :
-                    // InternalMyFNC.g:419:3: ( () otherlv_2= 'b' )
+                    // InternalMyFNC.g:405:6: lv_alpha_1_2= 'b'
                     {
-                    // InternalMyFNC.g:419:3: ( () otherlv_2= 'b' )
-                    // InternalMyFNC.g:420:4: () otherlv_2= 'b'
-                    {
-                    // InternalMyFNC.g:420:4: ()
-                    // InternalMyFNC.g:421:5: 
-                    {
+                    lv_alpha_1_2=(Token)match(input,15,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getSimpleAccess().getSimpleAction_1_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_alpha_1_2, grammarAccess.getSimpleAccess().getAlphaBKeyword_1_0_1());
+                    					
 
-                    }
-
-                    otherlv_2=(Token)match(input,16,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_2, grammarAccess.getSimpleAccess().getBKeyword_1_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getSimpleRule());
+                    						}
+                    						setWithLastConsumed(current, "alpha", lv_alpha_1_2, null);
+                    					
 
                     }
                     break;
                 case 3 :
-                    // InternalMyFNC.g:433:3: ( () otherlv_4= 'c' )
+                    // InternalMyFNC.g:416:6: lv_alpha_1_3= 'c'
                     {
-                    // InternalMyFNC.g:433:3: ( () otherlv_4= 'c' )
-                    // InternalMyFNC.g:434:4: () otherlv_4= 'c'
-                    {
-                    // InternalMyFNC.g:434:4: ()
-                    // InternalMyFNC.g:435:5: 
-                    {
+                    lv_alpha_1_3=(Token)match(input,16,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getSimpleAccess().getSimpleAction_2_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_alpha_1_3, grammarAccess.getSimpleAccess().getAlphaCKeyword_1_0_2());
+                    					
 
-                    }
-
-                    otherlv_4=(Token)match(input,17,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_4, grammarAccess.getSimpleAccess().getCKeyword_2_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getSimpleRule());
+                    						}
+                    						setWithLastConsumed(current, "alpha", lv_alpha_1_3, null);
+                    					
 
                     }
                     break;
                 case 4 :
-                    // InternalMyFNC.g:447:3: ( () otherlv_6= 'd' )
+                    // InternalMyFNC.g:427:6: lv_alpha_1_4= 'd'
                     {
-                    // InternalMyFNC.g:447:3: ( () otherlv_6= 'd' )
-                    // InternalMyFNC.g:448:4: () otherlv_6= 'd'
-                    {
-                    // InternalMyFNC.g:448:4: ()
-                    // InternalMyFNC.g:449:5: 
-                    {
+                    lv_alpha_1_4=(Token)match(input,17,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getSimpleAccess().getSimpleAction_3_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_alpha_1_4, grammarAccess.getSimpleAccess().getAlphaDKeyword_1_0_3());
+                    					
 
-                    }
-
-                    otherlv_6=(Token)match(input,18,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_6, grammarAccess.getSimpleAccess().getDKeyword_3_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getSimpleRule());
+                    						}
+                    						setWithLastConsumed(current, "alpha", lv_alpha_1_4, null);
+                    					
 
                     }
                     break;
                 case 5 :
-                    // InternalMyFNC.g:461:3: ( () otherlv_8= 'e' )
+                    // InternalMyFNC.g:438:6: lv_alpha_1_5= 'e'
                     {
-                    // InternalMyFNC.g:461:3: ( () otherlv_8= 'e' )
-                    // InternalMyFNC.g:462:4: () otherlv_8= 'e'
-                    {
-                    // InternalMyFNC.g:462:4: ()
-                    // InternalMyFNC.g:463:5: 
-                    {
+                    lv_alpha_1_5=(Token)match(input,18,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getSimpleAccess().getSimpleAction_4_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_alpha_1_5, grammarAccess.getSimpleAccess().getAlphaEKeyword_1_0_4());
+                    					
 
-                    }
-
-                    otherlv_8=(Token)match(input,19,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_8, grammarAccess.getSimpleAccess().getEKeyword_4_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getSimpleRule());
+                    						}
+                    						setWithLastConsumed(current, "alpha", lv_alpha_1_5, null);
+                    					
 
                     }
                     break;
                 case 6 :
-                    // InternalMyFNC.g:475:3: ( () otherlv_10= 'f' )
+                    // InternalMyFNC.g:449:6: lv_alpha_1_6= 'f'
                     {
-                    // InternalMyFNC.g:475:3: ( () otherlv_10= 'f' )
-                    // InternalMyFNC.g:476:4: () otherlv_10= 'f'
-                    {
-                    // InternalMyFNC.g:476:4: ()
-                    // InternalMyFNC.g:477:5: 
-                    {
+                    lv_alpha_1_6=(Token)match(input,19,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getSimpleAccess().getSimpleAction_5_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_alpha_1_6, grammarAccess.getSimpleAccess().getAlphaFKeyword_1_0_5());
+                    					
 
-                    }
-
-                    otherlv_10=(Token)match(input,20,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_10, grammarAccess.getSimpleAccess().getFKeyword_5_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getSimpleRule());
+                    						}
+                    						setWithLastConsumed(current, "alpha", lv_alpha_1_6, null);
+                    					
 
                     }
                     break;
                 case 7 :
-                    // InternalMyFNC.g:489:3: ( () otherlv_12= 'g' )
+                    // InternalMyFNC.g:460:6: lv_alpha_1_7= 'g'
                     {
-                    // InternalMyFNC.g:489:3: ( () otherlv_12= 'g' )
-                    // InternalMyFNC.g:490:4: () otherlv_12= 'g'
-                    {
-                    // InternalMyFNC.g:490:4: ()
-                    // InternalMyFNC.g:491:5: 
-                    {
+                    lv_alpha_1_7=(Token)match(input,20,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getSimpleAccess().getSimpleAction_6_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_alpha_1_7, grammarAccess.getSimpleAccess().getAlphaGKeyword_1_0_6());
+                    					
 
-                    }
-
-                    otherlv_12=(Token)match(input,21,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_12, grammarAccess.getSimpleAccess().getGKeyword_6_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getSimpleRule());
+                    						}
+                    						setWithLastConsumed(current, "alpha", lv_alpha_1_7, null);
+                    					
 
                     }
                     break;
                 case 8 :
-                    // InternalMyFNC.g:503:3: ( () otherlv_14= 'h' )
+                    // InternalMyFNC.g:471:6: lv_alpha_1_8= 'h'
                     {
-                    // InternalMyFNC.g:503:3: ( () otherlv_14= 'h' )
-                    // InternalMyFNC.g:504:4: () otherlv_14= 'h'
-                    {
-                    // InternalMyFNC.g:504:4: ()
-                    // InternalMyFNC.g:505:5: 
-                    {
+                    lv_alpha_1_8=(Token)match(input,21,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getSimpleAccess().getSimpleAction_7_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_alpha_1_8, grammarAccess.getSimpleAccess().getAlphaHKeyword_1_0_7());
+                    					
 
-                    }
-
-                    otherlv_14=(Token)match(input,22,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_14, grammarAccess.getSimpleAccess().getHKeyword_7_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getSimpleRule());
+                    						}
+                    						setWithLastConsumed(current, "alpha", lv_alpha_1_8, null);
+                    					
 
                     }
                     break;
                 case 9 :
-                    // InternalMyFNC.g:517:3: ( () otherlv_16= 'i' )
+                    // InternalMyFNC.g:482:6: lv_alpha_1_9= 'i'
                     {
-                    // InternalMyFNC.g:517:3: ( () otherlv_16= 'i' )
-                    // InternalMyFNC.g:518:4: () otherlv_16= 'i'
-                    {
-                    // InternalMyFNC.g:518:4: ()
-                    // InternalMyFNC.g:519:5: 
-                    {
+                    lv_alpha_1_9=(Token)match(input,22,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getSimpleAccess().getSimpleAction_8_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_alpha_1_9, grammarAccess.getSimpleAccess().getAlphaIKeyword_1_0_8());
+                    					
 
-                    }
-
-                    otherlv_16=(Token)match(input,23,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_16, grammarAccess.getSimpleAccess().getIKeyword_8_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getSimpleRule());
+                    						}
+                    						setWithLastConsumed(current, "alpha", lv_alpha_1_9, null);
+                    					
 
                     }
                     break;
                 case 10 :
-                    // InternalMyFNC.g:531:3: ( () otherlv_18= 'j' )
+                    // InternalMyFNC.g:493:6: lv_alpha_1_10= 'j'
                     {
-                    // InternalMyFNC.g:531:3: ( () otherlv_18= 'j' )
-                    // InternalMyFNC.g:532:4: () otherlv_18= 'j'
-                    {
-                    // InternalMyFNC.g:532:4: ()
-                    // InternalMyFNC.g:533:5: 
-                    {
+                    lv_alpha_1_10=(Token)match(input,23,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getSimpleAccess().getSimpleAction_9_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_alpha_1_10, grammarAccess.getSimpleAccess().getAlphaJKeyword_1_0_9());
+                    					
 
-                    }
-
-                    otherlv_18=(Token)match(input,24,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_18, grammarAccess.getSimpleAccess().getJKeyword_9_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getSimpleRule());
+                    						}
+                    						setWithLastConsumed(current, "alpha", lv_alpha_1_10, null);
+                    					
 
                     }
                     break;
                 case 11 :
-                    // InternalMyFNC.g:545:3: ( () otherlv_20= 'k' )
+                    // InternalMyFNC.g:504:6: lv_alpha_1_11= 'k'
                     {
-                    // InternalMyFNC.g:545:3: ( () otherlv_20= 'k' )
-                    // InternalMyFNC.g:546:4: () otherlv_20= 'k'
-                    {
-                    // InternalMyFNC.g:546:4: ()
-                    // InternalMyFNC.g:547:5: 
-                    {
+                    lv_alpha_1_11=(Token)match(input,24,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getSimpleAccess().getSimpleAction_10_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_alpha_1_11, grammarAccess.getSimpleAccess().getAlphaKKeyword_1_0_10());
+                    					
 
-                    }
-
-                    otherlv_20=(Token)match(input,25,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_20, grammarAccess.getSimpleAccess().getKKeyword_10_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getSimpleRule());
+                    						}
+                    						setWithLastConsumed(current, "alpha", lv_alpha_1_11, null);
+                    					
 
                     }
                     break;
                 case 12 :
-                    // InternalMyFNC.g:559:3: ( () otherlv_22= 'l' )
+                    // InternalMyFNC.g:515:6: lv_alpha_1_12= 'l'
                     {
-                    // InternalMyFNC.g:559:3: ( () otherlv_22= 'l' )
-                    // InternalMyFNC.g:560:4: () otherlv_22= 'l'
-                    {
-                    // InternalMyFNC.g:560:4: ()
-                    // InternalMyFNC.g:561:5: 
-                    {
+                    lv_alpha_1_12=(Token)match(input,25,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getSimpleAccess().getSimpleAction_11_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_alpha_1_12, grammarAccess.getSimpleAccess().getAlphaLKeyword_1_0_11());
+                    					
 
-                    }
-
-                    otherlv_22=(Token)match(input,26,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_22, grammarAccess.getSimpleAccess().getLKeyword_11_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getSimpleRule());
+                    						}
+                    						setWithLastConsumed(current, "alpha", lv_alpha_1_12, null);
+                    					
 
                     }
                     break;
                 case 13 :
-                    // InternalMyFNC.g:573:3: ( () otherlv_24= 'm' )
+                    // InternalMyFNC.g:526:6: lv_alpha_1_13= 'm'
                     {
-                    // InternalMyFNC.g:573:3: ( () otherlv_24= 'm' )
-                    // InternalMyFNC.g:574:4: () otherlv_24= 'm'
-                    {
-                    // InternalMyFNC.g:574:4: ()
-                    // InternalMyFNC.g:575:5: 
-                    {
+                    lv_alpha_1_13=(Token)match(input,26,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getSimpleAccess().getSimpleAction_12_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_alpha_1_13, grammarAccess.getSimpleAccess().getAlphaMKeyword_1_0_12());
+                    					
 
-                    }
-
-                    otherlv_24=(Token)match(input,27,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_24, grammarAccess.getSimpleAccess().getMKeyword_12_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getSimpleRule());
+                    						}
+                    						setWithLastConsumed(current, "alpha", lv_alpha_1_13, null);
+                    					
 
                     }
                     break;
                 case 14 :
-                    // InternalMyFNC.g:587:3: ( () otherlv_26= 'n' )
+                    // InternalMyFNC.g:537:6: lv_alpha_1_14= 'n'
                     {
-                    // InternalMyFNC.g:587:3: ( () otherlv_26= 'n' )
-                    // InternalMyFNC.g:588:4: () otherlv_26= 'n'
-                    {
-                    // InternalMyFNC.g:588:4: ()
-                    // InternalMyFNC.g:589:5: 
-                    {
+                    lv_alpha_1_14=(Token)match(input,27,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getSimpleAccess().getSimpleAction_13_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_alpha_1_14, grammarAccess.getSimpleAccess().getAlphaNKeyword_1_0_13());
+                    					
 
-                    }
-
-                    otherlv_26=(Token)match(input,28,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_26, grammarAccess.getSimpleAccess().getNKeyword_13_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getSimpleRule());
+                    						}
+                    						setWithLastConsumed(current, "alpha", lv_alpha_1_14, null);
+                    					
 
                     }
                     break;
                 case 15 :
-                    // InternalMyFNC.g:601:3: ( () otherlv_28= 'o' )
+                    // InternalMyFNC.g:548:6: lv_alpha_1_15= 'o'
                     {
-                    // InternalMyFNC.g:601:3: ( () otherlv_28= 'o' )
-                    // InternalMyFNC.g:602:4: () otherlv_28= 'o'
-                    {
-                    // InternalMyFNC.g:602:4: ()
-                    // InternalMyFNC.g:603:5: 
-                    {
+                    lv_alpha_1_15=(Token)match(input,28,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getSimpleAccess().getSimpleAction_14_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_alpha_1_15, grammarAccess.getSimpleAccess().getAlphaOKeyword_1_0_14());
+                    					
 
-                    }
-
-                    otherlv_28=(Token)match(input,29,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_28, grammarAccess.getSimpleAccess().getOKeyword_14_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getSimpleRule());
+                    						}
+                    						setWithLastConsumed(current, "alpha", lv_alpha_1_15, null);
+                    					
 
                     }
                     break;
                 case 16 :
-                    // InternalMyFNC.g:615:3: ( () otherlv_30= 'p' )
+                    // InternalMyFNC.g:559:6: lv_alpha_1_16= 'p'
                     {
-                    // InternalMyFNC.g:615:3: ( () otherlv_30= 'p' )
-                    // InternalMyFNC.g:616:4: () otherlv_30= 'p'
-                    {
-                    // InternalMyFNC.g:616:4: ()
-                    // InternalMyFNC.g:617:5: 
-                    {
+                    lv_alpha_1_16=(Token)match(input,29,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getSimpleAccess().getSimpleAction_15_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_alpha_1_16, grammarAccess.getSimpleAccess().getAlphaPKeyword_1_0_15());
+                    					
 
-                    }
-
-                    otherlv_30=(Token)match(input,30,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_30, grammarAccess.getSimpleAccess().getPKeyword_15_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getSimpleRule());
+                    						}
+                    						setWithLastConsumed(current, "alpha", lv_alpha_1_16, null);
+                    					
 
                     }
                     break;
                 case 17 :
-                    // InternalMyFNC.g:629:3: ( () otherlv_32= 'q' )
+                    // InternalMyFNC.g:570:6: lv_alpha_1_17= 'q'
                     {
-                    // InternalMyFNC.g:629:3: ( () otherlv_32= 'q' )
-                    // InternalMyFNC.g:630:4: () otherlv_32= 'q'
-                    {
-                    // InternalMyFNC.g:630:4: ()
-                    // InternalMyFNC.g:631:5: 
-                    {
+                    lv_alpha_1_17=(Token)match(input,30,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getSimpleAccess().getSimpleAction_16_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_alpha_1_17, grammarAccess.getSimpleAccess().getAlphaQKeyword_1_0_16());
+                    					
 
-                    }
-
-                    otherlv_32=(Token)match(input,31,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_32, grammarAccess.getSimpleAccess().getQKeyword_16_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getSimpleRule());
+                    						}
+                    						setWithLastConsumed(current, "alpha", lv_alpha_1_17, null);
+                    					
 
                     }
                     break;
                 case 18 :
-                    // InternalMyFNC.g:643:3: ( () otherlv_34= 'r' )
+                    // InternalMyFNC.g:581:6: lv_alpha_1_18= 'r'
                     {
-                    // InternalMyFNC.g:643:3: ( () otherlv_34= 'r' )
-                    // InternalMyFNC.g:644:4: () otherlv_34= 'r'
-                    {
-                    // InternalMyFNC.g:644:4: ()
-                    // InternalMyFNC.g:645:5: 
-                    {
+                    lv_alpha_1_18=(Token)match(input,31,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getSimpleAccess().getSimpleAction_17_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_alpha_1_18, grammarAccess.getSimpleAccess().getAlphaRKeyword_1_0_17());
+                    					
 
-                    }
-
-                    otherlv_34=(Token)match(input,32,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_34, grammarAccess.getSimpleAccess().getRKeyword_17_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getSimpleRule());
+                    						}
+                    						setWithLastConsumed(current, "alpha", lv_alpha_1_18, null);
+                    					
 
                     }
                     break;
                 case 19 :
-                    // InternalMyFNC.g:657:3: ( () otherlv_36= 's' )
+                    // InternalMyFNC.g:592:6: lv_alpha_1_19= 's'
                     {
-                    // InternalMyFNC.g:657:3: ( () otherlv_36= 's' )
-                    // InternalMyFNC.g:658:4: () otherlv_36= 's'
-                    {
-                    // InternalMyFNC.g:658:4: ()
-                    // InternalMyFNC.g:659:5: 
-                    {
+                    lv_alpha_1_19=(Token)match(input,32,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getSimpleAccess().getSimpleAction_18_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_alpha_1_19, grammarAccess.getSimpleAccess().getAlphaSKeyword_1_0_18());
+                    					
 
-                    }
-
-                    otherlv_36=(Token)match(input,33,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_36, grammarAccess.getSimpleAccess().getSKeyword_18_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getSimpleRule());
+                    						}
+                    						setWithLastConsumed(current, "alpha", lv_alpha_1_19, null);
+                    					
 
                     }
                     break;
                 case 20 :
-                    // InternalMyFNC.g:671:3: ( () otherlv_38= 't' )
+                    // InternalMyFNC.g:603:6: lv_alpha_1_20= 't'
                     {
-                    // InternalMyFNC.g:671:3: ( () otherlv_38= 't' )
-                    // InternalMyFNC.g:672:4: () otherlv_38= 't'
-                    {
-                    // InternalMyFNC.g:672:4: ()
-                    // InternalMyFNC.g:673:5: 
-                    {
+                    lv_alpha_1_20=(Token)match(input,33,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getSimpleAccess().getSimpleAction_19_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_alpha_1_20, grammarAccess.getSimpleAccess().getAlphaTKeyword_1_0_19());
+                    					
 
-                    }
-
-                    otherlv_38=(Token)match(input,34,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_38, grammarAccess.getSimpleAccess().getTKeyword_19_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getSimpleRule());
+                    						}
+                    						setWithLastConsumed(current, "alpha", lv_alpha_1_20, null);
+                    					
 
                     }
                     break;
                 case 21 :
-                    // InternalMyFNC.g:685:3: ( () otherlv_40= 'v' )
+                    // InternalMyFNC.g:614:6: lv_alpha_1_21= 'v'
                     {
-                    // InternalMyFNC.g:685:3: ( () otherlv_40= 'v' )
-                    // InternalMyFNC.g:686:4: () otherlv_40= 'v'
-                    {
-                    // InternalMyFNC.g:686:4: ()
-                    // InternalMyFNC.g:687:5: 
-                    {
+                    lv_alpha_1_21=(Token)match(input,34,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getSimpleAccess().getSimpleAction_20_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_alpha_1_21, grammarAccess.getSimpleAccess().getAlphaVKeyword_1_0_20());
+                    					
 
-                    }
-
-                    otherlv_40=(Token)match(input,35,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_40, grammarAccess.getSimpleAccess().getVKeyword_20_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getSimpleRule());
+                    						}
+                    						setWithLastConsumed(current, "alpha", lv_alpha_1_21, null);
+                    					
 
                     }
                     break;
                 case 22 :
-                    // InternalMyFNC.g:699:3: ( () otherlv_42= 'w' )
+                    // InternalMyFNC.g:625:6: lv_alpha_1_22= 'w'
                     {
-                    // InternalMyFNC.g:699:3: ( () otherlv_42= 'w' )
-                    // InternalMyFNC.g:700:4: () otherlv_42= 'w'
-                    {
-                    // InternalMyFNC.g:700:4: ()
-                    // InternalMyFNC.g:701:5: 
-                    {
+                    lv_alpha_1_22=(Token)match(input,35,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getSimpleAccess().getSimpleAction_21_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_alpha_1_22, grammarAccess.getSimpleAccess().getAlphaWKeyword_1_0_21());
+                    					
 
-                    }
-
-                    otherlv_42=(Token)match(input,36,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_42, grammarAccess.getSimpleAccess().getWKeyword_21_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getSimpleRule());
+                    						}
+                    						setWithLastConsumed(current, "alpha", lv_alpha_1_22, null);
+                    					
 
                     }
                     break;
                 case 23 :
-                    // InternalMyFNC.g:713:3: ( () otherlv_44= 'x' )
+                    // InternalMyFNC.g:636:6: lv_alpha_1_23= 'x'
                     {
-                    // InternalMyFNC.g:713:3: ( () otherlv_44= 'x' )
-                    // InternalMyFNC.g:714:4: () otherlv_44= 'x'
-                    {
-                    // InternalMyFNC.g:714:4: ()
-                    // InternalMyFNC.g:715:5: 
-                    {
+                    lv_alpha_1_23=(Token)match(input,36,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getSimpleAccess().getSimpleAction_22_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_alpha_1_23, grammarAccess.getSimpleAccess().getAlphaXKeyword_1_0_22());
+                    					
 
-                    }
-
-                    otherlv_44=(Token)match(input,37,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_44, grammarAccess.getSimpleAccess().getXKeyword_22_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getSimpleRule());
+                    						}
+                    						setWithLastConsumed(current, "alpha", lv_alpha_1_23, null);
+                    					
 
                     }
                     break;
                 case 24 :
-                    // InternalMyFNC.g:727:3: ( () otherlv_46= 'y' )
+                    // InternalMyFNC.g:647:6: lv_alpha_1_24= 'y'
                     {
-                    // InternalMyFNC.g:727:3: ( () otherlv_46= 'y' )
-                    // InternalMyFNC.g:728:4: () otherlv_46= 'y'
-                    {
-                    // InternalMyFNC.g:728:4: ()
-                    // InternalMyFNC.g:729:5: 
-                    {
+                    lv_alpha_1_24=(Token)match(input,37,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getSimpleAccess().getSimpleAction_23_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_alpha_1_24, grammarAccess.getSimpleAccess().getAlphaYKeyword_1_0_23());
+                    					
 
-                    }
-
-                    otherlv_46=(Token)match(input,38,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_46, grammarAccess.getSimpleAccess().getYKeyword_23_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getSimpleRule());
+                    						}
+                    						setWithLastConsumed(current, "alpha", lv_alpha_1_24, null);
+                    					
 
                     }
                     break;
                 case 25 :
-                    // InternalMyFNC.g:741:3: ( () otherlv_48= 'z' )
+                    // InternalMyFNC.g:658:6: lv_alpha_1_25= 'z'
                     {
-                    // InternalMyFNC.g:741:3: ( () otherlv_48= 'z' )
-                    // InternalMyFNC.g:742:4: () otherlv_48= 'z'
-                    {
-                    // InternalMyFNC.g:742:4: ()
-                    // InternalMyFNC.g:743:5: 
-                    {
+                    lv_alpha_1_25=(Token)match(input,38,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getSimpleAccess().getSimpleAction_24_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_alpha_1_25, grammarAccess.getSimpleAccess().getAlphaZKeyword_1_0_24());
+                    					
 
-                    }
-
-                    otherlv_48=(Token)match(input,39,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_48, grammarAccess.getSimpleAccess().getZKeyword_24_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getSimpleRule());
+                    						}
+                    						setWithLastConsumed(current, "alpha", lv_alpha_1_25, null);
+                    					
 
                     }
                     break;
+
+            }
+
+
+            }
+
+
+            }
+
 
             }
 
@@ -1953,7 +1606,7 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNonTerminal"
-    // InternalMyFNC.g:758:1: entryRuleNonTerminal returns [EObject current=null] : iv_ruleNonTerminal= ruleNonTerminal EOF ;
+    // InternalMyFNC.g:675:1: entryRuleNonTerminal returns [EObject current=null] : iv_ruleNonTerminal= ruleNonTerminal EOF ;
     public final EObject entryRuleNonTerminal() throws RecognitionException {
         EObject current = null;
 
@@ -1961,8 +1614,8 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMyFNC.g:758:52: (iv_ruleNonTerminal= ruleNonTerminal EOF )
-            // InternalMyFNC.g:759:2: iv_ruleNonTerminal= ruleNonTerminal EOF
+            // InternalMyFNC.g:675:52: (iv_ruleNonTerminal= ruleNonTerminal EOF )
+            // InternalMyFNC.g:676:2: iv_ruleNonTerminal= ruleNonTerminal EOF
             {
              newCompositeNode(grammarAccess.getNonTerminalRule()); 
             pushFollow(FOLLOW_1);
@@ -1989,855 +1642,608 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNonTerminal"
-    // InternalMyFNC.g:765:1: ruleNonTerminal returns [EObject current=null] : ( ( (lv_var_0_0= 'A' ) ) | ( () otherlv_2= 'B' ) | ( () otherlv_4= 'C' ) | ( () otherlv_6= 'D' ) | ( () otherlv_8= 'E' ) | ( () otherlv_10= 'F' ) | ( () otherlv_12= 'G' ) | ( () otherlv_14= 'H' ) | ( () otherlv_16= 'I' ) | ( () otherlv_18= 'J' ) | ( () otherlv_20= 'K' ) | ( () otherlv_22= 'L' ) | ( () otherlv_24= 'M' ) | ( () otherlv_26= 'N' ) | ( () otherlv_28= 'O' ) | ( () otherlv_30= 'P' ) | ( () otherlv_32= 'Q' ) | ( () otherlv_34= 'R' ) | ( () otherlv_36= 'T' ) | ( () otherlv_38= 'U' ) | ( () otherlv_40= 'V' ) | ( () otherlv_42= 'W' ) | ( () otherlv_44= 'X' ) | ( () otherlv_46= 'Y' ) | ( () otherlv_48= 'Z' ) ) ;
+    // InternalMyFNC.g:682:1: ruleNonTerminal returns [EObject current=null] : ( () ( ( (lv_var_1_1= 'A' | lv_var_1_2= 'B' | lv_var_1_3= 'C' | lv_var_1_4= 'D' | lv_var_1_5= 'E' | lv_var_1_6= 'F' | lv_var_1_7= 'G' | lv_var_1_8= 'H' | lv_var_1_9= 'I' | lv_var_1_10= 'J' | lv_var_1_11= 'K' | lv_var_1_12= 'L' | lv_var_1_13= 'M' | lv_var_1_14= 'N' | lv_var_1_15= 'O' | lv_var_1_16= 'P' | lv_var_1_17= 'Q' | lv_var_1_18= 'R' | lv_var_1_19= 'T' | lv_var_1_20= 'U' | lv_var_1_21= 'V' | lv_var_1_22= 'W' | lv_var_1_23= 'X' | lv_var_1_24= 'Y' | lv_var_1_25= 'Z' ) ) ) ) ;
     public final EObject ruleNonTerminal() throws RecognitionException {
         EObject current = null;
 
-        Token lv_var_0_0=null;
-        Token otherlv_2=null;
-        Token otherlv_4=null;
-        Token otherlv_6=null;
-        Token otherlv_8=null;
-        Token otherlv_10=null;
-        Token otherlv_12=null;
-        Token otherlv_14=null;
-        Token otherlv_16=null;
-        Token otherlv_18=null;
-        Token otherlv_20=null;
-        Token otherlv_22=null;
-        Token otherlv_24=null;
-        Token otherlv_26=null;
-        Token otherlv_28=null;
-        Token otherlv_30=null;
-        Token otherlv_32=null;
-        Token otherlv_34=null;
-        Token otherlv_36=null;
-        Token otherlv_38=null;
-        Token otherlv_40=null;
-        Token otherlv_42=null;
-        Token otherlv_44=null;
-        Token otherlv_46=null;
-        Token otherlv_48=null;
+        Token lv_var_1_1=null;
+        Token lv_var_1_2=null;
+        Token lv_var_1_3=null;
+        Token lv_var_1_4=null;
+        Token lv_var_1_5=null;
+        Token lv_var_1_6=null;
+        Token lv_var_1_7=null;
+        Token lv_var_1_8=null;
+        Token lv_var_1_9=null;
+        Token lv_var_1_10=null;
+        Token lv_var_1_11=null;
+        Token lv_var_1_12=null;
+        Token lv_var_1_13=null;
+        Token lv_var_1_14=null;
+        Token lv_var_1_15=null;
+        Token lv_var_1_16=null;
+        Token lv_var_1_17=null;
+        Token lv_var_1_18=null;
+        Token lv_var_1_19=null;
+        Token lv_var_1_20=null;
+        Token lv_var_1_21=null;
+        Token lv_var_1_22=null;
+        Token lv_var_1_23=null;
+        Token lv_var_1_24=null;
+        Token lv_var_1_25=null;
 
 
         	enterRule();
 
         try {
-            // InternalMyFNC.g:771:2: ( ( ( (lv_var_0_0= 'A' ) ) | ( () otherlv_2= 'B' ) | ( () otherlv_4= 'C' ) | ( () otherlv_6= 'D' ) | ( () otherlv_8= 'E' ) | ( () otherlv_10= 'F' ) | ( () otherlv_12= 'G' ) | ( () otherlv_14= 'H' ) | ( () otherlv_16= 'I' ) | ( () otherlv_18= 'J' ) | ( () otherlv_20= 'K' ) | ( () otherlv_22= 'L' ) | ( () otherlv_24= 'M' ) | ( () otherlv_26= 'N' ) | ( () otherlv_28= 'O' ) | ( () otherlv_30= 'P' ) | ( () otherlv_32= 'Q' ) | ( () otherlv_34= 'R' ) | ( () otherlv_36= 'T' ) | ( () otherlv_38= 'U' ) | ( () otherlv_40= 'V' ) | ( () otherlv_42= 'W' ) | ( () otherlv_44= 'X' ) | ( () otherlv_46= 'Y' ) | ( () otherlv_48= 'Z' ) ) )
-            // InternalMyFNC.g:772:2: ( ( (lv_var_0_0= 'A' ) ) | ( () otherlv_2= 'B' ) | ( () otherlv_4= 'C' ) | ( () otherlv_6= 'D' ) | ( () otherlv_8= 'E' ) | ( () otherlv_10= 'F' ) | ( () otherlv_12= 'G' ) | ( () otherlv_14= 'H' ) | ( () otherlv_16= 'I' ) | ( () otherlv_18= 'J' ) | ( () otherlv_20= 'K' ) | ( () otherlv_22= 'L' ) | ( () otherlv_24= 'M' ) | ( () otherlv_26= 'N' ) | ( () otherlv_28= 'O' ) | ( () otherlv_30= 'P' ) | ( () otherlv_32= 'Q' ) | ( () otherlv_34= 'R' ) | ( () otherlv_36= 'T' ) | ( () otherlv_38= 'U' ) | ( () otherlv_40= 'V' ) | ( () otherlv_42= 'W' ) | ( () otherlv_44= 'X' ) | ( () otherlv_46= 'Y' ) | ( () otherlv_48= 'Z' ) )
+            // InternalMyFNC.g:688:2: ( ( () ( ( (lv_var_1_1= 'A' | lv_var_1_2= 'B' | lv_var_1_3= 'C' | lv_var_1_4= 'D' | lv_var_1_5= 'E' | lv_var_1_6= 'F' | lv_var_1_7= 'G' | lv_var_1_8= 'H' | lv_var_1_9= 'I' | lv_var_1_10= 'J' | lv_var_1_11= 'K' | lv_var_1_12= 'L' | lv_var_1_13= 'M' | lv_var_1_14= 'N' | lv_var_1_15= 'O' | lv_var_1_16= 'P' | lv_var_1_17= 'Q' | lv_var_1_18= 'R' | lv_var_1_19= 'T' | lv_var_1_20= 'U' | lv_var_1_21= 'V' | lv_var_1_22= 'W' | lv_var_1_23= 'X' | lv_var_1_24= 'Y' | lv_var_1_25= 'Z' ) ) ) ) )
+            // InternalMyFNC.g:689:2: ( () ( ( (lv_var_1_1= 'A' | lv_var_1_2= 'B' | lv_var_1_3= 'C' | lv_var_1_4= 'D' | lv_var_1_5= 'E' | lv_var_1_6= 'F' | lv_var_1_7= 'G' | lv_var_1_8= 'H' | lv_var_1_9= 'I' | lv_var_1_10= 'J' | lv_var_1_11= 'K' | lv_var_1_12= 'L' | lv_var_1_13= 'M' | lv_var_1_14= 'N' | lv_var_1_15= 'O' | lv_var_1_16= 'P' | lv_var_1_17= 'Q' | lv_var_1_18= 'R' | lv_var_1_19= 'T' | lv_var_1_20= 'U' | lv_var_1_21= 'V' | lv_var_1_22= 'W' | lv_var_1_23= 'X' | lv_var_1_24= 'Y' | lv_var_1_25= 'Z' ) ) ) )
             {
-            // InternalMyFNC.g:772:2: ( ( (lv_var_0_0= 'A' ) ) | ( () otherlv_2= 'B' ) | ( () otherlv_4= 'C' ) | ( () otherlv_6= 'D' ) | ( () otherlv_8= 'E' ) | ( () otherlv_10= 'F' ) | ( () otherlv_12= 'G' ) | ( () otherlv_14= 'H' ) | ( () otherlv_16= 'I' ) | ( () otherlv_18= 'J' ) | ( () otherlv_20= 'K' ) | ( () otherlv_22= 'L' ) | ( () otherlv_24= 'M' ) | ( () otherlv_26= 'N' ) | ( () otherlv_28= 'O' ) | ( () otherlv_30= 'P' ) | ( () otherlv_32= 'Q' ) | ( () otherlv_34= 'R' ) | ( () otherlv_36= 'T' ) | ( () otherlv_38= 'U' ) | ( () otherlv_40= 'V' ) | ( () otherlv_42= 'W' ) | ( () otherlv_44= 'X' ) | ( () otherlv_46= 'Y' ) | ( () otherlv_48= 'Z' ) )
-            int alt9=25;
+            // InternalMyFNC.g:689:2: ( () ( ( (lv_var_1_1= 'A' | lv_var_1_2= 'B' | lv_var_1_3= 'C' | lv_var_1_4= 'D' | lv_var_1_5= 'E' | lv_var_1_6= 'F' | lv_var_1_7= 'G' | lv_var_1_8= 'H' | lv_var_1_9= 'I' | lv_var_1_10= 'J' | lv_var_1_11= 'K' | lv_var_1_12= 'L' | lv_var_1_13= 'M' | lv_var_1_14= 'N' | lv_var_1_15= 'O' | lv_var_1_16= 'P' | lv_var_1_17= 'Q' | lv_var_1_18= 'R' | lv_var_1_19= 'T' | lv_var_1_20= 'U' | lv_var_1_21= 'V' | lv_var_1_22= 'W' | lv_var_1_23= 'X' | lv_var_1_24= 'Y' | lv_var_1_25= 'Z' ) ) ) )
+            // InternalMyFNC.g:690:3: () ( ( (lv_var_1_1= 'A' | lv_var_1_2= 'B' | lv_var_1_3= 'C' | lv_var_1_4= 'D' | lv_var_1_5= 'E' | lv_var_1_6= 'F' | lv_var_1_7= 'G' | lv_var_1_8= 'H' | lv_var_1_9= 'I' | lv_var_1_10= 'J' | lv_var_1_11= 'K' | lv_var_1_12= 'L' | lv_var_1_13= 'M' | lv_var_1_14= 'N' | lv_var_1_15= 'O' | lv_var_1_16= 'P' | lv_var_1_17= 'Q' | lv_var_1_18= 'R' | lv_var_1_19= 'T' | lv_var_1_20= 'U' | lv_var_1_21= 'V' | lv_var_1_22= 'W' | lv_var_1_23= 'X' | lv_var_1_24= 'Y' | lv_var_1_25= 'Z' ) ) )
+            {
+            // InternalMyFNC.g:690:3: ()
+            // InternalMyFNC.g:691:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getNonTerminalAccess().getNonTerminalAction_0(),
+            					current);
+            			
+
+            }
+
+            // InternalMyFNC.g:697:3: ( ( (lv_var_1_1= 'A' | lv_var_1_2= 'B' | lv_var_1_3= 'C' | lv_var_1_4= 'D' | lv_var_1_5= 'E' | lv_var_1_6= 'F' | lv_var_1_7= 'G' | lv_var_1_8= 'H' | lv_var_1_9= 'I' | lv_var_1_10= 'J' | lv_var_1_11= 'K' | lv_var_1_12= 'L' | lv_var_1_13= 'M' | lv_var_1_14= 'N' | lv_var_1_15= 'O' | lv_var_1_16= 'P' | lv_var_1_17= 'Q' | lv_var_1_18= 'R' | lv_var_1_19= 'T' | lv_var_1_20= 'U' | lv_var_1_21= 'V' | lv_var_1_22= 'W' | lv_var_1_23= 'X' | lv_var_1_24= 'Y' | lv_var_1_25= 'Z' ) ) )
+            // InternalMyFNC.g:698:4: ( (lv_var_1_1= 'A' | lv_var_1_2= 'B' | lv_var_1_3= 'C' | lv_var_1_4= 'D' | lv_var_1_5= 'E' | lv_var_1_6= 'F' | lv_var_1_7= 'G' | lv_var_1_8= 'H' | lv_var_1_9= 'I' | lv_var_1_10= 'J' | lv_var_1_11= 'K' | lv_var_1_12= 'L' | lv_var_1_13= 'M' | lv_var_1_14= 'N' | lv_var_1_15= 'O' | lv_var_1_16= 'P' | lv_var_1_17= 'Q' | lv_var_1_18= 'R' | lv_var_1_19= 'T' | lv_var_1_20= 'U' | lv_var_1_21= 'V' | lv_var_1_22= 'W' | lv_var_1_23= 'X' | lv_var_1_24= 'Y' | lv_var_1_25= 'Z' ) )
+            {
+            // InternalMyFNC.g:698:4: ( (lv_var_1_1= 'A' | lv_var_1_2= 'B' | lv_var_1_3= 'C' | lv_var_1_4= 'D' | lv_var_1_5= 'E' | lv_var_1_6= 'F' | lv_var_1_7= 'G' | lv_var_1_8= 'H' | lv_var_1_9= 'I' | lv_var_1_10= 'J' | lv_var_1_11= 'K' | lv_var_1_12= 'L' | lv_var_1_13= 'M' | lv_var_1_14= 'N' | lv_var_1_15= 'O' | lv_var_1_16= 'P' | lv_var_1_17= 'Q' | lv_var_1_18= 'R' | lv_var_1_19= 'T' | lv_var_1_20= 'U' | lv_var_1_21= 'V' | lv_var_1_22= 'W' | lv_var_1_23= 'X' | lv_var_1_24= 'Y' | lv_var_1_25= 'Z' ) )
+            // InternalMyFNC.g:699:5: (lv_var_1_1= 'A' | lv_var_1_2= 'B' | lv_var_1_3= 'C' | lv_var_1_4= 'D' | lv_var_1_5= 'E' | lv_var_1_6= 'F' | lv_var_1_7= 'G' | lv_var_1_8= 'H' | lv_var_1_9= 'I' | lv_var_1_10= 'J' | lv_var_1_11= 'K' | lv_var_1_12= 'L' | lv_var_1_13= 'M' | lv_var_1_14= 'N' | lv_var_1_15= 'O' | lv_var_1_16= 'P' | lv_var_1_17= 'Q' | lv_var_1_18= 'R' | lv_var_1_19= 'T' | lv_var_1_20= 'U' | lv_var_1_21= 'V' | lv_var_1_22= 'W' | lv_var_1_23= 'X' | lv_var_1_24= 'Y' | lv_var_1_25= 'Z' )
+            {
+            // InternalMyFNC.g:699:5: (lv_var_1_1= 'A' | lv_var_1_2= 'B' | lv_var_1_3= 'C' | lv_var_1_4= 'D' | lv_var_1_5= 'E' | lv_var_1_6= 'F' | lv_var_1_7= 'G' | lv_var_1_8= 'H' | lv_var_1_9= 'I' | lv_var_1_10= 'J' | lv_var_1_11= 'K' | lv_var_1_12= 'L' | lv_var_1_13= 'M' | lv_var_1_14= 'N' | lv_var_1_15= 'O' | lv_var_1_16= 'P' | lv_var_1_17= 'Q' | lv_var_1_18= 'R' | lv_var_1_19= 'T' | lv_var_1_20= 'U' | lv_var_1_21= 'V' | lv_var_1_22= 'W' | lv_var_1_23= 'X' | lv_var_1_24= 'Y' | lv_var_1_25= 'Z' )
+            int alt8=25;
             switch ( input.LA(1) ) {
+            case 39:
+                {
+                alt8=1;
+                }
+                break;
             case 40:
                 {
-                alt9=1;
+                alt8=2;
                 }
                 break;
             case 41:
                 {
-                alt9=2;
+                alt8=3;
                 }
                 break;
             case 42:
                 {
-                alt9=3;
+                alt8=4;
                 }
                 break;
             case 43:
                 {
-                alt9=4;
+                alt8=5;
                 }
                 break;
             case 44:
                 {
-                alt9=5;
+                alt8=6;
                 }
                 break;
             case 45:
                 {
-                alt9=6;
+                alt8=7;
                 }
                 break;
             case 46:
                 {
-                alt9=7;
+                alt8=8;
                 }
                 break;
             case 47:
                 {
-                alt9=8;
+                alt8=9;
                 }
                 break;
             case 48:
                 {
-                alt9=9;
+                alt8=10;
                 }
                 break;
             case 49:
                 {
-                alt9=10;
+                alt8=11;
                 }
                 break;
             case 50:
                 {
-                alt9=11;
+                alt8=12;
                 }
                 break;
             case 51:
                 {
-                alt9=12;
+                alt8=13;
                 }
                 break;
             case 52:
                 {
-                alt9=13;
+                alt8=14;
                 }
                 break;
             case 53:
                 {
-                alt9=14;
+                alt8=15;
                 }
                 break;
             case 54:
                 {
-                alt9=15;
+                alt8=16;
                 }
                 break;
             case 55:
                 {
-                alt9=16;
+                alt8=17;
                 }
                 break;
             case 56:
                 {
-                alt9=17;
+                alt8=18;
                 }
                 break;
             case 57:
                 {
-                alt9=18;
+                alt8=19;
                 }
                 break;
             case 58:
                 {
-                alt9=19;
+                alt8=20;
                 }
                 break;
             case 59:
                 {
-                alt9=20;
+                alt8=21;
                 }
                 break;
             case 60:
                 {
-                alt9=21;
+                alt8=22;
                 }
                 break;
             case 61:
                 {
-                alt9=22;
+                alt8=23;
                 }
                 break;
             case 62:
                 {
-                alt9=23;
+                alt8=24;
                 }
                 break;
             case 63:
                 {
-                alt9=24;
-                }
-                break;
-            case 64:
-                {
-                alt9=25;
+                alt8=25;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 9, 0, input);
+                    new NoViableAltException("", 8, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt9) {
+            switch (alt8) {
                 case 1 :
-                    // InternalMyFNC.g:773:3: ( (lv_var_0_0= 'A' ) )
+                    // InternalMyFNC.g:700:6: lv_var_1_1= 'A'
                     {
-                    // InternalMyFNC.g:773:3: ( (lv_var_0_0= 'A' ) )
-                    // InternalMyFNC.g:774:4: (lv_var_0_0= 'A' )
-                    {
-                    // InternalMyFNC.g:774:4: (lv_var_0_0= 'A' )
-                    // InternalMyFNC.g:775:5: lv_var_0_0= 'A'
-                    {
-                    lv_var_0_0=(Token)match(input,40,FOLLOW_2); 
+                    lv_var_1_1=(Token)match(input,39,FOLLOW_2); 
 
-                    					newLeafNode(lv_var_0_0, grammarAccess.getNonTerminalAccess().getVarAKeyword_0_0());
-                    				
+                    						newLeafNode(lv_var_1_1, grammarAccess.getNonTerminalAccess().getVarAKeyword_1_0_0());
+                    					
 
-                    					if (current==null) {
-                    						current = createModelElement(grammarAccess.getNonTerminalRule());
-                    					}
-                    					setWithLastConsumed(current, "var", lv_var_0_0, "A");
-                    				
-
-                    }
-
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getNonTerminalRule());
+                    						}
+                    						setWithLastConsumed(current, "var", lv_var_1_1, null);
+                    					
 
                     }
                     break;
                 case 2 :
-                    // InternalMyFNC.g:788:3: ( () otherlv_2= 'B' )
+                    // InternalMyFNC.g:711:6: lv_var_1_2= 'B'
                     {
-                    // InternalMyFNC.g:788:3: ( () otherlv_2= 'B' )
-                    // InternalMyFNC.g:789:4: () otherlv_2= 'B'
-                    {
-                    // InternalMyFNC.g:789:4: ()
-                    // InternalMyFNC.g:790:5: 
-                    {
+                    lv_var_1_2=(Token)match(input,40,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getNonTerminalAccess().getNonTerminalAction_1_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_var_1_2, grammarAccess.getNonTerminalAccess().getVarBKeyword_1_0_1());
+                    					
 
-                    }
-
-                    otherlv_2=(Token)match(input,41,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_2, grammarAccess.getNonTerminalAccess().getBKeyword_1_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getNonTerminalRule());
+                    						}
+                    						setWithLastConsumed(current, "var", lv_var_1_2, null);
+                    					
 
                     }
                     break;
                 case 3 :
-                    // InternalMyFNC.g:802:3: ( () otherlv_4= 'C' )
+                    // InternalMyFNC.g:722:6: lv_var_1_3= 'C'
                     {
-                    // InternalMyFNC.g:802:3: ( () otherlv_4= 'C' )
-                    // InternalMyFNC.g:803:4: () otherlv_4= 'C'
-                    {
-                    // InternalMyFNC.g:803:4: ()
-                    // InternalMyFNC.g:804:5: 
-                    {
+                    lv_var_1_3=(Token)match(input,41,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getNonTerminalAccess().getNonTerminalAction_2_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_var_1_3, grammarAccess.getNonTerminalAccess().getVarCKeyword_1_0_2());
+                    					
 
-                    }
-
-                    otherlv_4=(Token)match(input,42,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_4, grammarAccess.getNonTerminalAccess().getCKeyword_2_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getNonTerminalRule());
+                    						}
+                    						setWithLastConsumed(current, "var", lv_var_1_3, null);
+                    					
 
                     }
                     break;
                 case 4 :
-                    // InternalMyFNC.g:816:3: ( () otherlv_6= 'D' )
+                    // InternalMyFNC.g:733:6: lv_var_1_4= 'D'
                     {
-                    // InternalMyFNC.g:816:3: ( () otherlv_6= 'D' )
-                    // InternalMyFNC.g:817:4: () otherlv_6= 'D'
-                    {
-                    // InternalMyFNC.g:817:4: ()
-                    // InternalMyFNC.g:818:5: 
-                    {
+                    lv_var_1_4=(Token)match(input,42,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getNonTerminalAccess().getNonTerminalAction_3_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_var_1_4, grammarAccess.getNonTerminalAccess().getVarDKeyword_1_0_3());
+                    					
 
-                    }
-
-                    otherlv_6=(Token)match(input,43,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_6, grammarAccess.getNonTerminalAccess().getDKeyword_3_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getNonTerminalRule());
+                    						}
+                    						setWithLastConsumed(current, "var", lv_var_1_4, null);
+                    					
 
                     }
                     break;
                 case 5 :
-                    // InternalMyFNC.g:830:3: ( () otherlv_8= 'E' )
+                    // InternalMyFNC.g:744:6: lv_var_1_5= 'E'
                     {
-                    // InternalMyFNC.g:830:3: ( () otherlv_8= 'E' )
-                    // InternalMyFNC.g:831:4: () otherlv_8= 'E'
-                    {
-                    // InternalMyFNC.g:831:4: ()
-                    // InternalMyFNC.g:832:5: 
-                    {
+                    lv_var_1_5=(Token)match(input,43,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getNonTerminalAccess().getNonTerminalAction_4_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_var_1_5, grammarAccess.getNonTerminalAccess().getVarEKeyword_1_0_4());
+                    					
 
-                    }
-
-                    otherlv_8=(Token)match(input,44,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_8, grammarAccess.getNonTerminalAccess().getEKeyword_4_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getNonTerminalRule());
+                    						}
+                    						setWithLastConsumed(current, "var", lv_var_1_5, null);
+                    					
 
                     }
                     break;
                 case 6 :
-                    // InternalMyFNC.g:844:3: ( () otherlv_10= 'F' )
+                    // InternalMyFNC.g:755:6: lv_var_1_6= 'F'
                     {
-                    // InternalMyFNC.g:844:3: ( () otherlv_10= 'F' )
-                    // InternalMyFNC.g:845:4: () otherlv_10= 'F'
-                    {
-                    // InternalMyFNC.g:845:4: ()
-                    // InternalMyFNC.g:846:5: 
-                    {
+                    lv_var_1_6=(Token)match(input,44,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getNonTerminalAccess().getNonTerminalAction_5_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_var_1_6, grammarAccess.getNonTerminalAccess().getVarFKeyword_1_0_5());
+                    					
 
-                    }
-
-                    otherlv_10=(Token)match(input,45,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_10, grammarAccess.getNonTerminalAccess().getFKeyword_5_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getNonTerminalRule());
+                    						}
+                    						setWithLastConsumed(current, "var", lv_var_1_6, null);
+                    					
 
                     }
                     break;
                 case 7 :
-                    // InternalMyFNC.g:858:3: ( () otherlv_12= 'G' )
+                    // InternalMyFNC.g:766:6: lv_var_1_7= 'G'
                     {
-                    // InternalMyFNC.g:858:3: ( () otherlv_12= 'G' )
-                    // InternalMyFNC.g:859:4: () otherlv_12= 'G'
-                    {
-                    // InternalMyFNC.g:859:4: ()
-                    // InternalMyFNC.g:860:5: 
-                    {
+                    lv_var_1_7=(Token)match(input,45,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getNonTerminalAccess().getNonTerminalAction_6_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_var_1_7, grammarAccess.getNonTerminalAccess().getVarGKeyword_1_0_6());
+                    					
 
-                    }
-
-                    otherlv_12=(Token)match(input,46,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_12, grammarAccess.getNonTerminalAccess().getGKeyword_6_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getNonTerminalRule());
+                    						}
+                    						setWithLastConsumed(current, "var", lv_var_1_7, null);
+                    					
 
                     }
                     break;
                 case 8 :
-                    // InternalMyFNC.g:872:3: ( () otherlv_14= 'H' )
+                    // InternalMyFNC.g:777:6: lv_var_1_8= 'H'
                     {
-                    // InternalMyFNC.g:872:3: ( () otherlv_14= 'H' )
-                    // InternalMyFNC.g:873:4: () otherlv_14= 'H'
-                    {
-                    // InternalMyFNC.g:873:4: ()
-                    // InternalMyFNC.g:874:5: 
-                    {
+                    lv_var_1_8=(Token)match(input,46,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getNonTerminalAccess().getNonTerminalAction_7_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_var_1_8, grammarAccess.getNonTerminalAccess().getVarHKeyword_1_0_7());
+                    					
 
-                    }
-
-                    otherlv_14=(Token)match(input,47,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_14, grammarAccess.getNonTerminalAccess().getHKeyword_7_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getNonTerminalRule());
+                    						}
+                    						setWithLastConsumed(current, "var", lv_var_1_8, null);
+                    					
 
                     }
                     break;
                 case 9 :
-                    // InternalMyFNC.g:886:3: ( () otherlv_16= 'I' )
+                    // InternalMyFNC.g:788:6: lv_var_1_9= 'I'
                     {
-                    // InternalMyFNC.g:886:3: ( () otherlv_16= 'I' )
-                    // InternalMyFNC.g:887:4: () otherlv_16= 'I'
-                    {
-                    // InternalMyFNC.g:887:4: ()
-                    // InternalMyFNC.g:888:5: 
-                    {
+                    lv_var_1_9=(Token)match(input,47,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getNonTerminalAccess().getNonTerminalAction_8_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_var_1_9, grammarAccess.getNonTerminalAccess().getVarIKeyword_1_0_8());
+                    					
 
-                    }
-
-                    otherlv_16=(Token)match(input,48,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_16, grammarAccess.getNonTerminalAccess().getIKeyword_8_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getNonTerminalRule());
+                    						}
+                    						setWithLastConsumed(current, "var", lv_var_1_9, null);
+                    					
 
                     }
                     break;
                 case 10 :
-                    // InternalMyFNC.g:900:3: ( () otherlv_18= 'J' )
+                    // InternalMyFNC.g:799:6: lv_var_1_10= 'J'
                     {
-                    // InternalMyFNC.g:900:3: ( () otherlv_18= 'J' )
-                    // InternalMyFNC.g:901:4: () otherlv_18= 'J'
-                    {
-                    // InternalMyFNC.g:901:4: ()
-                    // InternalMyFNC.g:902:5: 
-                    {
+                    lv_var_1_10=(Token)match(input,48,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getNonTerminalAccess().getNonTerminalAction_9_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_var_1_10, grammarAccess.getNonTerminalAccess().getVarJKeyword_1_0_9());
+                    					
 
-                    }
-
-                    otherlv_18=(Token)match(input,49,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_18, grammarAccess.getNonTerminalAccess().getJKeyword_9_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getNonTerminalRule());
+                    						}
+                    						setWithLastConsumed(current, "var", lv_var_1_10, null);
+                    					
 
                     }
                     break;
                 case 11 :
-                    // InternalMyFNC.g:914:3: ( () otherlv_20= 'K' )
+                    // InternalMyFNC.g:810:6: lv_var_1_11= 'K'
                     {
-                    // InternalMyFNC.g:914:3: ( () otherlv_20= 'K' )
-                    // InternalMyFNC.g:915:4: () otherlv_20= 'K'
-                    {
-                    // InternalMyFNC.g:915:4: ()
-                    // InternalMyFNC.g:916:5: 
-                    {
+                    lv_var_1_11=(Token)match(input,49,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getNonTerminalAccess().getNonTerminalAction_10_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_var_1_11, grammarAccess.getNonTerminalAccess().getVarKKeyword_1_0_10());
+                    					
 
-                    }
-
-                    otherlv_20=(Token)match(input,50,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_20, grammarAccess.getNonTerminalAccess().getKKeyword_10_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getNonTerminalRule());
+                    						}
+                    						setWithLastConsumed(current, "var", lv_var_1_11, null);
+                    					
 
                     }
                     break;
                 case 12 :
-                    // InternalMyFNC.g:928:3: ( () otherlv_22= 'L' )
+                    // InternalMyFNC.g:821:6: lv_var_1_12= 'L'
                     {
-                    // InternalMyFNC.g:928:3: ( () otherlv_22= 'L' )
-                    // InternalMyFNC.g:929:4: () otherlv_22= 'L'
-                    {
-                    // InternalMyFNC.g:929:4: ()
-                    // InternalMyFNC.g:930:5: 
-                    {
+                    lv_var_1_12=(Token)match(input,50,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getNonTerminalAccess().getNonTerminalAction_11_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_var_1_12, grammarAccess.getNonTerminalAccess().getVarLKeyword_1_0_11());
+                    					
 
-                    }
-
-                    otherlv_22=(Token)match(input,51,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_22, grammarAccess.getNonTerminalAccess().getLKeyword_11_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getNonTerminalRule());
+                    						}
+                    						setWithLastConsumed(current, "var", lv_var_1_12, null);
+                    					
 
                     }
                     break;
                 case 13 :
-                    // InternalMyFNC.g:942:3: ( () otherlv_24= 'M' )
+                    // InternalMyFNC.g:832:6: lv_var_1_13= 'M'
                     {
-                    // InternalMyFNC.g:942:3: ( () otherlv_24= 'M' )
-                    // InternalMyFNC.g:943:4: () otherlv_24= 'M'
-                    {
-                    // InternalMyFNC.g:943:4: ()
-                    // InternalMyFNC.g:944:5: 
-                    {
+                    lv_var_1_13=(Token)match(input,51,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getNonTerminalAccess().getNonTerminalAction_12_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_var_1_13, grammarAccess.getNonTerminalAccess().getVarMKeyword_1_0_12());
+                    					
 
-                    }
-
-                    otherlv_24=(Token)match(input,52,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_24, grammarAccess.getNonTerminalAccess().getMKeyword_12_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getNonTerminalRule());
+                    						}
+                    						setWithLastConsumed(current, "var", lv_var_1_13, null);
+                    					
 
                     }
                     break;
                 case 14 :
-                    // InternalMyFNC.g:956:3: ( () otherlv_26= 'N' )
+                    // InternalMyFNC.g:843:6: lv_var_1_14= 'N'
                     {
-                    // InternalMyFNC.g:956:3: ( () otherlv_26= 'N' )
-                    // InternalMyFNC.g:957:4: () otherlv_26= 'N'
-                    {
-                    // InternalMyFNC.g:957:4: ()
-                    // InternalMyFNC.g:958:5: 
-                    {
+                    lv_var_1_14=(Token)match(input,52,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getNonTerminalAccess().getNonTerminalAction_13_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_var_1_14, grammarAccess.getNonTerminalAccess().getVarNKeyword_1_0_13());
+                    					
 
-                    }
-
-                    otherlv_26=(Token)match(input,53,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_26, grammarAccess.getNonTerminalAccess().getNKeyword_13_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getNonTerminalRule());
+                    						}
+                    						setWithLastConsumed(current, "var", lv_var_1_14, null);
+                    					
 
                     }
                     break;
                 case 15 :
-                    // InternalMyFNC.g:970:3: ( () otherlv_28= 'O' )
+                    // InternalMyFNC.g:854:6: lv_var_1_15= 'O'
                     {
-                    // InternalMyFNC.g:970:3: ( () otherlv_28= 'O' )
-                    // InternalMyFNC.g:971:4: () otherlv_28= 'O'
-                    {
-                    // InternalMyFNC.g:971:4: ()
-                    // InternalMyFNC.g:972:5: 
-                    {
+                    lv_var_1_15=(Token)match(input,53,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getNonTerminalAccess().getNonTerminalAction_14_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_var_1_15, grammarAccess.getNonTerminalAccess().getVarOKeyword_1_0_14());
+                    					
 
-                    }
-
-                    otherlv_28=(Token)match(input,54,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_28, grammarAccess.getNonTerminalAccess().getOKeyword_14_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getNonTerminalRule());
+                    						}
+                    						setWithLastConsumed(current, "var", lv_var_1_15, null);
+                    					
 
                     }
                     break;
                 case 16 :
-                    // InternalMyFNC.g:984:3: ( () otherlv_30= 'P' )
+                    // InternalMyFNC.g:865:6: lv_var_1_16= 'P'
                     {
-                    // InternalMyFNC.g:984:3: ( () otherlv_30= 'P' )
-                    // InternalMyFNC.g:985:4: () otherlv_30= 'P'
-                    {
-                    // InternalMyFNC.g:985:4: ()
-                    // InternalMyFNC.g:986:5: 
-                    {
+                    lv_var_1_16=(Token)match(input,54,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getNonTerminalAccess().getNonTerminalAction_15_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_var_1_16, grammarAccess.getNonTerminalAccess().getVarPKeyword_1_0_15());
+                    					
 
-                    }
-
-                    otherlv_30=(Token)match(input,55,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_30, grammarAccess.getNonTerminalAccess().getPKeyword_15_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getNonTerminalRule());
+                    						}
+                    						setWithLastConsumed(current, "var", lv_var_1_16, null);
+                    					
 
                     }
                     break;
                 case 17 :
-                    // InternalMyFNC.g:998:3: ( () otherlv_32= 'Q' )
+                    // InternalMyFNC.g:876:6: lv_var_1_17= 'Q'
                     {
-                    // InternalMyFNC.g:998:3: ( () otherlv_32= 'Q' )
-                    // InternalMyFNC.g:999:4: () otherlv_32= 'Q'
-                    {
-                    // InternalMyFNC.g:999:4: ()
-                    // InternalMyFNC.g:1000:5: 
-                    {
+                    lv_var_1_17=(Token)match(input,55,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getNonTerminalAccess().getNonTerminalAction_16_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_var_1_17, grammarAccess.getNonTerminalAccess().getVarQKeyword_1_0_16());
+                    					
 
-                    }
-
-                    otherlv_32=(Token)match(input,56,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_32, grammarAccess.getNonTerminalAccess().getQKeyword_16_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getNonTerminalRule());
+                    						}
+                    						setWithLastConsumed(current, "var", lv_var_1_17, null);
+                    					
 
                     }
                     break;
                 case 18 :
-                    // InternalMyFNC.g:1012:3: ( () otherlv_34= 'R' )
+                    // InternalMyFNC.g:887:6: lv_var_1_18= 'R'
                     {
-                    // InternalMyFNC.g:1012:3: ( () otherlv_34= 'R' )
-                    // InternalMyFNC.g:1013:4: () otherlv_34= 'R'
-                    {
-                    // InternalMyFNC.g:1013:4: ()
-                    // InternalMyFNC.g:1014:5: 
-                    {
+                    lv_var_1_18=(Token)match(input,56,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getNonTerminalAccess().getNonTerminalAction_17_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_var_1_18, grammarAccess.getNonTerminalAccess().getVarRKeyword_1_0_17());
+                    					
 
-                    }
-
-                    otherlv_34=(Token)match(input,57,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_34, grammarAccess.getNonTerminalAccess().getRKeyword_17_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getNonTerminalRule());
+                    						}
+                    						setWithLastConsumed(current, "var", lv_var_1_18, null);
+                    					
 
                     }
                     break;
                 case 19 :
-                    // InternalMyFNC.g:1026:3: ( () otherlv_36= 'T' )
+                    // InternalMyFNC.g:898:6: lv_var_1_19= 'T'
                     {
-                    // InternalMyFNC.g:1026:3: ( () otherlv_36= 'T' )
-                    // InternalMyFNC.g:1027:4: () otherlv_36= 'T'
-                    {
-                    // InternalMyFNC.g:1027:4: ()
-                    // InternalMyFNC.g:1028:5: 
-                    {
+                    lv_var_1_19=(Token)match(input,57,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getNonTerminalAccess().getNonTerminalAction_18_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_var_1_19, grammarAccess.getNonTerminalAccess().getVarTKeyword_1_0_18());
+                    					
 
-                    }
-
-                    otherlv_36=(Token)match(input,58,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_36, grammarAccess.getNonTerminalAccess().getTKeyword_18_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getNonTerminalRule());
+                    						}
+                    						setWithLastConsumed(current, "var", lv_var_1_19, null);
+                    					
 
                     }
                     break;
                 case 20 :
-                    // InternalMyFNC.g:1040:3: ( () otherlv_38= 'U' )
+                    // InternalMyFNC.g:909:6: lv_var_1_20= 'U'
                     {
-                    // InternalMyFNC.g:1040:3: ( () otherlv_38= 'U' )
-                    // InternalMyFNC.g:1041:4: () otherlv_38= 'U'
-                    {
-                    // InternalMyFNC.g:1041:4: ()
-                    // InternalMyFNC.g:1042:5: 
-                    {
+                    lv_var_1_20=(Token)match(input,58,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getNonTerminalAccess().getNonTerminalAction_19_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_var_1_20, grammarAccess.getNonTerminalAccess().getVarUKeyword_1_0_19());
+                    					
 
-                    }
-
-                    otherlv_38=(Token)match(input,59,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_38, grammarAccess.getNonTerminalAccess().getUKeyword_19_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getNonTerminalRule());
+                    						}
+                    						setWithLastConsumed(current, "var", lv_var_1_20, null);
+                    					
 
                     }
                     break;
                 case 21 :
-                    // InternalMyFNC.g:1054:3: ( () otherlv_40= 'V' )
+                    // InternalMyFNC.g:920:6: lv_var_1_21= 'V'
                     {
-                    // InternalMyFNC.g:1054:3: ( () otherlv_40= 'V' )
-                    // InternalMyFNC.g:1055:4: () otherlv_40= 'V'
-                    {
-                    // InternalMyFNC.g:1055:4: ()
-                    // InternalMyFNC.g:1056:5: 
-                    {
+                    lv_var_1_21=(Token)match(input,59,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getNonTerminalAccess().getNonTerminalAction_20_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_var_1_21, grammarAccess.getNonTerminalAccess().getVarVKeyword_1_0_20());
+                    					
 
-                    }
-
-                    otherlv_40=(Token)match(input,60,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_40, grammarAccess.getNonTerminalAccess().getVKeyword_20_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getNonTerminalRule());
+                    						}
+                    						setWithLastConsumed(current, "var", lv_var_1_21, null);
+                    					
 
                     }
                     break;
                 case 22 :
-                    // InternalMyFNC.g:1068:3: ( () otherlv_42= 'W' )
+                    // InternalMyFNC.g:931:6: lv_var_1_22= 'W'
                     {
-                    // InternalMyFNC.g:1068:3: ( () otherlv_42= 'W' )
-                    // InternalMyFNC.g:1069:4: () otherlv_42= 'W'
-                    {
-                    // InternalMyFNC.g:1069:4: ()
-                    // InternalMyFNC.g:1070:5: 
-                    {
+                    lv_var_1_22=(Token)match(input,60,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getNonTerminalAccess().getNonTerminalAction_21_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_var_1_22, grammarAccess.getNonTerminalAccess().getVarWKeyword_1_0_21());
+                    					
 
-                    }
-
-                    otherlv_42=(Token)match(input,61,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_42, grammarAccess.getNonTerminalAccess().getWKeyword_21_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getNonTerminalRule());
+                    						}
+                    						setWithLastConsumed(current, "var", lv_var_1_22, null);
+                    					
 
                     }
                     break;
                 case 23 :
-                    // InternalMyFNC.g:1082:3: ( () otherlv_44= 'X' )
+                    // InternalMyFNC.g:942:6: lv_var_1_23= 'X'
                     {
-                    // InternalMyFNC.g:1082:3: ( () otherlv_44= 'X' )
-                    // InternalMyFNC.g:1083:4: () otherlv_44= 'X'
-                    {
-                    // InternalMyFNC.g:1083:4: ()
-                    // InternalMyFNC.g:1084:5: 
-                    {
+                    lv_var_1_23=(Token)match(input,61,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getNonTerminalAccess().getNonTerminalAction_22_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_var_1_23, grammarAccess.getNonTerminalAccess().getVarXKeyword_1_0_22());
+                    					
 
-                    }
-
-                    otherlv_44=(Token)match(input,62,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_44, grammarAccess.getNonTerminalAccess().getXKeyword_22_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getNonTerminalRule());
+                    						}
+                    						setWithLastConsumed(current, "var", lv_var_1_23, null);
+                    					
 
                     }
                     break;
                 case 24 :
-                    // InternalMyFNC.g:1096:3: ( () otherlv_46= 'Y' )
+                    // InternalMyFNC.g:953:6: lv_var_1_24= 'Y'
                     {
-                    // InternalMyFNC.g:1096:3: ( () otherlv_46= 'Y' )
-                    // InternalMyFNC.g:1097:4: () otherlv_46= 'Y'
-                    {
-                    // InternalMyFNC.g:1097:4: ()
-                    // InternalMyFNC.g:1098:5: 
-                    {
+                    lv_var_1_24=(Token)match(input,62,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getNonTerminalAccess().getNonTerminalAction_23_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_var_1_24, grammarAccess.getNonTerminalAccess().getVarYKeyword_1_0_23());
+                    					
 
-                    }
-
-                    otherlv_46=(Token)match(input,63,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_46, grammarAccess.getNonTerminalAccess().getYKeyword_23_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getNonTerminalRule());
+                    						}
+                    						setWithLastConsumed(current, "var", lv_var_1_24, null);
+                    					
 
                     }
                     break;
                 case 25 :
-                    // InternalMyFNC.g:1110:3: ( () otherlv_48= 'Z' )
+                    // InternalMyFNC.g:964:6: lv_var_1_25= 'Z'
                     {
-                    // InternalMyFNC.g:1110:3: ( () otherlv_48= 'Z' )
-                    // InternalMyFNC.g:1111:4: () otherlv_48= 'Z'
-                    {
-                    // InternalMyFNC.g:1111:4: ()
-                    // InternalMyFNC.g:1112:5: 
-                    {
+                    lv_var_1_25=(Token)match(input,63,FOLLOW_2); 
 
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getNonTerminalAccess().getNonTerminalAction_24_0(),
-                    						current);
-                    				
+                    						newLeafNode(lv_var_1_25, grammarAccess.getNonTerminalAccess().getVarZKeyword_1_0_24());
+                    					
 
-                    }
-
-                    otherlv_48=(Token)match(input,64,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_48, grammarAccess.getNonTerminalAccess().getZKeyword_24_1());
-                    			
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getNonTerminalRule());
+                    						}
+                    						setWithLastConsumed(current, "var", lv_var_1_25, null);
+                    					
 
                     }
                     break;
+
+            }
+
+
+            }
+
+
+            }
+
 
             }
 
@@ -2861,7 +2267,7 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBinary"
-    // InternalMyFNC.g:1127:1: entryRuleBinary returns [EObject current=null] : iv_ruleBinary= ruleBinary EOF ;
+    // InternalMyFNC.g:981:1: entryRuleBinary returns [EObject current=null] : iv_ruleBinary= ruleBinary EOF ;
     public final EObject entryRuleBinary() throws RecognitionException {
         EObject current = null;
 
@@ -2869,8 +2275,8 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMyFNC.g:1127:47: (iv_ruleBinary= ruleBinary EOF )
-            // InternalMyFNC.g:1128:2: iv_ruleBinary= ruleBinary EOF
+            // InternalMyFNC.g:981:47: (iv_ruleBinary= ruleBinary EOF )
+            // InternalMyFNC.g:982:2: iv_ruleBinary= ruleBinary EOF
             {
              newCompositeNode(grammarAccess.getBinaryRule()); 
             pushFollow(FOLLOW_1);
@@ -2897,81 +2303,98 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBinary"
-    // InternalMyFNC.g:1134:1: ruleBinary returns [EObject current=null] : ( ( (lv_first_0_0= ruleNonTerminal ) ) ( (lv_second_1_0= ruleNonTerminal ) ) ) ;
+    // InternalMyFNC.g:988:1: ruleBinary returns [EObject current=null] : ( () ( ( (lv_first_1_0= ruleNonTerminal ) ) ( (lv_second_2_0= ruleNonTerminal ) ) ) ) ;
     public final EObject ruleBinary() throws RecognitionException {
         EObject current = null;
 
-        EObject lv_first_0_0 = null;
+        EObject lv_first_1_0 = null;
 
-        EObject lv_second_1_0 = null;
+        EObject lv_second_2_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalMyFNC.g:1140:2: ( ( ( (lv_first_0_0= ruleNonTerminal ) ) ( (lv_second_1_0= ruleNonTerminal ) ) ) )
-            // InternalMyFNC.g:1141:2: ( ( (lv_first_0_0= ruleNonTerminal ) ) ( (lv_second_1_0= ruleNonTerminal ) ) )
+            // InternalMyFNC.g:994:2: ( ( () ( ( (lv_first_1_0= ruleNonTerminal ) ) ( (lv_second_2_0= ruleNonTerminal ) ) ) ) )
+            // InternalMyFNC.g:995:2: ( () ( ( (lv_first_1_0= ruleNonTerminal ) ) ( (lv_second_2_0= ruleNonTerminal ) ) ) )
             {
-            // InternalMyFNC.g:1141:2: ( ( (lv_first_0_0= ruleNonTerminal ) ) ( (lv_second_1_0= ruleNonTerminal ) ) )
-            // InternalMyFNC.g:1142:3: ( (lv_first_0_0= ruleNonTerminal ) ) ( (lv_second_1_0= ruleNonTerminal ) )
+            // InternalMyFNC.g:995:2: ( () ( ( (lv_first_1_0= ruleNonTerminal ) ) ( (lv_second_2_0= ruleNonTerminal ) ) ) )
+            // InternalMyFNC.g:996:3: () ( ( (lv_first_1_0= ruleNonTerminal ) ) ( (lv_second_2_0= ruleNonTerminal ) ) )
             {
-            // InternalMyFNC.g:1142:3: ( (lv_first_0_0= ruleNonTerminal ) )
-            // InternalMyFNC.g:1143:4: (lv_first_0_0= ruleNonTerminal )
-            {
-            // InternalMyFNC.g:1143:4: (lv_first_0_0= ruleNonTerminal )
-            // InternalMyFNC.g:1144:5: lv_first_0_0= ruleNonTerminal
+            // InternalMyFNC.g:996:3: ()
+            // InternalMyFNC.g:997:4: 
             {
 
-            					newCompositeNode(grammarAccess.getBinaryAccess().getFirstNonTerminalParserRuleCall_0_0());
-            				
+            				current = forceCreateModelElement(
+            					grammarAccess.getBinaryAccess().getBinaryAction_0(),
+            					current);
+            			
+
+            }
+
+            // InternalMyFNC.g:1003:3: ( ( (lv_first_1_0= ruleNonTerminal ) ) ( (lv_second_2_0= ruleNonTerminal ) ) )
+            // InternalMyFNC.g:1004:4: ( (lv_first_1_0= ruleNonTerminal ) ) ( (lv_second_2_0= ruleNonTerminal ) )
+            {
+            // InternalMyFNC.g:1004:4: ( (lv_first_1_0= ruleNonTerminal ) )
+            // InternalMyFNC.g:1005:5: (lv_first_1_0= ruleNonTerminal )
+            {
+            // InternalMyFNC.g:1005:5: (lv_first_1_0= ruleNonTerminal )
+            // InternalMyFNC.g:1006:6: lv_first_1_0= ruleNonTerminal
+            {
+
+            						newCompositeNode(grammarAccess.getBinaryAccess().getFirstNonTerminalParserRuleCall_1_0_0());
+            					
             pushFollow(FOLLOW_8);
-            lv_first_0_0=ruleNonTerminal();
+            lv_first_1_0=ruleNonTerminal();
 
             state._fsp--;
 
 
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getBinaryRule());
-            					}
-            					set(
-            						current,
-            						"first",
-            						lv_first_0_0,
-            						"org.xtext.cyk.mydsl.MyFNC.NonTerminal");
-            					afterParserOrEnumRuleCall();
-            				
+            						if (current==null) {
+            							current = createModelElementForParent(grammarAccess.getBinaryRule());
+            						}
+            						set(
+            							current,
+            							"first",
+            							lv_first_1_0,
+            							"org.xtext.cyk.mydsl.MyFNC.NonTerminal");
+            						afterParserOrEnumRuleCall();
+            					
 
             }
 
 
             }
 
-            // InternalMyFNC.g:1161:3: ( (lv_second_1_0= ruleNonTerminal ) )
-            // InternalMyFNC.g:1162:4: (lv_second_1_0= ruleNonTerminal )
+            // InternalMyFNC.g:1023:4: ( (lv_second_2_0= ruleNonTerminal ) )
+            // InternalMyFNC.g:1024:5: (lv_second_2_0= ruleNonTerminal )
             {
-            // InternalMyFNC.g:1162:4: (lv_second_1_0= ruleNonTerminal )
-            // InternalMyFNC.g:1163:5: lv_second_1_0= ruleNonTerminal
+            // InternalMyFNC.g:1024:5: (lv_second_2_0= ruleNonTerminal )
+            // InternalMyFNC.g:1025:6: lv_second_2_0= ruleNonTerminal
             {
 
-            					newCompositeNode(grammarAccess.getBinaryAccess().getSecondNonTerminalParserRuleCall_1_0());
-            				
+            						newCompositeNode(grammarAccess.getBinaryAccess().getSecondNonTerminalParserRuleCall_1_1_0());
+            					
             pushFollow(FOLLOW_2);
-            lv_second_1_0=ruleNonTerminal();
+            lv_second_2_0=ruleNonTerminal();
 
             state._fsp--;
 
 
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getBinaryRule());
-            					}
-            					set(
-            						current,
-            						"second",
-            						lv_second_1_0,
-            						"org.xtext.cyk.mydsl.MyFNC.NonTerminal");
-            					afterParserOrEnumRuleCall();
-            				
+            						if (current==null) {
+            							current = createModelElementForParent(grammarAccess.getBinaryRule());
+            						}
+            						set(
+            							current,
+            							"second",
+            							lv_second_2_0,
+            							"org.xtext.cyk.mydsl.MyFNC.NonTerminal");
+            						afterParserOrEnumRuleCall();
+            					
+
+            }
+
 
             }
 
@@ -3001,7 +2424,7 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInputString"
-    // InternalMyFNC.g:1184:1: entryRuleInputString returns [EObject current=null] : iv_ruleInputString= ruleInputString EOF ;
+    // InternalMyFNC.g:1047:1: entryRuleInputString returns [EObject current=null] : iv_ruleInputString= ruleInputString EOF ;
     public final EObject entryRuleInputString() throws RecognitionException {
         EObject current = null;
 
@@ -3009,8 +2432,8 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMyFNC.g:1184:52: (iv_ruleInputString= ruleInputString EOF )
-            // InternalMyFNC.g:1185:2: iv_ruleInputString= ruleInputString EOF
+            // InternalMyFNC.g:1047:52: (iv_ruleInputString= ruleInputString EOF )
+            // InternalMyFNC.g:1048:2: iv_ruleInputString= ruleInputString EOF
             {
              newCompositeNode(grammarAccess.getInputStringRule()); 
             pushFollow(FOLLOW_1);
@@ -3037,7 +2460,7 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInputString"
-    // InternalMyFNC.g:1191:1: ruleInputString returns [EObject current=null] : (otherlv_0= 'Check' ( (lv_input_1_0= RULE_STRING ) ) ) ;
+    // InternalMyFNC.g:1054:1: ruleInputString returns [EObject current=null] : (otherlv_0= 'Check' ( (lv_input_1_0= RULE_STRING ) ) ) ;
     public final EObject ruleInputString() throws RecognitionException {
         EObject current = null;
 
@@ -3048,21 +2471,21 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMyFNC.g:1197:2: ( (otherlv_0= 'Check' ( (lv_input_1_0= RULE_STRING ) ) ) )
-            // InternalMyFNC.g:1198:2: (otherlv_0= 'Check' ( (lv_input_1_0= RULE_STRING ) ) )
+            // InternalMyFNC.g:1060:2: ( (otherlv_0= 'Check' ( (lv_input_1_0= RULE_STRING ) ) ) )
+            // InternalMyFNC.g:1061:2: (otherlv_0= 'Check' ( (lv_input_1_0= RULE_STRING ) ) )
             {
-            // InternalMyFNC.g:1198:2: (otherlv_0= 'Check' ( (lv_input_1_0= RULE_STRING ) ) )
-            // InternalMyFNC.g:1199:3: otherlv_0= 'Check' ( (lv_input_1_0= RULE_STRING ) )
+            // InternalMyFNC.g:1061:2: (otherlv_0= 'Check' ( (lv_input_1_0= RULE_STRING ) ) )
+            // InternalMyFNC.g:1062:3: otherlv_0= 'Check' ( (lv_input_1_0= RULE_STRING ) )
             {
-            otherlv_0=(Token)match(input,65,FOLLOW_9); 
+            otherlv_0=(Token)match(input,64,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getInputStringAccess().getCheckKeyword_0());
             		
-            // InternalMyFNC.g:1203:3: ( (lv_input_1_0= RULE_STRING ) )
-            // InternalMyFNC.g:1204:4: (lv_input_1_0= RULE_STRING )
+            // InternalMyFNC.g:1066:3: ( (lv_input_1_0= RULE_STRING ) )
+            // InternalMyFNC.g:1067:4: (lv_input_1_0= RULE_STRING )
             {
-            // InternalMyFNC.g:1204:4: (lv_input_1_0= RULE_STRING )
-            // InternalMyFNC.g:1205:5: lv_input_1_0= RULE_STRING
+            // InternalMyFNC.g:1067:4: (lv_input_1_0= RULE_STRING )
+            // InternalMyFNC.g:1068:5: lv_input_1_0= RULE_STRING
             {
             lv_input_1_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -3112,12 +2535,12 @@ public class InternalMyFNCParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0xFFFFFF0000000000L,0x0000000000000003L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0xFFFFFF8000000000L,0x0000000000000001L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0xFFFFFFFFFFFFC000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0xFFFFFFFFFFFFC000L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000002002L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0xFFFFFFFFFFFFE000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0xFFFFFF0000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0xFFFFFFFFFFFFE000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0xFFFFFF8000000000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000010L});
 
 }

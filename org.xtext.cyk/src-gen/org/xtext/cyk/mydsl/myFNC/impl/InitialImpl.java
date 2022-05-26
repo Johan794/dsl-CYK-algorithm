@@ -20,8 +20,8 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.cyk.mydsl.myFNC.Initial;
-import org.xtext.cyk.mydsl.myFNC.Lambda;
 import org.xtext.cyk.mydsl.myFNC.MyFNCPackage;
+import org.xtext.cyk.mydsl.myFNC.Rigth;
 
 /**
  * <!-- begin-user-doc -->
@@ -67,7 +67,7 @@ public class InitialImpl extends MinimalEObjectImpl.Container implements Initial
    * @generated
    * @ordered
    */
-  protected EList<Lambda> rigth;
+  protected EList<Rigth> rigth;
 
   /**
    * <!-- begin-user-doc -->
@@ -121,11 +121,11 @@ public class InitialImpl extends MinimalEObjectImpl.Container implements Initial
    * @generated
    */
   @Override
-  public EList<Lambda> getRigth()
+  public EList<Rigth> getRigth()
   {
     if (rigth == null)
     {
-      rigth = new EObjectContainmentEList<Lambda>(Lambda.class, this, MyFNCPackage.INITIAL__RIGTH);
+      rigth = new EObjectContainmentEList<Rigth>(Rigth.class, this, MyFNCPackage.INITIAL__RIGTH);
     }
     return rigth;
   }
@@ -180,7 +180,7 @@ public class InitialImpl extends MinimalEObjectImpl.Container implements Initial
         return;
       case MyFNCPackage.INITIAL__RIGTH:
         getRigth().clear();
-        getRigth().addAll((Collection<? extends Lambda>)newValue);
+        getRigth().addAll((Collection<? extends Rigth>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

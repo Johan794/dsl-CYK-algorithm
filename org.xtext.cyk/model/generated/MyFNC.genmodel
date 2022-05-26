@@ -22,7 +22,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyFNC.ecore#//Production/left"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyFNC.ecore#//Production/rigth"/>
     </genClasses>
-    <genClasses ecoreClass="MyFNC.ecore#//Rigth"/>
+    <genClasses ecoreClass="MyFNC.ecore#//Rigth">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyFNC.ecore#//Rigth/simple"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyFNC.ecore#//Rigth/binary"/>
+    </genClasses>
     <genClasses ecoreClass="MyFNC.ecore#//Simple">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyFNC.ecore#//Simple/alpha"/>
     </genClasses>

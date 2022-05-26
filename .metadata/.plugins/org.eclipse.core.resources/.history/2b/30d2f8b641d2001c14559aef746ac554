@@ -1,5 +1,0 @@
-grammar org.xtext.cyk.mydsl.MyFNC with org.eclipse.xtext.common.Terminals
-
-generate myFNC "http://www.xtext.org/cyk/mydsl/MyFNC"
-
-

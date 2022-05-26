@@ -3,6 +3,7 @@
  */
 package org.xtext.cyk.mydsl.myFNC;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +22,7 @@ package org.xtext.cyk.mydsl.myFNC;
  * @model
  * @generated
  */
-public interface Binary extends Rigth
+public interface Binary extends EObject
 {
   /**
    * Returns the value of the '<em><b>First</b></em>' containment reference.

@@ -4,10 +4,10 @@ INDEX VERSION 1.131+C:\Users\johan\OneDrive\Escritorio\GIT\xTextWorkSpace\.metad
 1584152466.index
 2183566698.index
 1325633195.index
-4008729434.index
+1291352397.index
 3719495022.index
 2960343012.index
-2968981118.index
+2058685802.index
 2092984384.index
 3370568861.index
 575130474.index
@@ -27,7 +27,6 @@ INDEX VERSION 1.131+C:\Users\johan\OneDrive\Escritorio\GIT\xTextWorkSpace\.metad
 1975511716.index
 4134798604.index
 1548507152.index
-1793130738.index
 429548476.index
 1637901754.index
 1818945503.index
@@ -94,8 +93,8 @@ INDEX VERSION 1.131+C:\Users\johan\OneDrive\Escritorio\GIT\xTextWorkSpace\.metad
 2353754088.index
 2552420462.index
 584902760.index
-1291352397.index
-2058685802.index
 3512477831.index
+4008729434.index
+2968981118.index
 434708737.index
 815334566.index

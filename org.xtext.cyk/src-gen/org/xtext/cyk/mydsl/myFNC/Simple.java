@@ -3,6 +3,7 @@
  */
 package org.xtext.cyk.mydsl.myFNC;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +21,7 @@ package org.xtext.cyk.mydsl.myFNC;
  * @model
  * @generated
  */
-public interface Simple extends Rigth
+public interface Simple extends EObject
 {
   /**
    * Returns the value of the '<em><b>Alpha</b></em>' attribute.

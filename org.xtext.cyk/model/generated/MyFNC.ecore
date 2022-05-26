@@ -12,7 +12,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Initial">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="left" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rigth" upperBound="-1"
-        eType="#//Lambda" containment="true"/>
+        eType="#//Rigth" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Lambda">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rigth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -23,14 +23,19 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="rigth" upperBound="-1"
         eType="#//Rigth" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Rigth" eSuperTypes="#//Lambda"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Simple" eSuperTypes="#//Rigth">
+  <eClassifiers xsi:type="ecore:EClass" name="Rigth" eSuperTypes="#//Lambda">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="simple" eType="#//Simple"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="binary" eType="#//Binary"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Simple">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="alpha" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NonTerminal">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="var" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Binary" eSuperTypes="#//Rigth">
+  <eClassifiers xsi:type="ecore:EClass" name="Binary">
     <eStructuralFeatures xsi:type="ecore:EReference" name="first" eType="#//NonTerminal"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="second" eType="#//NonTerminal"

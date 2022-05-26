@@ -369,3 +369,982 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jdt.core 4 4 2022-05-24 21:51:32.915
+!MESSAGE Exception occurred during compilation unit conversion:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package org.xtext.cyk.mydsl.generator;
+
+import java.io.*;
+import java.util.*;
+
+public class CYK{
+
+    public static String word;
+    public static String startingSymbol;
+    public static boolean isTokenWord = false;
+    public static ArrayList<String> terminals = new ArrayList<String>();
+    public static ArrayList<String> nonTerminals = new ArrayList<String>();
+    public static TreeMap<String,ArrayList<String>> grammar = new TreeMap<>();
+    
+    /*
+    public static void main(String[] args){
+        if(args.length < 2){ 
+            System.out.println("Usage: java CYK <File> <Word>."); 
+            System.exit(1); 
+        }else if (args.length > 2){
+            isTokenWord = true;
+        }
+        doSteps();
+    }
+    */
+
+    public String doSteps(){
+       // parseGrammar(args);
+        String[][] cykTable = createCYKTable();
+        printResult(doCyk(cykTable));
+        
+        return "";
+    }
+
+    public static void parseGrammar(String[] args){
+        Scanner input = openFile(args[0]);
+        ArrayList<String> tmp = new ArrayList<>();
+        int line = 2;
+
+        word = getWord(args);
+        startingSymbol = input.next();
+        input.nextLine();
+
+        while(input.hasNextLine() && line <= 3){
+            tmp.addAll(Arrays.<String>asList(toArray(input.nextLine())));
+            if(line == 2) { terminals.addAll(tmp); }
+            if(line == 3) { nonTerminals.addAll(tmp); }
+            tmp.clear();
+            line++;
+        }
+
+        while(input.hasNextLine()){
+            tmp.addAll(Arrays.<String>asList(toArray(input.nextLine())));
+            String leftSide = tmp.get(0);
+            tmp.remove(0);
+            grammar.put(leftSide, new ArrayList<String>());
+            grammar.get(leftSide).addAll(tmp);
+            tmp.clear();
+        }
+        input.close();
+    }
+
+    public static String getWord(String[] args){
+        if(!isTokenWord) { return args[1]; }
+        String[] argsWithoutFile = new String[args.length - 1];
+        for(int i = 1; i < args.length; i++){
+            argsWithoutFile[i-1] = args[i];
+        }
+        return toString(argsWithoutFile);
+    }
+
+    public static void printResult (String[][] cykTable){
+    	String result = "";
+    	result+="Word: " + word+"\n";
+    	result+= "\nG = (" + terminals.toString().replace("[", "{").replace("]", "}") 
+                + ", " + nonTerminals.toString().replace("[", "{").replace("]", "}")
+                + ", P, " + startingSymbol + ")\n\nWith Productions P as:\n";
+        for(String s: grammar.keySet()){
+        	result+=s + " -> " + grammar.get(s).toString().replaceAll("[\\[\\]\\,]", "").replaceAll("\\s", " | ");
+        }
+        
+        result+="\nApplying CYK-Algorithm:\n";
+        drawTable(cykTable);
+    }
+
+    public static void drawTable(String[][] cykTable){
+    	String out = "";
+        int l = findLongestString(cykTable) + 2;
+        String formatString = "| %-" + l + "s ";
+        String s = "";
+        StringBuilder sb = new StringBuilder();
+    //Building Table Structure Modules
+        sb.append("+");
+        for(int x = 0; x <= l + 2; x++){
+            if(x == l + 2){ 
+                sb.append("+");
+            }else{
+                sb.append("-");
+            }
+        }
+        String low = sb.toString();
+        sb.delete(0, 1);
+        String lowRight = sb.toString();
+    //Print Table
+        for(int i = 0; i < cykTable.length; i++){
+            for(int j = 0; j <= cykTable[i].length; j++){
+            	out+=(j == 0) ? low : (i <= 1 && j == cykTable[i].length - 1) ? "" : lowRight+"\n";
+                System.out.print((j == 0) ? low : (i <= 1 && j == cykTable[i].length - 1) ? "" : lowRight);
+            }
+            System.out.println();
+            for(int j = 0; j < cykTable[i].length; j++){
+                s = (cykTable[i][j].isEmpty()) ? "-" : cykTable[i][j];
+                System.out.format(formatString, s.replaceAll("\\s", ","));
+                if(j == cykTable[i].length - 1) { 
+                	out+="|"+"\n";
+                	System.out.print("|"); 
+                }
+            }
+            out+0
+            System.out.println();
+        }
+        System.out.println(low+"\n");
+    //Step 4: Evaluate success.
+        if(cykTable[cykTable.length-1][cykTable[cykTable.length-1].length-1].contains(startingSymbol)){
+            System.out.println("The word \"" + word + "\" is an element of the CFG G and can be derived from it.");
+        }else{
+            System.out.println("The word \"" + word + "\" is not an element of the CFG G and can not be derived from it.");
+        }
+    }
+
+    public static int findLongestString(String[][] cykTable){
+        int x = 0;
+        for(String[] s : cykTable){
+            for(String d : s){
+                if(d.length() > x){ x = d.length(); }
+            }
+        }
+        return x;
+    }
+
+//Jagged Array for the Algorithm
+    public static String[][] createCYKTable (){
+        int length = isTokenWord ? toArray(word).length : word.length();
+        String[][] cykTable = new String[length + 1][];
+        cykTable[0] = new String[length];
+        for(int i = 1; i < cykTable.length; i++){
+            cykTable[i] = new String[length - (i - 1)];
+        }
+        for(int i = 1; i < cykTable.length; i++){
+            for(int j = 0; j < cykTable[i].length; j++){
+                cykTable[i][j] = "";
+            }
+        }
+        return cykTable;
+    }
+
+    public static String[][] doCyk(String[][] cykTable){
+    //Step 1: Fill header row
+        for(int i = 0; i < cykTable[0].length; i++){
+            cykTable[0][i] = manageWord(word, i);
+        }
+    //Step 2: Get productions for terminals
+        for(int i = 0; i < cykTable[1].length; i++){
+            String[] validCombinations = checkIfProduces(new String[] {cykTable[0][i]});
+            cykTable[1][i] = toString(validCombinations);
+        }
+        if(word.length() <= 1) { return cykTable; }
+    //Step 3: Get productions for subwords with the length of 2
+        for(int i = 0; i < cykTable[2].length; i++){
+            String[] downwards = toArray(cykTable[1][i]);
+            String[] diagonal = toArray(cykTable[1][i+1]);
+            String[] validCombinations = checkIfProduces(getAllCombinations(downwards, diagonal));
+            cykTable[2][i] = toString(validCombinations);
+        }
+        if(word.length() <= 2){ return cykTable; }
+    //Step 3: Get productions for subwords with the length of n
+        TreeSet<String> currentValues = new TreeSet<String>();
+
+        for(int i = 3; i < cykTable.length; i++){
+            for(int j = 0; j < cykTable[i].length; j++){
+                for(int compareFrom = 1; compareFrom < i; compareFrom++){
+                    String[] downwards = cykTable[compareFrom][j].split("\\s");
+                    String[] diagonal = cykTable[i-compareFrom][j+compareFrom].split("\\s");
+                    String[] combinations = getAllCombinations(downwards, diagonal);
+                    String[] validCombinations = checkIfProduces(combinations);
+                    if(cykTable[i][j].isEmpty()){
+                        cykTable[i][j] = toString(validCombinations);
+                    }else{
+                        String[] oldValues = toArray(cykTable[i][j]);
+                        ArrayList<String> newValues = new ArrayList<String>(Arrays.asList(oldValues));
+                        newValues.addAll(Arrays.asList(validCombinations));
+                        currentValues.addAll(newValues);
+                        cykTable[i][j] = toString(currentValues.toArray(new String[currentValues.size()]));
+                    }
+                }
+                currentValues.clear();
+            }
+        }
+        return cykTable;
+    }
+
+    public static String manageWord(String word, int position){
+        if(!isTokenWord){ return Character.toString(word.charAt(position)); }
+        return toArray(word)[position];
+    }
+
+    public static String[] checkIfProduces(String[] toCheck){
+        ArrayList<String> storage = new ArrayList<>();
+        for(String s : grammar.keySet()){
+            for(String current : toCheck){
+                if(grammar.get(s).contains(current)){
+                    storage.add(s);
+                }
+            }
+        }
+        if(storage.size() == 0) { return new String[] {}; }
+        return storage.toArray(new String[storage.size()]);
+    }
+
+    public static String[] getAllCombinations(String[] from, String[] to){
+        int length = from.length * to.length;
+        int counter = 0;
+        String[] combinations = new String[length];
+        if(length == 0){ return combinations; };
+        for(int i = 0; i < from.length; i++){
+            for(int j = 0; j < to.length; j++){
+                combinations[counter] = from[i] + to[j];
+                counter++;
+            }
+        }
+        return combinations;
+    }
+
+    public static String toString(String[] input){
+        return Arrays.toString(input).replaceAll("[\\[\\]\\,]", "");
+    }
+
+    public static String[] toArray(String input){
+        return input.split("\\s");
+    }
+
+    public static Scanner openFile(String file){
+        try{
+            return new Scanner(new File(file));
+        }catch(FileNotFoundException e){
+            System.out.println("Error: Can't find or open the file: " + file + ".");
+            System.exit(1);
+            return null;
+        }
+    }
+
+	public static String getWord() {
+		return word;
+	}
+
+	public static void setWord(String word) {
+		CYK.word = word;
+	}
+
+	public static String getStartingSymbol() {
+		return startingSymbol;
+	}
+
+	public static void setStartingSymbol(String startingSymbol) {
+		CYK.startingSymbol = startingSymbol;
+	}
+
+	public static boolean isTokenWord() {
+		return isTokenWord;
+	}
+
+	public static void setTokenWord(boolean isTokenWord) {
+		CYK.isTokenWord = isTokenWord;
+	}
+
+	public static ArrayList<String> getTerminals() {
+		return terminals;
+	}
+
+	public static void setTerminals(ArrayList<String> terminals) {
+		CYK.terminals = terminals;
+	}
+
+	public static ArrayList<String> getNonTerminals() {
+		return nonTerminals;
+	}
+
+	public static void setNonTerminals(ArrayList<String> nonTerminals) {
+		CYK.nonTerminals = nonTerminals;
+	}
+
+	public static TreeMap<String, ArrayList<String>> getGrammar() {
+		return grammar;
+	}
+
+	public static void setGrammar(TreeMap<String, ArrayList<String>> grammar) {
+		CYK.grammar = grammar;
+	}    
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2047)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3853)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1953)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1990)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3095)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3013)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2220)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3034)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3390)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1534)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:521)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:201)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:94)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:91)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:158)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+
+!ENTRY org.eclipse.jdt.ui 4 2 2022-05-24 21:51:32.938
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2047)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3853)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1953)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1990)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3095)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3013)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2220)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3034)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3390)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1534)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:521)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:201)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:94)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:91)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:158)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+
+!ENTRY org.eclipse.jdt.ui 4 0 2022-05-24 21:51:32.940
+!MESSAGE Error in JDT Core during reconcile
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2047)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3853)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1953)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1990)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3095)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3013)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2220)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3034)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3390)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1534)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:521)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:201)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:94)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:91)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:158)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+
+!ENTRY org.eclipse.jdt.core 4 4 2022-05-24 21:51:32.974
+!MESSAGE Exception occurred during compilation unit conversion:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package org.xtext.cyk.mydsl.generator;
+
+import java.io.*;
+import java.util.*;
+
+public class CYK{
+
+    public static String word;
+    public static String startingSymbol;
+    public static boolean isTokenWord = false;
+    public static ArrayList<String> terminals = new ArrayList<String>();
+    public static ArrayList<String> nonTerminals = new ArrayList<String>();
+    public static TreeMap<String,ArrayList<String>> grammar = new TreeMap<>();
+    
+    /*
+    public static void main(String[] args){
+        if(args.length < 2){ 
+            System.out.println("Usage: java CYK <File> <Word>."); 
+            System.exit(1); 
+        }else if (args.length > 2){
+            isTokenWord = true;
+        }
+        doSteps();
+    }
+    */
+
+    public String doSteps(){
+       // parseGrammar(args);
+        String[][] cykTable = createCYKTable();
+        printResult(doCyk(cykTable));
+        
+        return "";
+    }
+
+    public static void parseGrammar(String[] args){
+        Scanner input = openFile(args[0]);
+        ArrayList<String> tmp = new ArrayList<>();
+        int line = 2;
+
+        word = getWord(args);
+        startingSymbol = input.next();
+        input.nextLine();
+
+        while(input.hasNextLine() && line <= 3){
+            tmp.addAll(Arrays.<String>asList(toArray(input.nextLine())));
+            if(line == 2) { terminals.addAll(tmp); }
+            if(line == 3) { nonTerminals.addAll(tmp); }
+            tmp.clear();
+            line++;
+        }
+
+        while(input.hasNextLine()){
+            tmp.addAll(Arrays.<String>asList(toArray(input.nextLine())));
+            String leftSide = tmp.get(0);
+            tmp.remove(0);
+            grammar.put(leftSide, new ArrayList<String>());
+            grammar.get(leftSide).addAll(tmp);
+            tmp.clear();
+        }
+        input.close();
+    }
+
+    public static String getWord(String[] args){
+        if(!isTokenWord) { return args[1]; }
+        String[] argsWithoutFile = new String[args.length - 1];
+        for(int i = 1; i < args.length; i++){
+            argsWithoutFile[i-1] = args[i];
+        }
+        return toString(argsWithoutFile);
+    }
+
+    public static void printResult (String[][] cykTable){
+    	String result = "";
+    	result+="Word: " + word+"\n";
+    	result+= "\nG = (" + terminals.toString().replace("[", "{").replace("]", "}") 
+                + ", " + nonTerminals.toString().replace("[", "{").replace("]", "}")
+                + ", P, " + startingSymbol + ")\n\nWith Productions P as:\n";
+        for(String s: grammar.keySet()){
+        	result+=s + " -> " + grammar.get(s).toString().replaceAll("[\\[\\]\\,]", "").replaceAll("\\s", " | ");
+        }
+        
+        result+="\nApplying CYK-Algorithm:\n";
+        drawTable(cykTable);
+    }
+
+    public static void drawTable(String[][] cykTable){
+    	String out = "";
+        int l = findLongestString(cykTable) + 2;
+        String formatString = "| %-" + l + "s ";
+        String s = "";
+        StringBuilder sb = new StringBuilder();
+    //Building Table Structure Modules
+        sb.append("+");
+        for(int x = 0; x <= l + 2; x++){
+            if(x == l + 2){ 
+                sb.append("+");
+            }else{
+                sb.append("-");
+            }
+        }
+        String low = sb.toString();
+        sb.delete(0, 1);
+        String lowRight = sb.toString();
+    //Print Table
+        for(int i = 0; i < cykTable.length; i++){
+            for(int j = 0; j <= cykTable[i].length; j++){
+            	out+=(j == 0) ? low : (i <= 1 && j == cykTable[i].length - 1) ? "" : lowRight+"\n";
+                System.out.print((j == 0) ? low : (i <= 1 && j == cykTable[i].length - 1) ? "" : lowRight);
+            }
+            System.out.println();
+            for(int j = 0; j < cykTable[i].length; j++){
+                s = (cykTable[i][j].isEmpty()) ? "-" : cykTable[i][j];
+                System.out.format(formatString, s.replaceAll("\\s", ","));
+                if(j == cykTable[i].length - 1) { 
+                	out+="|"+"\n";
+                	System.out.print("|"); 
+                }
+            }
+            out+0
+            System.out.println();
+        }
+        System.out.println(low+"\n");
+    //Step 4: Evaluate success.
+        if(cykTable[cykTable.length-1][cykTable[cykTable.length-1].length-1].contains(startingSymbol)){
+            System.out.println("The word \"" + word + "\" is an element of the CFG G and can be derived from it.");
+        }else{
+            System.out.println("The word \"" + word + "\" is not an element of the CFG G and can not be derived from it.");
+        }
+    }
+
+    public static int findLongestString(String[][] cykTable){
+        int x = 0;
+        for(String[] s : cykTable){
+            for(String d : s){
+                if(d.length() > x){ x = d.length(); }
+            }
+        }
+        return x;
+    }
+
+//Jagged Array for the Algorithm
+    public static String[][] createCYKTable (){
+        int length = isTokenWord ? toArray(word).length : word.length();
+        String[][] cykTable = new String[length + 1][];
+        cykTable[0] = new String[length];
+        for(int i = 1; i < cykTable.length; i++){
+            cykTable[i] = new String[length - (i - 1)];
+        }
+        for(int i = 1; i < cykTable.length; i++){
+            for(int j = 0; j < cykTable[i].length; j++){
+                cykTable[i][j] = "";
+            }
+        }
+        return cykTable;
+    }
+
+    public static String[][] doCyk(String[][] cykTable){
+    //Step 1: Fill header row
+        for(int i = 0; i < cykTable[0].length; i++){
+            cykTable[0][i] = manageWord(word, i);
+        }
+    //Step 2: Get productions for terminals
+        for(int i = 0; i < cykTable[1].length; i++){
+            String[] validCombinations = checkIfProduces(new String[] {cykTable[0][i]});
+            cykTable[1][i] = toString(validCombinations);
+        }
+        if(word.length() <= 1) { return cykTable; }
+    //Step 3: Get productions for subwords with the length of 2
+        for(int i = 0; i < cykTable[2].length; i++){
+            String[] downwards = toArray(cykTable[1][i]);
+            String[] diagonal = toArray(cykTable[1][i+1]);
+            String[] validCombinations = checkIfProduces(getAllCombinations(downwards, diagonal));
+            cykTable[2][i] = toString(validCombinations);
+        }
+        if(word.length() <= 2){ return cykTable; }
+    //Step 3: Get productions for subwords with the length of n
+        TreeSet<String> currentValues = new TreeSet<String>();
+
+        for(int i = 3; i < cykTable.length; i++){
+            for(int j = 0; j < cykTable[i].length; j++){
+                for(int compareFrom = 1; compareFrom < i; compareFrom++){
+                    String[] downwards = cykTable[compareFrom][j].split("\\s");
+                    String[] diagonal = cykTable[i-compareFrom][j+compareFrom].split("\\s");
+                    String[] combinations = getAllCombinations(downwards, diagonal);
+                    String[] validCombinations = checkIfProduces(combinations);
+                    if(cykTable[i][j].isEmpty()){
+                        cykTable[i][j] = toString(validCombinations);
+                    }else{
+                        String[] oldValues = toArray(cykTable[i][j]);
+                        ArrayList<String> newValues = new ArrayList<String>(Arrays.asList(oldValues));
+                        newValues.addAll(Arrays.asList(validCombinations));
+                        currentValues.addAll(newValues);
+                        cykTable[i][j] = toString(currentValues.toArray(new String[currentValues.size()]));
+                    }
+                }
+                currentValues.clear();
+            }
+        }
+        return cykTable;
+    }
+
+    public static String manageWord(String word, int position){
+        if(!isTokenWord){ return Character.toString(word.charAt(position)); }
+        return toArray(word)[position];
+    }
+
+    public static String[] checkIfProduces(String[] toCheck){
+        ArrayList<String> storage = new ArrayList<>();
+        for(String s : grammar.keySet()){
+            for(String current : toCheck){
+                if(grammar.get(s).contains(current)){
+                    storage.add(s);
+                }
+            }
+        }
+        if(storage.size() == 0) { return new String[] {}; }
+        return storage.toArray(new String[storage.size()]);
+    }
+
+    public static String[] getAllCombinations(String[] from, String[] to){
+        int length = from.length * to.length;
+        int counter = 0;
+        String[] combinations = new String[length];
+        if(length == 0){ return combinations; };
+        for(int i = 0; i < from.length; i++){
+            for(int j = 0; j < to.length; j++){
+                combinations[counter] = from[i] + to[j];
+                counter++;
+            }
+        }
+        return combinations;
+    }
+
+    public static String toString(String[] input){
+        return Arrays.toString(input).replaceAll("[\\[\\]\\,]", "");
+    }
+
+    public static String[] toArray(String input){
+        return input.split("\\s");
+    }
+
+    public static Scanner openFile(String file){
+        try{
+            return new Scanner(new File(file));
+        }catch(FileNotFoundException e){
+            System.out.println("Error: Can't find or open the file: " + file + ".");
+            System.exit(1);
+            return null;
+        }
+    }
+
+	public static String getWord() {
+		return word;
+	}
+
+	public static void setWord(String word) {
+		CYK.word = word;
+	}
+
+	public static String getStartingSymbol() {
+		return startingSymbol;
+	}
+
+	public static void setStartingSymbol(String startingSymbol) {
+		CYK.startingSymbol = startingSymbol;
+	}
+
+	public static boolean isTokenWord() {
+		return isTokenWord;
+	}
+
+	public static void setTokenWord(boolean isTokenWord) {
+		CYK.isTokenWord = isTokenWord;
+	}
+
+	public static ArrayList<String> getTerminals() {
+		return terminals;
+	}
+
+	public static void setTerminals(ArrayList<String> terminals) {
+		CYK.terminals = terminals;
+	}
+
+	public static ArrayList<String> getNonTerminals() {
+		return nonTerminals;
+	}
+
+	public static void setNonTerminals(ArrayList<String> nonTerminals) {
+		CYK.nonTerminals = nonTerminals;
+	}
+
+	public static TreeMap<String, ArrayList<String>> getGrammar() {
+		return grammar;
+	}
+
+	public static void setGrammar(TreeMap<String, ArrayList<String>> grammar) {
+		CYK.grammar = grammar;
+	}    
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2047)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3853)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1953)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1990)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3095)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3013)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2220)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3034)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3390)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1534)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1271)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:868)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:294)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:286)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:199)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:166)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$1.run(SelectionListenerWithASTManager.java:151)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 2 2022-05-24 21:51:32.976
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.core.manipulation".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2047)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3853)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1953)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1990)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3095)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3013)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2220)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3034)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3390)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1534)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1271)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:868)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:294)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:286)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:199)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:166)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$1.run(SelectionListenerWithASTManager.java:151)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 0 2022-05-24 21:51:32.977
+!MESSAGE Error in JDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2047)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3853)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1953)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1990)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3095)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3013)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2220)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3034)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3390)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1534)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1271)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:868)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:294)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:286)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:199)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:166)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$1.run(SelectionListenerWithASTManager.java:151)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2022-05-25 18:21:38.894 -----------------------------------------------
+eclipse.buildId=4.23.0.I20220308-0310
+java.version=11.0.13
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_CO
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.jface 2 0 2022-05-25 18:21:57.390
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-25 18:21:57.390
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@14d298d6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@64af5454,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-25 18:21:57.390
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@94aeba1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@f6cde7e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-05-25 18:22:26.709
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\johan'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2022-05-25 22:08:53.610 -----------------------------------------------
+eclipse.buildId=4.23.0.I20220308-0310
+java.version=11.0.13
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_CO
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.jface 2 0 2022-05-25 22:09:15.114
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-25 22:09:15.114
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3e0704e2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@14d298d6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-25 22:09:15.114
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@64af5454,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@94aeba1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-05-25 22:09:43.394
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\johan'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2022-05-25 23:22:48.750 -----------------------------------------------
+eclipse.buildId=4.23.0.I20220308-0310
+java.version=11.0.13
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_CO
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.jface 2 0 2022-05-25 23:22:54.887
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-25 23:22:54.887
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5a96f3cb,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3e0704e2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-05-25 23:22:54.887
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@14d298d6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@64af5454,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-05-25 23:23:27.000
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\johan'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.

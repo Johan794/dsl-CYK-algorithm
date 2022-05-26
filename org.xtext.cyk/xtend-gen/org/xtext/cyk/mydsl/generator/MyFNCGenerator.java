@@ -3,6 +3,9 @@
  */
 package org.xtext.cyk.mydsl.generator;
 
+import java.util.ArrayList;
+import java.util.TreeMap;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
@@ -10,11 +13,15 @@ import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.xtext.cyk.mydsl.myFNC.Binary;
 import org.xtext.cyk.mydsl.myFNC.GNFC;
+import org.xtext.cyk.mydsl.myFNC.Production;
+import org.xtext.cyk.mydsl.myFNC.Rigth;
+import org.xtext.cyk.mydsl.myFNC.Simple;
 
 /**
  * Generates code from your model files on save.
- * 
+ * this class has the responsibility of create the interaction between model and ui for xtext
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 @SuppressWarnings("all")
@@ -25,16 +32,120 @@ public class MyFNCGenerator extends AbstractGenerator {
     final GNFC grammar = ((GNFC) _head);
     fsa.generateFile("result.txt", this.runCYK(grammar));
   }
-  
+
   public CharSequence runCYK(final GNFC grammar) {
-    StringConcatenation _builder = new StringConcatenation();
-    String _get = this.get(grammar);
-    _builder.append(_get);
-    _builder.newLineIfNotEmpty();
-    return _builder;
+    CharSequence _xblockexpression = null;
+    {
+      CYK cyk = this.setCYK(grammar);
+      StringConcatenation _builder = new StringConcatenation();
+      String _doSteps = cyk.doSteps();
+      _builder.append(_doSteps);
+      _builder.newLineIfNotEmpty();
+      _xblockexpression = _builder;
+    }
+    return _xblockexpression;
   }
-  
-  public String get(final GNFC grammar) {
-    return grammar.getFinal().getInput();
+
+  public CYK setCYK(final GNFC grammar) {
+    CYK _xblockexpression = null;
+    {
+      CYK cyk = new CYK();
+      cyk.setWord(grammar.getFinal().getInput());
+      cyk.setStartingSymbol(grammar.getInit().getLeft());
+      cyk.setNonTerminals(this.getNonTerminals(grammar));
+      cyk.setTerminals(this.getTerminals(grammar));
+      cyk.setGrammar(this.setGrammarData(grammar));
+      _xblockexpression = cyk;
+    }
+    return _xblockexpression;
+  }
+
+  public ArrayList<String> getNonTerminals(final GNFC grammar) {
+    ArrayList<String> _xblockexpression = null;
+    {
+      ArrayList<String> nonTerminals = new ArrayList<String>();
+      EList<Production> _productions = grammar.getProductions();
+      for (final Production production : _productions) {
+        nonTerminals.add(production.getLeft().getVar());
+      }
+      _xblockexpression = nonTerminals;
+    }
+    return _xblockexpression;
+  }
+
+  public ArrayList<String> getTerminals(final GNFC grammar) {
+    ArrayList<String> _xblockexpression = null;
+    {
+      ArrayList<String> terminals = new ArrayList<String>();
+      EList<Production> _productions = grammar.getProductions();
+      for (final Production production : _productions) {
+        EList<Rigth> _rigth = production.getRigth();
+        for (final Rigth rigth : _rigth) {
+          Simple _simple = rigth.getSimple();
+          boolean _tripleNotEquals = (_simple != null);
+          if (_tripleNotEquals) {
+            terminals.add(rigth.getSimple().getAlpha());
+          }
+        }
+      }
+      _xblockexpression = terminals;
+    }
+    return _xblockexpression;
+  }
+
+  public TreeMap<String, ArrayList<String>> setGrammarData(final GNFC grammar) {
+    TreeMap<String, ArrayList<String>> _xblockexpression = null;
+    {
+      TreeMap<String, ArrayList<String>> map = new TreeMap<String, ArrayList<String>>();
+      String _left = grammar.getInit().getLeft();
+      ArrayList<String> _arrayList = new ArrayList<String>();
+      map.put(_left, _arrayList);
+      EList<Rigth> _rigth = grammar.getInit().getRigth();
+      for (final Rigth rigth : _rigth) {
+        Simple _simple = rigth.getSimple();
+        boolean _tripleNotEquals = (_simple != null);
+        if (_tripleNotEquals) {
+          map.get(grammar.getInit().getLeft()).add(rigth.getSimple().getAlpha());
+        } else {
+          Binary _binary = rigth.getBinary();
+          boolean _tripleNotEquals_1 = (_binary != null);
+          if (_tripleNotEquals_1) {
+            ArrayList<String> _get = map.get(grammar.getInit().getLeft());
+            String _var = rigth.getBinary().getFirst().getVar();
+            String _var_1 = rigth.getBinary().getSecond().getVar();
+            String _plus = (_var + _var_1);
+            _get.add(_plus);
+          }
+        }
+      }
+      EList<Production> _productions = grammar.getProductions();
+      for (final Production production : _productions) {
+        {
+          String _var_2 = production.getLeft().getVar();
+          ArrayList<String> _arrayList_1 = new ArrayList<String>();
+          map.put(_var_2, _arrayList_1);
+          EList<Rigth> _rigth_1 = production.getRigth();
+          for (final Rigth rigth_1 : _rigth_1) {
+            Simple _simple_1 = rigth_1.getSimple();
+            boolean _tripleNotEquals_2 = (_simple_1 != null);
+            if (_tripleNotEquals_2) {
+              map.get(production.getLeft().getVar()).add(rigth_1.getSimple().getAlpha());
+            } else {
+              Binary _binary_1 = rigth_1.getBinary();
+              boolean _tripleNotEquals_3 = (_binary_1 != null);
+              if (_tripleNotEquals_3) {
+                ArrayList<String> _get_1 = map.get(production.getLeft().getVar());
+                String _var_3 = rigth_1.getBinary().getFirst().getVar();
+                String _var_4 = rigth_1.getBinary().getSecond().getVar();
+                String _plus_1 = (_var_3 + _var_4);
+                _get_1.add(_plus_1);
+              }
+            }
+          }
+        }
+      }
+      _xblockexpression = map;
+    }
+    return _xblockexpression;
   }
 }

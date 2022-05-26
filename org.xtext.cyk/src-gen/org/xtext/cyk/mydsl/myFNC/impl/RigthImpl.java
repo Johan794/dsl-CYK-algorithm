@@ -3,20 +3,55 @@
  */
 package org.xtext.cyk.mydsl.myFNC.impl;
 
-import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.xtext.cyk.mydsl.myFNC.Binary;
 import org.xtext.cyk.mydsl.myFNC.MyFNCPackage;
 import org.xtext.cyk.mydsl.myFNC.Rigth;
+import org.xtext.cyk.mydsl.myFNC.Simple;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Rigth</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link org.xtext.cyk.mydsl.myFNC.impl.RigthImpl#getSimple <em>Simple</em>}</li>
+ *   <li>{@link org.xtext.cyk.mydsl.myFNC.impl.RigthImpl#getBinary <em>Binary</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class RigthImpl extends LambdaImpl implements Rigth
 {
+  /**
+   * The cached value of the '{@link #getSimple() <em>Simple</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSimple()
+   * @generated
+   * @ordered
+   */
+  protected Simple simple;
+
+  /**
+   * The cached value of the '{@link #getBinary() <em>Binary</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBinary()
+   * @generated
+   * @ordered
+   */
+  protected Binary binary;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -36,6 +71,200 @@ public class RigthImpl extends LambdaImpl implements Rigth
   protected EClass eStaticClass()
   {
     return MyFNCPackage.Literals.RIGTH;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Simple getSimple()
+  {
+    return simple;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetSimple(Simple newSimple, NotificationChain msgs)
+  {
+    Simple oldSimple = simple;
+    simple = newSimple;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyFNCPackage.RIGTH__SIMPLE, oldSimple, newSimple);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setSimple(Simple newSimple)
+  {
+    if (newSimple != simple)
+    {
+      NotificationChain msgs = null;
+      if (simple != null)
+        msgs = ((InternalEObject)simple).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyFNCPackage.RIGTH__SIMPLE, null, msgs);
+      if (newSimple != null)
+        msgs = ((InternalEObject)newSimple).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyFNCPackage.RIGTH__SIMPLE, null, msgs);
+      msgs = basicSetSimple(newSimple, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyFNCPackage.RIGTH__SIMPLE, newSimple, newSimple));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Binary getBinary()
+  {
+    return binary;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetBinary(Binary newBinary, NotificationChain msgs)
+  {
+    Binary oldBinary = binary;
+    binary = newBinary;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyFNCPackage.RIGTH__BINARY, oldBinary, newBinary);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setBinary(Binary newBinary)
+  {
+    if (newBinary != binary)
+    {
+      NotificationChain msgs = null;
+      if (binary != null)
+        msgs = ((InternalEObject)binary).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyFNCPackage.RIGTH__BINARY, null, msgs);
+      if (newBinary != null)
+        msgs = ((InternalEObject)newBinary).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyFNCPackage.RIGTH__BINARY, null, msgs);
+      msgs = basicSetBinary(newBinary, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyFNCPackage.RIGTH__BINARY, newBinary, newBinary));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case MyFNCPackage.RIGTH__SIMPLE:
+        return basicSetSimple(null, msgs);
+      case MyFNCPackage.RIGTH__BINARY:
+        return basicSetBinary(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case MyFNCPackage.RIGTH__SIMPLE:
+        return getSimple();
+      case MyFNCPackage.RIGTH__BINARY:
+        return getBinary();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case MyFNCPackage.RIGTH__SIMPLE:
+        setSimple((Simple)newValue);
+        return;
+      case MyFNCPackage.RIGTH__BINARY:
+        setBinary((Binary)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case MyFNCPackage.RIGTH__SIMPLE:
+        setSimple((Simple)null);
+        return;
+      case MyFNCPackage.RIGTH__BINARY:
+        setBinary((Binary)null);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case MyFNCPackage.RIGTH__SIMPLE:
+        return simple != null;
+      case MyFNCPackage.RIGTH__BINARY:
+        return binary != null;
+    }
+    return super.eIsSet(featureID);
   }
 
 } //RigthImpl

@@ -49,7 +49,6 @@ public class InternalMyFNCLexer extends Lexer {
     public static final int T__20=20;
     public static final int T__64=64;
     public static final int T__21=21;
-    public static final int T__65=65;
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
     public static final int T__37=37;
@@ -94,11 +93,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:11:7: ( '->' )
-            // InternalMyFNC.g:11:9: '->'
+            // InternalMyFNC.g:11:7: ( 'a' )
+            // InternalMyFNC.g:11:9: 'a'
             {
-            match("->"); 
-
+            match('a'); 
 
             }
 
@@ -115,10 +113,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:12:7: ( '|' )
-            // InternalMyFNC.g:12:9: '|'
+            // InternalMyFNC.g:12:7: ( 'b' )
+            // InternalMyFNC.g:12:9: 'b'
             {
-            match('|'); 
+            match('b'); 
 
             }
 
@@ -135,10 +133,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:13:7: ( 'b' )
-            // InternalMyFNC.g:13:9: 'b'
+            // InternalMyFNC.g:13:7: ( 'c' )
+            // InternalMyFNC.g:13:9: 'c'
             {
-            match('b'); 
+            match('c'); 
 
             }
 
@@ -155,10 +153,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:14:7: ( 'c' )
-            // InternalMyFNC.g:14:9: 'c'
+            // InternalMyFNC.g:14:7: ( 'd' )
+            // InternalMyFNC.g:14:9: 'd'
             {
-            match('c'); 
+            match('d'); 
 
             }
 
@@ -175,10 +173,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:15:7: ( 'd' )
-            // InternalMyFNC.g:15:9: 'd'
+            // InternalMyFNC.g:15:7: ( 'e' )
+            // InternalMyFNC.g:15:9: 'e'
             {
-            match('d'); 
+            match('e'); 
 
             }
 
@@ -195,10 +193,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:16:7: ( 'e' )
-            // InternalMyFNC.g:16:9: 'e'
+            // InternalMyFNC.g:16:7: ( 'f' )
+            // InternalMyFNC.g:16:9: 'f'
             {
-            match('e'); 
+            match('f'); 
 
             }
 
@@ -215,10 +213,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:17:7: ( 'f' )
-            // InternalMyFNC.g:17:9: 'f'
+            // InternalMyFNC.g:17:7: ( 'g' )
+            // InternalMyFNC.g:17:9: 'g'
             {
-            match('f'); 
+            match('g'); 
 
             }
 
@@ -235,10 +233,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:18:7: ( 'g' )
-            // InternalMyFNC.g:18:9: 'g'
+            // InternalMyFNC.g:18:7: ( 'h' )
+            // InternalMyFNC.g:18:9: 'h'
             {
-            match('g'); 
+            match('h'); 
 
             }
 
@@ -255,10 +253,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:19:7: ( 'h' )
-            // InternalMyFNC.g:19:9: 'h'
+            // InternalMyFNC.g:19:7: ( 'i' )
+            // InternalMyFNC.g:19:9: 'i'
             {
-            match('h'); 
+            match('i'); 
 
             }
 
@@ -275,10 +273,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:20:7: ( 'i' )
-            // InternalMyFNC.g:20:9: 'i'
+            // InternalMyFNC.g:20:7: ( 'j' )
+            // InternalMyFNC.g:20:9: 'j'
             {
-            match('i'); 
+            match('j'); 
 
             }
 
@@ -295,10 +293,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:21:7: ( 'j' )
-            // InternalMyFNC.g:21:9: 'j'
+            // InternalMyFNC.g:21:7: ( 'k' )
+            // InternalMyFNC.g:21:9: 'k'
             {
-            match('j'); 
+            match('k'); 
 
             }
 
@@ -315,10 +313,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:22:7: ( 'k' )
-            // InternalMyFNC.g:22:9: 'k'
+            // InternalMyFNC.g:22:7: ( 'l' )
+            // InternalMyFNC.g:22:9: 'l'
             {
-            match('k'); 
+            match('l'); 
 
             }
 
@@ -335,10 +333,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:23:7: ( 'l' )
-            // InternalMyFNC.g:23:9: 'l'
+            // InternalMyFNC.g:23:7: ( 'm' )
+            // InternalMyFNC.g:23:9: 'm'
             {
-            match('l'); 
+            match('m'); 
 
             }
 
@@ -355,10 +353,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:24:7: ( 'm' )
-            // InternalMyFNC.g:24:9: 'm'
+            // InternalMyFNC.g:24:7: ( 'n' )
+            // InternalMyFNC.g:24:9: 'n'
             {
-            match('m'); 
+            match('n'); 
 
             }
 
@@ -375,10 +373,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:25:7: ( 'n' )
-            // InternalMyFNC.g:25:9: 'n'
+            // InternalMyFNC.g:25:7: ( 'o' )
+            // InternalMyFNC.g:25:9: 'o'
             {
-            match('n'); 
+            match('o'); 
 
             }
 
@@ -395,10 +393,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:26:7: ( 'o' )
-            // InternalMyFNC.g:26:9: 'o'
+            // InternalMyFNC.g:26:7: ( 'p' )
+            // InternalMyFNC.g:26:9: 'p'
             {
-            match('o'); 
+            match('p'); 
 
             }
 
@@ -415,10 +413,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:27:7: ( 'p' )
-            // InternalMyFNC.g:27:9: 'p'
+            // InternalMyFNC.g:27:7: ( 'q' )
+            // InternalMyFNC.g:27:9: 'q'
             {
-            match('p'); 
+            match('q'); 
 
             }
 
@@ -435,10 +433,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:28:7: ( 'q' )
-            // InternalMyFNC.g:28:9: 'q'
+            // InternalMyFNC.g:28:7: ( 'r' )
+            // InternalMyFNC.g:28:9: 'r'
             {
-            match('q'); 
+            match('r'); 
 
             }
 
@@ -455,10 +453,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:29:7: ( 'r' )
-            // InternalMyFNC.g:29:9: 'r'
+            // InternalMyFNC.g:29:7: ( 's' )
+            // InternalMyFNC.g:29:9: 's'
             {
-            match('r'); 
+            match('s'); 
 
             }
 
@@ -475,10 +473,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:30:7: ( 's' )
-            // InternalMyFNC.g:30:9: 's'
+            // InternalMyFNC.g:30:7: ( 't' )
+            // InternalMyFNC.g:30:9: 't'
             {
-            match('s'); 
+            match('t'); 
 
             }
 
@@ -495,10 +493,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:31:7: ( 't' )
-            // InternalMyFNC.g:31:9: 't'
+            // InternalMyFNC.g:31:7: ( 'v' )
+            // InternalMyFNC.g:31:9: 'v'
             {
-            match('t'); 
+            match('v'); 
 
             }
 
@@ -515,10 +513,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:32:7: ( 'v' )
-            // InternalMyFNC.g:32:9: 'v'
+            // InternalMyFNC.g:32:7: ( 'w' )
+            // InternalMyFNC.g:32:9: 'w'
             {
-            match('v'); 
+            match('w'); 
 
             }
 
@@ -535,10 +533,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:33:7: ( 'w' )
-            // InternalMyFNC.g:33:9: 'w'
+            // InternalMyFNC.g:33:7: ( 'x' )
+            // InternalMyFNC.g:33:9: 'x'
             {
-            match('w'); 
+            match('x'); 
 
             }
 
@@ -555,10 +553,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:34:7: ( 'x' )
-            // InternalMyFNC.g:34:9: 'x'
+            // InternalMyFNC.g:34:7: ( 'y' )
+            // InternalMyFNC.g:34:9: 'y'
             {
-            match('x'); 
+            match('y'); 
 
             }
 
@@ -575,10 +573,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:35:7: ( 'y' )
-            // InternalMyFNC.g:35:9: 'y'
+            // InternalMyFNC.g:35:7: ( 'z' )
+            // InternalMyFNC.g:35:9: 'z'
             {
-            match('y'); 
+            match('z'); 
 
             }
 
@@ -595,10 +593,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:36:7: ( 'z' )
-            // InternalMyFNC.g:36:9: 'z'
+            // InternalMyFNC.g:36:7: ( 'A' )
+            // InternalMyFNC.g:36:9: 'A'
             {
-            match('z'); 
+            match('A'); 
 
             }
 
@@ -1095,10 +1093,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__61;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:61:7: ( 'Check' )
-            // InternalMyFNC.g:61:9: 'Check'
+            // InternalMyFNC.g:61:7: ( '->' )
+            // InternalMyFNC.g:61:9: '->'
             {
-            match("Check"); 
+            match("->"); 
 
 
             }
@@ -1116,10 +1114,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__62;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:62:7: ( 'S' )
-            // InternalMyFNC.g:62:9: 'S'
+            // InternalMyFNC.g:62:7: ( '|' )
+            // InternalMyFNC.g:62:9: '|'
             {
-            match('S'); 
+            match('|'); 
 
             }
 
@@ -1136,10 +1134,11 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__63;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:63:7: ( '&' )
-            // InternalMyFNC.g:63:9: '&'
+            // InternalMyFNC.g:63:7: ( 'Check' )
+            // InternalMyFNC.g:63:9: 'Check'
             {
-            match('&'); 
+            match("Check"); 
+
 
             }
 
@@ -1156,10 +1155,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = T__64;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:64:7: ( 'a' )
-            // InternalMyFNC.g:64:9: 'a'
+            // InternalMyFNC.g:64:7: ( 'S' )
+            // InternalMyFNC.g:64:9: 'S'
             {
-            match('a'); 
+            match('S'); 
 
             }
 
@@ -1171,35 +1170,15 @@ public class InternalMyFNCLexer extends Lexer {
     }
     // $ANTLR end "T__64"
 
-    // $ANTLR start "T__65"
-    public final void mT__65() throws RecognitionException {
-        try {
-            int _type = T__65;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:65:7: ( 'A' )
-            // InternalMyFNC.g:65:9: 'A'
-            {
-            match('A'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__65"
-
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:3997:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalMyFNC.g:3997:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalMyFNC.g:1524:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalMyFNC.g:1524:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalMyFNC.g:3997:11: ( '^' )?
+            // InternalMyFNC.g:1524:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1208,7 +1187,7 @@ public class InternalMyFNCLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalMyFNC.g:3997:11: '^'
+                    // InternalMyFNC.g:1524:11: '^'
                     {
                     match('^'); 
 
@@ -1226,7 +1205,7 @@ public class InternalMyFNCLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalMyFNC.g:3997:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalMyFNC.g:1524:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -1275,10 +1254,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:3999:10: ( ( '0' .. '9' )+ )
-            // InternalMyFNC.g:3999:12: ( '0' .. '9' )+
+            // InternalMyFNC.g:1526:10: ( ( '0' .. '9' )+ )
+            // InternalMyFNC.g:1526:12: ( '0' .. '9' )+
             {
-            // InternalMyFNC.g:3999:12: ( '0' .. '9' )+
+            // InternalMyFNC.g:1526:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -1292,7 +1271,7 @@ public class InternalMyFNCLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalMyFNC.g:3999:13: '0' .. '9'
+            	    // InternalMyFNC.g:1526:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1324,10 +1303,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:4001:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalMyFNC.g:4001:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalMyFNC.g:1528:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalMyFNC.g:1528:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalMyFNC.g:4001:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalMyFNC.g:1528:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1345,10 +1324,10 @@ public class InternalMyFNCLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalMyFNC.g:4001:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalMyFNC.g:1528:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalMyFNC.g:4001:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalMyFNC.g:1528:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -1364,7 +1343,7 @@ public class InternalMyFNCLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalMyFNC.g:4001:21: '\\\\' .
+                    	    // InternalMyFNC.g:1528:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1372,7 +1351,7 @@ public class InternalMyFNCLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalMyFNC.g:4001:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalMyFNC.g:1528:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1397,10 +1376,10 @@ public class InternalMyFNCLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalMyFNC.g:4001:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalMyFNC.g:1528:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalMyFNC.g:4001:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalMyFNC.g:1528:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1416,7 +1395,7 @@ public class InternalMyFNCLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalMyFNC.g:4001:54: '\\\\' .
+                    	    // InternalMyFNC.g:1528:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1424,7 +1403,7 @@ public class InternalMyFNCLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalMyFNC.g:4001:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalMyFNC.g:1528:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1467,12 +1446,12 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:4003:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalMyFNC.g:4003:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalMyFNC.g:1530:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalMyFNC.g:1530:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalMyFNC.g:4003:24: ( options {greedy=false; } : . )*
+            // InternalMyFNC.g:1530:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1497,7 +1476,7 @@ public class InternalMyFNCLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalMyFNC.g:4003:52: .
+            	    // InternalMyFNC.g:1530:52: .
             	    {
             	    matchAny(); 
 
@@ -1527,12 +1506,12 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:4005:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalMyFNC.g:4005:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalMyFNC.g:1532:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalMyFNC.g:1532:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalMyFNC.g:4005:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalMyFNC.g:1532:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1545,7 +1524,7 @@ public class InternalMyFNCLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalMyFNC.g:4005:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalMyFNC.g:1532:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1565,7 +1544,7 @@ public class InternalMyFNCLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalMyFNC.g:4005:40: ( ( '\\r' )? '\\n' )?
+            // InternalMyFNC.g:1532:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1574,9 +1553,9 @@ public class InternalMyFNCLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalMyFNC.g:4005:41: ( '\\r' )? '\\n'
+                    // InternalMyFNC.g:1532:41: ( '\\r' )? '\\n'
                     {
-                    // InternalMyFNC.g:4005:41: ( '\\r' )?
+                    // InternalMyFNC.g:1532:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1585,7 +1564,7 @@ public class InternalMyFNCLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalMyFNC.g:4005:41: '\\r'
+                            // InternalMyFNC.g:1532:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1617,10 +1596,10 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:4007:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalMyFNC.g:4007:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalMyFNC.g:1534:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalMyFNC.g:1534:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalMyFNC.g:4007:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalMyFNC.g:1534:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1674,8 +1653,8 @@ public class InternalMyFNCLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMyFNC.g:4009:16: ( . )
-            // InternalMyFNC.g:4009:18: .
+            // InternalMyFNC.g:1536:16: ( . )
+            // InternalMyFNC.g:1536:18: .
             {
             matchAny(); 
 
@@ -1690,8 +1669,8 @@ public class InternalMyFNCLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // InternalMyFNC.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=62;
+        // InternalMyFNC.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=61;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -2073,56 +2052,49 @@ public class InternalMyFNCLexer extends Lexer {
                 }
                 break;
             case 55 :
-                // InternalMyFNC.g:1:334: T__65
-                {
-                mT__65(); 
-
-                }
-                break;
-            case 56 :
-                // InternalMyFNC.g:1:340: RULE_ID
+                // InternalMyFNC.g:1:334: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 57 :
-                // InternalMyFNC.g:1:348: RULE_INT
+            case 56 :
+                // InternalMyFNC.g:1:342: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 58 :
-                // InternalMyFNC.g:1:357: RULE_STRING
+            case 57 :
+                // InternalMyFNC.g:1:351: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 59 :
-                // InternalMyFNC.g:1:369: RULE_ML_COMMENT
+            case 58 :
+                // InternalMyFNC.g:1:363: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 60 :
-                // InternalMyFNC.g:1:385: RULE_SL_COMMENT
+            case 59 :
+                // InternalMyFNC.g:1:379: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 61 :
-                // InternalMyFNC.g:1:401: RULE_WS
+            case 60 :
+                // InternalMyFNC.g:1:395: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 62 :
-                // InternalMyFNC.g:1:409: RULE_ANY_OTHER
+            case 61 :
+                // InternalMyFNC.g:1:403: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -2136,80 +2108,78 @@ public class InternalMyFNCLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\1\76\1\uffff\1\101\1\103\1\104\1\105\1\106\1\107\1\110\1\111\1\112\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\132\1\134\1\135\1\136\1\137\1\140\1\141\1\142\1\143\1\144\1\145\1\146\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157\1\160\1\161\1\162\1\163\1\uffff\1\165\1\166\1\76\2\uffff\3\76\36\uffff\1\102\40\uffff\2\102\1\177\1\uffff";
+        "\1\uffff\1\76\1\100\1\101\1\102\1\103\1\104\1\105\1\106\1\107\1\110\1\111\1\112\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\133\1\134\1\135\1\136\1\137\1\140\1\141\1\142\1\143\1\144\1\145\1\146\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157\1\160\1\161\1\75\1\uffff\1\164\1\75\2\uffff\3\75\36\uffff\1\77\37\uffff\2\77\1\175\1\uffff";
     static final String DFA12_eofS =
-        "\u0080\uffff";
+        "\176\uffff";
     static final String DFA12_minS =
-        "\1\0\1\76\1\uffff\61\60\1\uffff\2\60\1\101\2\uffff\2\0\1\52\36\uffff\1\145\40\uffff\1\143\1\153\1\60\1\uffff";
+        "\1\0\62\60\1\76\1\uffff\1\60\1\101\2\uffff\2\0\1\52\36\uffff\1\145\37\uffff\1\143\1\153\1\60\1\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\76\1\uffff\61\172\1\uffff\3\172\2\uffff\2\uffff\1\57\36\uffff\1\145\40\uffff\1\143\1\153\1\172\1\uffff";
+        "\1\uffff\62\172\1\76\1\uffff\2\172\2\uffff\2\uffff\1\57\36\uffff\1\145\37\uffff\1\143\1\153\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\2\uffff\1\2\61\uffff\1\65\3\uffff\1\70\1\71\3\uffff\1\75\1\76\1\1\1\2\1\3\1\70\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30\1\31\1\32\1\33\1\uffff\1\34\1\35\1\36\1\37\1\40\1\41\1\42\1\43\1\44\1\45\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56\1\57\1\60\1\61\1\62\1\64\1\65\1\66\1\67\1\71\1\72\1\73\1\74\1\75\3\uffff\1\63";
+        "\64\uffff\1\64\2\uffff\1\67\1\70\3\uffff\1\74\1\75\1\1\1\67\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30\1\31\1\32\1\33\1\uffff\1\34\1\35\1\36\1\37\1\40\1\41\1\42\1\43\1\44\1\45\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56\1\57\1\60\1\61\1\62\1\63\1\64\1\66\1\70\1\71\1\72\1\73\1\74\3\uffff\1\65";
     static final String DFA12_specialS =
-        "\1\0\71\uffff\1\2\1\1\104\uffff}>";
+        "\1\1\70\uffff\1\2\1\0\103\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\76\2\75\2\76\1\75\22\76\1\75\1\76\1\72\3\76\1\64\1\73\5\76\1\1\1\76\1\74\12\71\7\76\1\66\1\33\1\34\1\35\1\36\1\37\1\40\1\41\1\42\1\43\1\44\1\45\1\46\1\47\1\50\1\51\1\52\1\53\1\63\1\54\1\55\1\56\1\57\1\60\1\61\1\62\3\76\1\67\1\70\1\76\1\65\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\70\1\26\1\27\1\30\1\31\1\32\1\76\1\2\uff83\76",
-            "\1\77",
+            "\11\75\2\74\2\75\1\74\22\75\1\74\1\75\1\71\4\75\1\72\5\75\1\63\1\75\1\73\12\70\7\75\1\32\1\33\1\34\1\35\1\36\1\37\1\40\1\41\1\42\1\43\1\44\1\45\1\46\1\47\1\50\1\51\1\52\1\53\1\65\1\54\1\55\1\56\1\57\1\60\1\61\1\62\3\75\1\66\1\67\1\75\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\67\1\25\1\26\1\27\1\30\1\31\1\75\1\64\uff83\75",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\7\77\1\132\22\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\1\162",
             "",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\7\102\1\133\22\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
-            "\32\102\4\uffff\1\102\1\uffff\32\102",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
+            "\32\77\4\uffff\1\77\1\uffff\32\77",
             "",
             "",
-            "\0\170",
-            "\0\170",
-            "\1\171\4\uffff\1\172",
-            "",
+            "\0\166",
+            "\0\166",
+            "\1\167\4\uffff\1\170",
             "",
             "",
             "",
@@ -2239,42 +2209,42 @@ public class InternalMyFNCLexer extends Lexer {
             "",
             "",
             "",
+            "",
+            "\1\172",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\173",
             "\1\174",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\175",
-            "\1\176",
-            "\12\102\7\uffff\32\102\4\uffff\1\102\1\uffff\32\102",
+            "\12\77\7\uffff\32\77\4\uffff\1\77\1\uffff\32\77",
             ""
     };
 
@@ -2308,67 +2278,77 @@ public class InternalMyFNCLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
+                        int LA12_58 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_58>='\u0000' && LA12_58<='\uFFFF')) ) {s = 118;}
+
+                        else s = 61;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
                         int LA12_0 = input.LA(1);
 
                         s = -1;
-                        if ( (LA12_0=='-') ) {s = 1;}
+                        if ( (LA12_0=='a') ) {s = 1;}
 
-                        else if ( (LA12_0=='|') ) {s = 2;}
+                        else if ( (LA12_0=='b') ) {s = 2;}
 
-                        else if ( (LA12_0=='b') ) {s = 3;}
+                        else if ( (LA12_0=='c') ) {s = 3;}
 
-                        else if ( (LA12_0=='c') ) {s = 4;}
+                        else if ( (LA12_0=='d') ) {s = 4;}
 
-                        else if ( (LA12_0=='d') ) {s = 5;}
+                        else if ( (LA12_0=='e') ) {s = 5;}
 
-                        else if ( (LA12_0=='e') ) {s = 6;}
+                        else if ( (LA12_0=='f') ) {s = 6;}
 
-                        else if ( (LA12_0=='f') ) {s = 7;}
+                        else if ( (LA12_0=='g') ) {s = 7;}
 
-                        else if ( (LA12_0=='g') ) {s = 8;}
+                        else if ( (LA12_0=='h') ) {s = 8;}
 
-                        else if ( (LA12_0=='h') ) {s = 9;}
+                        else if ( (LA12_0=='i') ) {s = 9;}
 
-                        else if ( (LA12_0=='i') ) {s = 10;}
+                        else if ( (LA12_0=='j') ) {s = 10;}
 
-                        else if ( (LA12_0=='j') ) {s = 11;}
+                        else if ( (LA12_0=='k') ) {s = 11;}
 
-                        else if ( (LA12_0=='k') ) {s = 12;}
+                        else if ( (LA12_0=='l') ) {s = 12;}
 
-                        else if ( (LA12_0=='l') ) {s = 13;}
+                        else if ( (LA12_0=='m') ) {s = 13;}
 
-                        else if ( (LA12_0=='m') ) {s = 14;}
+                        else if ( (LA12_0=='n') ) {s = 14;}
 
-                        else if ( (LA12_0=='n') ) {s = 15;}
+                        else if ( (LA12_0=='o') ) {s = 15;}
 
-                        else if ( (LA12_0=='o') ) {s = 16;}
+                        else if ( (LA12_0=='p') ) {s = 16;}
 
-                        else if ( (LA12_0=='p') ) {s = 17;}
+                        else if ( (LA12_0=='q') ) {s = 17;}
 
-                        else if ( (LA12_0=='q') ) {s = 18;}
+                        else if ( (LA12_0=='r') ) {s = 18;}
 
-                        else if ( (LA12_0=='r') ) {s = 19;}
+                        else if ( (LA12_0=='s') ) {s = 19;}
 
-                        else if ( (LA12_0=='s') ) {s = 20;}
+                        else if ( (LA12_0=='t') ) {s = 20;}
 
-                        else if ( (LA12_0=='t') ) {s = 21;}
+                        else if ( (LA12_0=='v') ) {s = 21;}
 
-                        else if ( (LA12_0=='v') ) {s = 22;}
+                        else if ( (LA12_0=='w') ) {s = 22;}
 
-                        else if ( (LA12_0=='w') ) {s = 23;}
+                        else if ( (LA12_0=='x') ) {s = 23;}
 
-                        else if ( (LA12_0=='x') ) {s = 24;}
+                        else if ( (LA12_0=='y') ) {s = 24;}
 
-                        else if ( (LA12_0=='y') ) {s = 25;}
+                        else if ( (LA12_0=='z') ) {s = 25;}
 
-                        else if ( (LA12_0=='z') ) {s = 26;}
+                        else if ( (LA12_0=='A') ) {s = 26;}
 
                         else if ( (LA12_0=='B') ) {s = 27;}
 
@@ -2418,49 +2398,37 @@ public class InternalMyFNCLexer extends Lexer {
 
                         else if ( (LA12_0=='Z') ) {s = 50;}
 
-                        else if ( (LA12_0=='S') ) {s = 51;}
+                        else if ( (LA12_0=='-') ) {s = 51;}
 
-                        else if ( (LA12_0=='&') ) {s = 52;}
+                        else if ( (LA12_0=='|') ) {s = 52;}
 
-                        else if ( (LA12_0=='a') ) {s = 53;}
+                        else if ( (LA12_0=='S') ) {s = 53;}
 
-                        else if ( (LA12_0=='A') ) {s = 54;}
+                        else if ( (LA12_0=='^') ) {s = 54;}
 
-                        else if ( (LA12_0=='^') ) {s = 55;}
+                        else if ( (LA12_0=='_'||LA12_0=='u') ) {s = 55;}
 
-                        else if ( (LA12_0=='_'||LA12_0=='u') ) {s = 56;}
+                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 56;}
 
-                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 57;}
+                        else if ( (LA12_0=='\"') ) {s = 57;}
 
-                        else if ( (LA12_0=='\"') ) {s = 58;}
+                        else if ( (LA12_0=='\'') ) {s = 58;}
 
-                        else if ( (LA12_0=='\'') ) {s = 59;}
+                        else if ( (LA12_0=='/') ) {s = 59;}
 
-                        else if ( (LA12_0=='/') ) {s = 60;}
+                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 60;}
 
-                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 61;}
-
-                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='%')||(LA12_0>='(' && LA12_0<=',')||LA12_0=='.'||(LA12_0>=':' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||LA12_0=='{'||(LA12_0>='}' && LA12_0<='\uFFFF')) ) {s = 62;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA12_59 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_59>='\u0000' && LA12_59<='\uFFFF')) ) {s = 120;}
-
-                        else s = 62;
+                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<=',')||LA12_0=='.'||(LA12_0>=':' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||LA12_0=='{'||(LA12_0>='}' && LA12_0<='\uFFFF')) ) {s = 61;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA12_58 = input.LA(1);
+                        int LA12_57 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_58>='\u0000' && LA12_58<='\uFFFF')) ) {s = 120;}
+                        if ( ((LA12_57>='\u0000' && LA12_57<='\uFFFF')) ) {s = 118;}
 
-                        else s = 62;
+                        else s = 61;
 
                         if ( s>=0 ) return s;
                         break;

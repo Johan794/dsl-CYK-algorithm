@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.cyk.mydsl.myFNC.Binary;
 import org.xtext.cyk.mydsl.myFNC.MyFNCPackage;
@@ -29,7 +30,7 @@ import org.xtext.cyk.mydsl.myFNC.NonTerminal;
  *
  * @generated
  */
-public class BinaryImpl extends RigthImpl implements Binary
+public class BinaryImpl extends MinimalEObjectImpl.Container implements Binary
 {
   /**
    * The cached value of the '{@link #getFirst() <em>First</em>}' containment reference.

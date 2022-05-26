@@ -22,6 +22,7 @@ import org.xtext.cyk.mydsl.myFNC.Lambda;
 import org.xtext.cyk.mydsl.myFNC.MyFNCPackage;
 import org.xtext.cyk.mydsl.myFNC.NonTerminal;
 import org.xtext.cyk.mydsl.myFNC.Production;
+import org.xtext.cyk.mydsl.myFNC.Rigth;
 import org.xtext.cyk.mydsl.myFNC.Simple;
 import org.xtext.cyk.mydsl.services.MyFNCGrammarAccess;
 
@@ -60,6 +61,9 @@ public class MyFNCSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case MyFNCPackage.PRODUCTION:
 				sequence_Production(context, (Production) semanticObject); 
 				return; 
+			case MyFNCPackage.RIGTH:
+				sequence_Rigth(context, (Rigth) semanticObject); 
+				return; 
 			case MyFNCPackage.SIMPLE:
 				sequence_Simple(context, (Simple) semanticObject); 
 				return; 
@@ -71,8 +75,6 @@ public class MyFNCSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Lambda returns Binary
-	 *     Rigth returns Binary
 	 *     Binary returns Binary
 	 *
 	 * Constraint:
@@ -87,8 +89,8 @@ public class MyFNCSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyFNCPackage.Literals.BINARY__SECOND));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getBinaryAccess().getFirstNonTerminalParserRuleCall_0_0(), semanticObject.getFirst());
-		feeder.accept(grammarAccess.getBinaryAccess().getSecondNonTerminalParserRuleCall_1_0(), semanticObject.getSecond());
+		feeder.accept(grammarAccess.getBinaryAccess().getFirstNonTerminalParserRuleCall_1_0_0(), semanticObject.getFirst());
+		feeder.accept(grammarAccess.getBinaryAccess().getSecondNonTerminalParserRuleCall_1_1_0(), semanticObject.getSecond());
 		feeder.finish();
 	}
 	
@@ -113,7 +115,7 @@ public class MyFNCSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Initial returns Initial
 	 *
 	 * Constraint:
-	 *     (left='S' rigth+=Lambda rigth+=Rigth*)
+	 *     (left='S' rigth+=Rigth rigth+=Rigth*)
 	 * </pre>
 	 */
 	protected void sequence_Initial(ISerializationContext context, Initial semanticObject) {
@@ -167,7 +169,33 @@ public class MyFNCSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     NonTerminal returns NonTerminal
 	 *
 	 * Constraint:
-	 *     var='A'?
+	 *     (
+	 *         var='A' | 
+	 *         var='B' | 
+	 *         var='C' | 
+	 *         var='D' | 
+	 *         var='E' | 
+	 *         var='F' | 
+	 *         var='G' | 
+	 *         var='H' | 
+	 *         var='I' | 
+	 *         var='J' | 
+	 *         var='K' | 
+	 *         var='L' | 
+	 *         var='M' | 
+	 *         var='N' | 
+	 *         var='O' | 
+	 *         var='P' | 
+	 *         var='Q' | 
+	 *         var='R' | 
+	 *         var='T' | 
+	 *         var='U' | 
+	 *         var='V' | 
+	 *         var='W' | 
+	 *         var='X' | 
+	 *         var='Y' | 
+	 *         var='Z'
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_NonTerminal(ISerializationContext context, NonTerminal semanticObject) {
@@ -192,12 +220,51 @@ public class MyFNCSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Lambda returns Simple
-	 *     Rigth returns Simple
+	 *     Lambda returns Rigth
+	 *     Rigth returns Rigth
+	 *
+	 * Constraint:
+	 *     (simple=Simple | binary=Binary)
+	 * </pre>
+	 */
+	protected void sequence_Rigth(ISerializationContext context, Rigth semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Simple returns Simple
 	 *
 	 * Constraint:
-	 *     alpha='a'?
+	 *     (
+	 *         alpha='a' | 
+	 *         alpha='b' | 
+	 *         alpha='c' | 
+	 *         alpha='d' | 
+	 *         alpha='e' | 
+	 *         alpha='f' | 
+	 *         alpha='g' | 
+	 *         alpha='h' | 
+	 *         alpha='i' | 
+	 *         alpha='j' | 
+	 *         alpha='k' | 
+	 *         alpha='l' | 
+	 *         alpha='m' | 
+	 *         alpha='n' | 
+	 *         alpha='o' | 
+	 *         alpha='p' | 
+	 *         alpha='q' | 
+	 *         alpha='r' | 
+	 *         alpha='s' | 
+	 *         alpha='t' | 
+	 *         alpha='v' | 
+	 *         alpha='w' | 
+	 *         alpha='x' | 
+	 *         alpha='y' | 
+	 *         alpha='z'
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_Simple(ISerializationContext context, Simple semanticObject) {

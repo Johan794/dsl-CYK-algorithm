@@ -8,6 +8,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.cyk.mydsl.myFNC.MyFNCPackage;
 import org.xtext.cyk.mydsl.myFNC.Simple;
@@ -25,7 +26,7 @@ import org.xtext.cyk.mydsl.myFNC.Simple;
  *
  * @generated
  */
-public class SimpleImpl extends RigthImpl implements Simple
+public class SimpleImpl extends MinimalEObjectImpl.Container implements Simple
 {
   /**
    * The default value of the '{@link #getAlpha() <em>Alpha</em>}' attribute.

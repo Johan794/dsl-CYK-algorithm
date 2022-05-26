@@ -1,0 +1,41 @@
+grammar org.xtext.cyk.mydsl.MyFNC with org.eclipse.xtext.common.Terminals
+
+generate myFNC "http://www.xtext.org/cyk/mydsl/MyFNC"
+
+GNFC:
+	init = Initial productions+=Production* final = InputString
+;
+
+	
+Initial:
+	left= 'S' '->' rigth+=(Lambda)('|' + rigth+=Rigth)*;
+	
+Lambda:
+	rigth= '&' | Rigth
+;
+Production:
+	left=NonTerminal '->' rigth+=(Rigth)('|' + rigth+=Rigth)*
+;
+
+Rigth: 
+	simple = Simple |binary = Binary
+;
+
+Simple:
+	{Simple}alpha= ('a'|'b'|'c'|'d'|'e'|'f'|'g'|'h'|'i'|'j'|'k'|'l'|
+	'm'|'n'|'o'|'p'|'q'|'r'|'s'|'t'|'v'|'w'|'x'|'y'|'z')
+;
+
+NonTerminal:
+	{NonTerminal}var=('A'|'B'|'C'|'D'|'E'|'F'|'G'|'H'|'I'|'J'|'K'|'L'|
+	'M'|'N'|'O'|'P'|'Q'|'R'|'T'|'U'|'V'|'W'|'X'|'Y'|'Z')
+;
+
+Binary:
+	{Binary}(first=NonTerminal second=NonTerminal)
+;
+
+
+InputString:
+	'Check' input = STRING
+;

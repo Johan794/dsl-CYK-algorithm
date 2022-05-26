@@ -11,73 +11,31 @@ public class CYK{
     public static ArrayList<String> terminals = new ArrayList<String>();
     public static ArrayList<String> nonTerminals = new ArrayList<String>();
     public static TreeMap<String,ArrayList<String>> grammar = new TreeMap<>();
-
-    public static void main(String[] args){
-        if(args.length < 2){ 
-            System.out.println("Usage: java CYK <File> <Word>."); 
-            System.exit(1); 
-        }else if (args.length > 2){
-            isTokenWord = true;
-        }
-        doSteps(args);
-    }
-
-    public static void doSteps(String[] args){
-        parseGrammar(args);
+    
+    public String doSteps(){
         String[][] cykTable = createCYKTable();
-        printResult(doCyk(cykTable));
+        return  printResult(doCyk(cykTable));
     }
 
-    public static void parseGrammar(String[] args){
-        Scanner input = openFile(args[0]);
-        ArrayList<String> tmp = new ArrayList<>();
-        int line = 2;
-
-        word = getWord(args);
-        startingSymbol = input.next();
-        input.nextLine();
-
-        while(input.hasNextLine() && line <= 3){
-            tmp.addAll(Arrays.<String>asList(toArray(input.nextLine())));
-            if(line == 2) { terminals.addAll(tmp); }
-            if(line == 3) { nonTerminals.addAll(tmp); }
-            tmp.clear();
-            line++;
-        }
-
-        while(input.hasNextLine()){
-            tmp.addAll(Arrays.<String>asList(toArray(input.nextLine())));
-            String leftSide = tmp.get(0);
-            tmp.remove(0);
-            grammar.put(leftSide, new ArrayList<String>());
-            grammar.get(leftSide).addAll(tmp);
-            tmp.clear();
-        }
-        input.close();
-    }
-
-    public static String getWord(String[] args){
-        if(!isTokenWord) { return args[1]; }
-        String[] argsWithoutFile = new String[args.length - 1];
-        for(int i = 1; i < args.length; i++){
-            argsWithoutFile[i-1] = args[i];
-        }
-        return toString(argsWithoutFile);
-    }
-
-    public static void printResult (String[][] cykTable){
-        System.out.println("Word: " + word);
-        System.out.println("\nG = (" + terminals.toString().replace("[", "{").replace("]", "}") 
-                          + ", " + nonTerminals.toString().replace("[", "{").replace("]", "}")
-                          + ", P, " + startingSymbol + ")\n\nWith Productions P as:");
+    
+    public static String printResult (String[][] cykTable){
+    	String result = "";
+    	result+="Word: " + word+"\n";
+    	result+= "\nG = (" + terminals.toString().replace("[", "{").replace("]", "}") 
+                + ", " + nonTerminals.toString().replace("[", "{").replace("]", "}")
+                + ", P, " + startingSymbol + ")\n\nWith Productions P as:\n";
         for(String s: grammar.keySet()){
-            System.out.println(s + " -> " + grammar.get(s).toString().replaceAll("[\\[\\]\\,]", "").replaceAll("\\s", " | "));
+        	result+=s + " -> " + grammar.get(s).toString().replaceAll("[\\[\\]\\,]", "").replaceAll("\\s", " | ")+"\n";
         }
-        System.out.println("\nApplying CYK-Algorithm:\n");
-        drawTable(cykTable);
+        
+        result+="\nApplying CYK-Algorithm:\n";
+        
+
+        return result+=drawTable(cykTable);
     }
 
-    public static void drawTable(String[][] cykTable){
+    public static String drawTable(String[][] cykTable){
+    	String out = "";
         int l = findLongestString(cykTable) + 2;
         String formatString = "| %-" + l + "s ";
         String s = "";
@@ -97,23 +55,36 @@ public class CYK{
     //Print Table
         for(int i = 0; i < cykTable.length; i++){
             for(int j = 0; j <= cykTable[i].length; j++){
+            	out+=((j == 0) ? low : (i <= 1 && j == cykTable[i].length - 1) ? "" : lowRight);
                 System.out.print((j == 0) ? low : (i <= 1 && j == cykTable[i].length - 1) ? "" : lowRight);
             }
+            out+="\n";
             System.out.println();
             for(int j = 0; j < cykTable[i].length; j++){
                 s = (cykTable[i][j].isEmpty()) ? "-" : cykTable[i][j];
                 System.out.format(formatString, s.replaceAll("\\s", ","));
-                if(j == cykTable[i].length - 1) { System.out.print("|"); }
+                out+= String.format(formatString,s.replaceAll("\\s", ","));
+              
+                if(j == cykTable[i].length - 1) { 
+                	out+="|";
+                	System.out.print("|"); 
+                }
             }
+            out+="\n";
             System.out.println();
         }
+        out+=low+"\n";
         System.out.println(low+"\n");
     //Step 4: Evaluate success.
         if(cykTable[cykTable.length-1][cykTable[cykTable.length-1].length-1].contains(startingSymbol)){
-            System.out.println("The word \"" + word + "\" is an element of the CFG G and can be derived from it.");
+        	out+="The word \"" + word + "\" is an element of the CFG G and can be derived from it.\n";
+        	System.out.println("The word \"" + word + "\" is an element of the CFG G and can be derived from it.");
         }else{
+        	out+="The word \"" + word + "\" is not an element of the CFG G and can not be derived from it.\n";
             System.out.println("The word \"" + word + "\" is not an element of the CFG G and can not be derived from it.");
         }
+        
+        return out;
     }
 
     public static int findLongestString(String[][] cykTable){
@@ -201,7 +172,10 @@ public class CYK{
                 }
             }
         }
-        if(storage.size() == 0) { return new String[] {}; }
+        if(storage.size() == 0) { 
+        	System.out.println("Storage vacio");
+        	return new String[] {}; 
+        }
         return storage.toArray(new String[storage.size()]);
     }
 
@@ -236,4 +210,52 @@ public class CYK{
             return null;
         }
     }
+
+	public static String getWord() {
+		return word;
+	}
+
+	public void setWord(String word) {
+		CYK.word = word;
+	}
+
+	public static String getStartingSymbol() {
+		return startingSymbol;
+	}
+
+	public  void setStartingSymbol(String startingSymbol) {
+		CYK.startingSymbol = startingSymbol;
+	}
+
+	public static boolean isTokenWord() {
+		return isTokenWord;
+	}
+
+	public static void setTokenWord(boolean isTokenWord) {
+		CYK.isTokenWord = isTokenWord;
+	}
+
+	public static ArrayList<String> getTerminals() {
+		return terminals;
+	}
+
+	public  void setTerminals(ArrayList<String> terminals) {
+		CYK.terminals = terminals;
+	}
+
+	public static ArrayList<String> getNonTerminals() {
+		return nonTerminals;
+	}
+
+	public  void setNonTerminals(ArrayList<String> nonTerminals) {
+		CYK.nonTerminals = nonTerminals;
+	}
+
+	public  TreeMap<String, ArrayList<String>> getGrammar() {
+		return grammar;
+	}
+
+	public  void setGrammar(TreeMap<String, ArrayList<String>> grammar) {
+		CYK.grammar = grammar;
+	}    
 }

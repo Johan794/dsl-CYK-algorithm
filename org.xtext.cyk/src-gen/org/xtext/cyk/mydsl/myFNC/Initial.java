@@ -50,7 +50,7 @@ public interface Initial extends EObject
 
   /**
    * Returns the value of the '<em><b>Rigth</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.cyk.mydsl.myFNC.Lambda}.
+   * The list contents are of type {@link org.xtext.cyk.mydsl.myFNC.Rigth}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Rigth</em>' containment reference list.
@@ -58,6 +58,6 @@ public interface Initial extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<Lambda> getRigth();
+  EList<Rigth> getRigth();
 
 } // Initial

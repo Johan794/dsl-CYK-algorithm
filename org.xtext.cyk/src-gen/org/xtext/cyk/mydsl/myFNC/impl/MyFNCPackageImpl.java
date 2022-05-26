@@ -304,6 +304,28 @@ public class MyFNCPackageImpl extends EPackageImpl implements MyFNCPackage
    * @generated
    */
   @Override
+  public EReference getRigth_Simple()
+  {
+    return (EReference)rigthEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getRigth_Binary()
+  {
+    return (EReference)rigthEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getSimple()
   {
     return simpleEClass;
@@ -445,6 +467,8 @@ public class MyFNCPackageImpl extends EPackageImpl implements MyFNCPackage
     createEReference(productionEClass, PRODUCTION__RIGTH);
 
     rigthEClass = createEClass(RIGTH);
+    createEReference(rigthEClass, RIGTH__SIMPLE);
+    createEReference(rigthEClass, RIGTH__BINARY);
 
     simpleEClass = createEClass(SIMPLE);
     createEAttribute(simpleEClass, SIMPLE__ALPHA);
@@ -490,8 +514,6 @@ public class MyFNCPackageImpl extends EPackageImpl implements MyFNCPackage
 
     // Add supertypes to classes
     rigthEClass.getESuperTypes().add(this.getLambda());
-    simpleEClass.getESuperTypes().add(this.getRigth());
-    binaryEClass.getESuperTypes().add(this.getRigth());
 
     // Initialize classes and features; add operations and parameters
     initEClass(gnfcEClass, org.xtext.cyk.mydsl.myFNC.GNFC.class, "GNFC", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -501,7 +523,7 @@ public class MyFNCPackageImpl extends EPackageImpl implements MyFNCPackage
 
     initEClass(initialEClass, Initial.class, "Initial", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getInitial_Left(), ecorePackage.getEString(), "left", null, 0, 1, Initial.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getInitial_Rigth(), this.getLambda(), null, "rigth", null, 0, -1, Initial.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInitial_Rigth(), this.getRigth(), null, "rigth", null, 0, -1, Initial.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(lambdaEClass, Lambda.class, "Lambda", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getLambda_Rigth(), ecorePackage.getEString(), "rigth", null, 0, 1, Lambda.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -511,6 +533,8 @@ public class MyFNCPackageImpl extends EPackageImpl implements MyFNCPackage
     initEReference(getProduction_Rigth(), this.getRigth(), null, "rigth", null, 0, -1, Production.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(rigthEClass, Rigth.class, "Rigth", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRigth_Simple(), this.getSimple(), null, "simple", null, 0, 1, Rigth.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRigth_Binary(), this.getBinary(), null, "binary", null, 0, 1, Rigth.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(simpleEClass, Simple.class, "Simple", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSimple_Alpha(), ecorePackage.getEString(), "alpha", null, 0, 1, Simple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

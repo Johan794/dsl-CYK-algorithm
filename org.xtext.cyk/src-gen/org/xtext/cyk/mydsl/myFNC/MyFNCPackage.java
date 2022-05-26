@@ -225,13 +225,31 @@ public interface MyFNCPackage extends EPackage
   int RIGTH__RIGTH = LAMBDA__RIGTH;
 
   /**
+   * The feature id for the '<em><b>Simple</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RIGTH__SIMPLE = LAMBDA_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Binary</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RIGTH__BINARY = LAMBDA_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Rigth</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RIGTH_FEATURE_COUNT = LAMBDA_FEATURE_COUNT + 0;
+  int RIGTH_FEATURE_COUNT = LAMBDA_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.xtext.cyk.mydsl.myFNC.impl.SimpleImpl <em>Simple</em>}' class.
@@ -244,22 +262,13 @@ public interface MyFNCPackage extends EPackage
   int SIMPLE = 5;
 
   /**
-   * The feature id for the '<em><b>Rigth</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SIMPLE__RIGTH = RIGTH__RIGTH;
-
-  /**
    * The feature id for the '<em><b>Alpha</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SIMPLE__ALPHA = RIGTH_FEATURE_COUNT + 0;
+  int SIMPLE__ALPHA = 0;
 
   /**
    * The number of structural features of the '<em>Simple</em>' class.
@@ -268,7 +277,7 @@ public interface MyFNCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SIMPLE_FEATURE_COUNT = RIGTH_FEATURE_COUNT + 1;
+  int SIMPLE_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.cyk.mydsl.myFNC.impl.NonTerminalImpl <em>Non Terminal</em>}' class.
@@ -309,22 +318,13 @@ public interface MyFNCPackage extends EPackage
   int BINARY = 7;
 
   /**
-   * The feature id for the '<em><b>Rigth</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINARY__RIGTH = RIGTH__RIGTH;
-
-  /**
    * The feature id for the '<em><b>First</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BINARY__FIRST = RIGTH_FEATURE_COUNT + 0;
+  int BINARY__FIRST = 0;
 
   /**
    * The feature id for the '<em><b>Second</b></em>' containment reference.
@@ -333,7 +333,7 @@ public interface MyFNCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINARY__SECOND = RIGTH_FEATURE_COUNT + 1;
+  int BINARY__SECOND = 1;
 
   /**
    * The number of structural features of the '<em>Binary</em>' class.
@@ -342,7 +342,7 @@ public interface MyFNCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINARY_FEATURE_COUNT = RIGTH_FEATURE_COUNT + 2;
+  int BINARY_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.cyk.mydsl.myFNC.impl.InputStringImpl <em>Input String</em>}' class.
@@ -510,6 +510,28 @@ public interface MyFNCPackage extends EPackage
    * @generated
    */
   EClass getRigth();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.cyk.mydsl.myFNC.Rigth#getSimple <em>Simple</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Simple</em>'.
+   * @see org.xtext.cyk.mydsl.myFNC.Rigth#getSimple()
+   * @see #getRigth()
+   * @generated
+   */
+  EReference getRigth_Simple();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.cyk.mydsl.myFNC.Rigth#getBinary <em>Binary</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Binary</em>'.
+   * @see org.xtext.cyk.mydsl.myFNC.Rigth#getBinary()
+   * @see #getRigth()
+   * @generated
+   */
+  EReference getRigth_Binary();
 
   /**
    * Returns the meta object for class '{@link org.xtext.cyk.mydsl.myFNC.Simple <em>Simple</em>}'.
@@ -742,6 +764,22 @@ public interface MyFNCPackage extends EPackage
      * @generated
      */
     EClass RIGTH = eINSTANCE.getRigth();
+
+    /**
+     * The meta object literal for the '<em><b>Simple</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RIGTH__SIMPLE = eINSTANCE.getRigth_Simple();
+
+    /**
+     * The meta object literal for the '<em><b>Binary</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RIGTH__BINARY = eINSTANCE.getRigth_Binary();
 
     /**
      * The meta object literal for the '{@link org.xtext.cyk.mydsl.myFNC.impl.SimpleImpl <em>Simple</em>}' class.

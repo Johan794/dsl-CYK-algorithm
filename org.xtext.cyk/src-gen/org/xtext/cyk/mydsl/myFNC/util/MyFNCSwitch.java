@@ -113,8 +113,6 @@ public class MyFNCSwitch<T> extends Switch<T>
       {
         Simple simple = (Simple)theEObject;
         T result = caseSimple(simple);
-        if (result == null) result = caseRigth(simple);
-        if (result == null) result = caseLambda(simple);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -129,8 +127,6 @@ public class MyFNCSwitch<T> extends Switch<T>
       {
         Binary binary = (Binary)theEObject;
         T result = caseBinary(binary);
-        if (result == null) result = caseRigth(binary);
-        if (result == null) result = caseLambda(binary);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

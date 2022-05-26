@@ -66,17 +66,17 @@ public class MyFNCGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cLeftSKeyword_0_0 = (Keyword)cLeftAssignment_0.eContents().get(0);
 		private final Keyword cHyphenMinusGreaterThanSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cRigthAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cRigthLambdaParserRuleCall_2_0 = (RuleCall)cRigthAssignment_2.eContents().get(0);
+		private final RuleCall cRigthRigthParserRuleCall_2_0 = (RuleCall)cRigthAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cVerticalLineKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cRigthAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cRigthRigthParserRuleCall_3_1_0 = (RuleCall)cRigthAssignment_3_1.eContents().get(0);
 		
 		//Initial:
-		//    left= 'S' '->' rigth+=(Lambda)('|' + rigth+=Rigth)*;
+		//    left= 'S' '->' rigth+=(Rigth)('|' + rigth+=Rigth)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//left= 'S' '->' rigth+=(Lambda)('|' + rigth+=Rigth)*
+		//left= 'S' '->' rigth+=(Rigth)('|' + rigth+=Rigth)*
 		public Group getGroup() { return cGroup; }
 		
 		//left= 'S'
@@ -88,11 +88,11 @@ public class MyFNCGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'->'
 		public Keyword getHyphenMinusGreaterThanSignKeyword_1() { return cHyphenMinusGreaterThanSignKeyword_1; }
 		
-		//rigth+=(Lambda)
+		//rigth+=(Rigth)
 		public Assignment getRigthAssignment_2() { return cRigthAssignment_2; }
 		
-		//(Lambda)
-		public RuleCall getRigthLambdaParserRuleCall_2_0() { return cRigthLambdaParserRuleCall_2_0; }
+		//(Rigth)
+		public RuleCall getRigthRigthParserRuleCall_2_0() { return cRigthRigthParserRuleCall_2_0; }
 		
 		//('|' + rigth+=Rigth)*
 		public Group getGroup_3() { return cGroup_3; }
@@ -181,670 +181,322 @@ public class MyFNCGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	public class RigthElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.cyk.mydsl.MyFNC.Rigth");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cSimpleParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cBinaryParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final Assignment cSimpleAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cSimpleSimpleParserRuleCall_0_0 = (RuleCall)cSimpleAssignment_0.eContents().get(0);
+		private final Assignment cBinaryAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cBinaryBinaryParserRuleCall_1_0 = (RuleCall)cBinaryAssignment_1.eContents().get(0);
 		
 		//Rigth:
-		//    Simple | Binary
+		//    simple = Simple |binary = Binary
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Simple | Binary
+		//simple = Simple |binary = Binary
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
+		//simple = Simple
+		public Assignment getSimpleAssignment_0() { return cSimpleAssignment_0; }
+		
 		//Simple
-		public RuleCall getSimpleParserRuleCall_0() { return cSimpleParserRuleCall_0; }
+		public RuleCall getSimpleSimpleParserRuleCall_0_0() { return cSimpleSimpleParserRuleCall_0_0; }
+		
+		//binary = Binary
+		public Assignment getBinaryAssignment_1() { return cBinaryAssignment_1; }
 		
 		//Binary
-		public RuleCall getBinaryParserRuleCall_1() { return cBinaryParserRuleCall_1; }
+		public RuleCall getBinaryBinaryParserRuleCall_1_0() { return cBinaryBinaryParserRuleCall_1_0; }
 	}
 	public class SimpleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.cyk.mydsl.MyFNC.Simple");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cAlphaAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final Keyword cAlphaAKeyword_0_0 = (Keyword)cAlphaAssignment_0.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Action cSimpleAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Keyword cBKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Action cSimpleAction_2_0 = (Action)cGroup_2.eContents().get(0);
-		private final Keyword cCKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
-		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final Action cSimpleAction_3_0 = (Action)cGroup_3.eContents().get(0);
-		private final Keyword cDKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
-		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
-		private final Action cSimpleAction_4_0 = (Action)cGroup_4.eContents().get(0);
-		private final Keyword cEKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
-		private final Action cSimpleAction_5_0 = (Action)cGroup_5.eContents().get(0);
-		private final Keyword cFKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Group cGroup_6 = (Group)cAlternatives.eContents().get(6);
-		private final Action cSimpleAction_6_0 = (Action)cGroup_6.eContents().get(0);
-		private final Keyword cGKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
-		private final Group cGroup_7 = (Group)cAlternatives.eContents().get(7);
-		private final Action cSimpleAction_7_0 = (Action)cGroup_7.eContents().get(0);
-		private final Keyword cHKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Group cGroup_8 = (Group)cAlternatives.eContents().get(8);
-		private final Action cSimpleAction_8_0 = (Action)cGroup_8.eContents().get(0);
-		private final Keyword cIKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
-		private final Group cGroup_9 = (Group)cAlternatives.eContents().get(9);
-		private final Action cSimpleAction_9_0 = (Action)cGroup_9.eContents().get(0);
-		private final Keyword cJKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
-		private final Group cGroup_10 = (Group)cAlternatives.eContents().get(10);
-		private final Action cSimpleAction_10_0 = (Action)cGroup_10.eContents().get(0);
-		private final Keyword cKKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
-		private final Group cGroup_11 = (Group)cAlternatives.eContents().get(11);
-		private final Action cSimpleAction_11_0 = (Action)cGroup_11.eContents().get(0);
-		private final Keyword cLKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
-		private final Group cGroup_12 = (Group)cAlternatives.eContents().get(12);
-		private final Action cSimpleAction_12_0 = (Action)cGroup_12.eContents().get(0);
-		private final Keyword cMKeyword_12_1 = (Keyword)cGroup_12.eContents().get(1);
-		private final Group cGroup_13 = (Group)cAlternatives.eContents().get(13);
-		private final Action cSimpleAction_13_0 = (Action)cGroup_13.eContents().get(0);
-		private final Keyword cNKeyword_13_1 = (Keyword)cGroup_13.eContents().get(1);
-		private final Group cGroup_14 = (Group)cAlternatives.eContents().get(14);
-		private final Action cSimpleAction_14_0 = (Action)cGroup_14.eContents().get(0);
-		private final Keyword cOKeyword_14_1 = (Keyword)cGroup_14.eContents().get(1);
-		private final Group cGroup_15 = (Group)cAlternatives.eContents().get(15);
-		private final Action cSimpleAction_15_0 = (Action)cGroup_15.eContents().get(0);
-		private final Keyword cPKeyword_15_1 = (Keyword)cGroup_15.eContents().get(1);
-		private final Group cGroup_16 = (Group)cAlternatives.eContents().get(16);
-		private final Action cSimpleAction_16_0 = (Action)cGroup_16.eContents().get(0);
-		private final Keyword cQKeyword_16_1 = (Keyword)cGroup_16.eContents().get(1);
-		private final Group cGroup_17 = (Group)cAlternatives.eContents().get(17);
-		private final Action cSimpleAction_17_0 = (Action)cGroup_17.eContents().get(0);
-		private final Keyword cRKeyword_17_1 = (Keyword)cGroup_17.eContents().get(1);
-		private final Group cGroup_18 = (Group)cAlternatives.eContents().get(18);
-		private final Action cSimpleAction_18_0 = (Action)cGroup_18.eContents().get(0);
-		private final Keyword cSKeyword_18_1 = (Keyword)cGroup_18.eContents().get(1);
-		private final Group cGroup_19 = (Group)cAlternatives.eContents().get(19);
-		private final Action cSimpleAction_19_0 = (Action)cGroup_19.eContents().get(0);
-		private final Keyword cTKeyword_19_1 = (Keyword)cGroup_19.eContents().get(1);
-		private final Group cGroup_20 = (Group)cAlternatives.eContents().get(20);
-		private final Action cSimpleAction_20_0 = (Action)cGroup_20.eContents().get(0);
-		private final Keyword cVKeyword_20_1 = (Keyword)cGroup_20.eContents().get(1);
-		private final Group cGroup_21 = (Group)cAlternatives.eContents().get(21);
-		private final Action cSimpleAction_21_0 = (Action)cGroup_21.eContents().get(0);
-		private final Keyword cWKeyword_21_1 = (Keyword)cGroup_21.eContents().get(1);
-		private final Group cGroup_22 = (Group)cAlternatives.eContents().get(22);
-		private final Action cSimpleAction_22_0 = (Action)cGroup_22.eContents().get(0);
-		private final Keyword cXKeyword_22_1 = (Keyword)cGroup_22.eContents().get(1);
-		private final Group cGroup_23 = (Group)cAlternatives.eContents().get(23);
-		private final Action cSimpleAction_23_0 = (Action)cGroup_23.eContents().get(0);
-		private final Keyword cYKeyword_23_1 = (Keyword)cGroup_23.eContents().get(1);
-		private final Group cGroup_24 = (Group)cAlternatives.eContents().get(24);
-		private final Action cSimpleAction_24_0 = (Action)cGroup_24.eContents().get(0);
-		private final Keyword cZKeyword_24_1 = (Keyword)cGroup_24.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cSimpleAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cAlphaAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Alternatives cAlphaAlternatives_1_0 = (Alternatives)cAlphaAssignment_1.eContents().get(0);
+		private final Keyword cAlphaAKeyword_1_0_0 = (Keyword)cAlphaAlternatives_1_0.eContents().get(0);
+		private final Keyword cAlphaBKeyword_1_0_1 = (Keyword)cAlphaAlternatives_1_0.eContents().get(1);
+		private final Keyword cAlphaCKeyword_1_0_2 = (Keyword)cAlphaAlternatives_1_0.eContents().get(2);
+		private final Keyword cAlphaDKeyword_1_0_3 = (Keyword)cAlphaAlternatives_1_0.eContents().get(3);
+		private final Keyword cAlphaEKeyword_1_0_4 = (Keyword)cAlphaAlternatives_1_0.eContents().get(4);
+		private final Keyword cAlphaFKeyword_1_0_5 = (Keyword)cAlphaAlternatives_1_0.eContents().get(5);
+		private final Keyword cAlphaGKeyword_1_0_6 = (Keyword)cAlphaAlternatives_1_0.eContents().get(6);
+		private final Keyword cAlphaHKeyword_1_0_7 = (Keyword)cAlphaAlternatives_1_0.eContents().get(7);
+		private final Keyword cAlphaIKeyword_1_0_8 = (Keyword)cAlphaAlternatives_1_0.eContents().get(8);
+		private final Keyword cAlphaJKeyword_1_0_9 = (Keyword)cAlphaAlternatives_1_0.eContents().get(9);
+		private final Keyword cAlphaKKeyword_1_0_10 = (Keyword)cAlphaAlternatives_1_0.eContents().get(10);
+		private final Keyword cAlphaLKeyword_1_0_11 = (Keyword)cAlphaAlternatives_1_0.eContents().get(11);
+		private final Keyword cAlphaMKeyword_1_0_12 = (Keyword)cAlphaAlternatives_1_0.eContents().get(12);
+		private final Keyword cAlphaNKeyword_1_0_13 = (Keyword)cAlphaAlternatives_1_0.eContents().get(13);
+		private final Keyword cAlphaOKeyword_1_0_14 = (Keyword)cAlphaAlternatives_1_0.eContents().get(14);
+		private final Keyword cAlphaPKeyword_1_0_15 = (Keyword)cAlphaAlternatives_1_0.eContents().get(15);
+		private final Keyword cAlphaQKeyword_1_0_16 = (Keyword)cAlphaAlternatives_1_0.eContents().get(16);
+		private final Keyword cAlphaRKeyword_1_0_17 = (Keyword)cAlphaAlternatives_1_0.eContents().get(17);
+		private final Keyword cAlphaSKeyword_1_0_18 = (Keyword)cAlphaAlternatives_1_0.eContents().get(18);
+		private final Keyword cAlphaTKeyword_1_0_19 = (Keyword)cAlphaAlternatives_1_0.eContents().get(19);
+		private final Keyword cAlphaVKeyword_1_0_20 = (Keyword)cAlphaAlternatives_1_0.eContents().get(20);
+		private final Keyword cAlphaWKeyword_1_0_21 = (Keyword)cAlphaAlternatives_1_0.eContents().get(21);
+		private final Keyword cAlphaXKeyword_1_0_22 = (Keyword)cAlphaAlternatives_1_0.eContents().get(22);
+		private final Keyword cAlphaYKeyword_1_0_23 = (Keyword)cAlphaAlternatives_1_0.eContents().get(23);
+		private final Keyword cAlphaZKeyword_1_0_24 = (Keyword)cAlphaAlternatives_1_0.eContents().get(24);
 		
 		//Simple:
-		//    alpha= 'a'|{Simple} 'b'|{Simple} 'c'|{Simple} 'd'|{Simple} 'e'|{Simple} 'f'|{Simple} 'g'|{Simple} 'h'|{Simple} 'i'|{Simple} 'j'|{Simple} 'k'|{Simple} 'l'|
-		//    {Simple} 'm'|{Simple} 'n'|{Simple} 'o'|{Simple} 'p'|{Simple} 'q'|{Simple} 'r'|{Simple} 's'|{Simple} 't'|{Simple} 'v'|{Simple} 'w'|{Simple} 'x'|{Simple} 'y'|{Simple} 'z'
+		//    {Simple}alpha= ('a'|'b'|'c'|'d'|'e'|'f'|'g'|'h'|'i'|'j'|'k'|'l'|
+		//    'm'|'n'|'o'|'p'|'q'|'r'|'s'|'t'|'v'|'w'|'x'|'y'|'z')
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//alpha= 'a'|{Simple} 'b'|{Simple} 'c'|{Simple} 'd'|{Simple} 'e'|{Simple} 'f'|{Simple} 'g'|{Simple} 'h'|{Simple} 'i'|{Simple} 'j'|{Simple} 'k'|{Simple} 'l'|
-		//{Simple} 'm'|{Simple} 'n'|{Simple} 'o'|{Simple} 'p'|{Simple} 'q'|{Simple} 'r'|{Simple} 's'|{Simple} 't'|{Simple} 'v'|{Simple} 'w'|{Simple} 'x'|{Simple} 'y'|{Simple} 'z'
-		public Alternatives getAlternatives() { return cAlternatives; }
+		//{Simple}alpha= ('a'|'b'|'c'|'d'|'e'|'f'|'g'|'h'|'i'|'j'|'k'|'l'|
+		//'m'|'n'|'o'|'p'|'q'|'r'|'s'|'t'|'v'|'w'|'x'|'y'|'z')
+		public Group getGroup() { return cGroup; }
 		
-		//alpha= 'a'
-		public Assignment getAlphaAssignment_0() { return cAlphaAssignment_0; }
+		//{Simple}
+		public Action getSimpleAction_0() { return cSimpleAction_0; }
+		
+		//alpha= ('a'|'b'|'c'|'d'|'e'|'f'|'g'|'h'|'i'|'j'|'k'|'l'|
+		//    'm'|'n'|'o'|'p'|'q'|'r'|'s'|'t'|'v'|'w'|'x'|'y'|'z')
+		public Assignment getAlphaAssignment_1() { return cAlphaAssignment_1; }
+		
+		//('a'|'b'|'c'|'d'|'e'|'f'|'g'|'h'|'i'|'j'|'k'|'l'|
+		//   'm'|'n'|'o'|'p'|'q'|'r'|'s'|'t'|'v'|'w'|'x'|'y'|'z')
+		public Alternatives getAlphaAlternatives_1_0() { return cAlphaAlternatives_1_0; }
 		
 		//'a'
-		public Keyword getAlphaAKeyword_0_0() { return cAlphaAKeyword_0_0; }
-		
-		//{Simple} 'b'
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//{Simple}
-		public Action getSimpleAction_1_0() { return cSimpleAction_1_0; }
+		public Keyword getAlphaAKeyword_1_0_0() { return cAlphaAKeyword_1_0_0; }
 		
 		//'b'
-		public Keyword getBKeyword_1_1() { return cBKeyword_1_1; }
-		
-		//{Simple} 'c'
-		public Group getGroup_2() { return cGroup_2; }
-		
-		//{Simple}
-		public Action getSimpleAction_2_0() { return cSimpleAction_2_0; }
+		public Keyword getAlphaBKeyword_1_0_1() { return cAlphaBKeyword_1_0_1; }
 		
 		//'c'
-		public Keyword getCKeyword_2_1() { return cCKeyword_2_1; }
-		
-		//{Simple} 'd'
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//{Simple}
-		public Action getSimpleAction_3_0() { return cSimpleAction_3_0; }
+		public Keyword getAlphaCKeyword_1_0_2() { return cAlphaCKeyword_1_0_2; }
 		
 		//'d'
-		public Keyword getDKeyword_3_1() { return cDKeyword_3_1; }
-		
-		//{Simple} 'e'
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//{Simple}
-		public Action getSimpleAction_4_0() { return cSimpleAction_4_0; }
+		public Keyword getAlphaDKeyword_1_0_3() { return cAlphaDKeyword_1_0_3; }
 		
 		//'e'
-		public Keyword getEKeyword_4_1() { return cEKeyword_4_1; }
-		
-		//{Simple} 'f'
-		public Group getGroup_5() { return cGroup_5; }
-		
-		//{Simple}
-		public Action getSimpleAction_5_0() { return cSimpleAction_5_0; }
+		public Keyword getAlphaEKeyword_1_0_4() { return cAlphaEKeyword_1_0_4; }
 		
 		//'f'
-		public Keyword getFKeyword_5_1() { return cFKeyword_5_1; }
-		
-		//{Simple} 'g'
-		public Group getGroup_6() { return cGroup_6; }
-		
-		//{Simple}
-		public Action getSimpleAction_6_0() { return cSimpleAction_6_0; }
+		public Keyword getAlphaFKeyword_1_0_5() { return cAlphaFKeyword_1_0_5; }
 		
 		//'g'
-		public Keyword getGKeyword_6_1() { return cGKeyword_6_1; }
-		
-		//{Simple} 'h'
-		public Group getGroup_7() { return cGroup_7; }
-		
-		//{Simple}
-		public Action getSimpleAction_7_0() { return cSimpleAction_7_0; }
+		public Keyword getAlphaGKeyword_1_0_6() { return cAlphaGKeyword_1_0_6; }
 		
 		//'h'
-		public Keyword getHKeyword_7_1() { return cHKeyword_7_1; }
-		
-		//{Simple} 'i'
-		public Group getGroup_8() { return cGroup_8; }
-		
-		//{Simple}
-		public Action getSimpleAction_8_0() { return cSimpleAction_8_0; }
+		public Keyword getAlphaHKeyword_1_0_7() { return cAlphaHKeyword_1_0_7; }
 		
 		//'i'
-		public Keyword getIKeyword_8_1() { return cIKeyword_8_1; }
-		
-		//{Simple} 'j'
-		public Group getGroup_9() { return cGroup_9; }
-		
-		//{Simple}
-		public Action getSimpleAction_9_0() { return cSimpleAction_9_0; }
+		public Keyword getAlphaIKeyword_1_0_8() { return cAlphaIKeyword_1_0_8; }
 		
 		//'j'
-		public Keyword getJKeyword_9_1() { return cJKeyword_9_1; }
-		
-		//{Simple} 'k'
-		public Group getGroup_10() { return cGroup_10; }
-		
-		//{Simple}
-		public Action getSimpleAction_10_0() { return cSimpleAction_10_0; }
+		public Keyword getAlphaJKeyword_1_0_9() { return cAlphaJKeyword_1_0_9; }
 		
 		//'k'
-		public Keyword getKKeyword_10_1() { return cKKeyword_10_1; }
-		
-		//{Simple} 'l'
-		public Group getGroup_11() { return cGroup_11; }
-		
-		//{Simple}
-		public Action getSimpleAction_11_0() { return cSimpleAction_11_0; }
+		public Keyword getAlphaKKeyword_1_0_10() { return cAlphaKKeyword_1_0_10; }
 		
 		//'l'
-		public Keyword getLKeyword_11_1() { return cLKeyword_11_1; }
-		
-		//{Simple} 'm'
-		public Group getGroup_12() { return cGroup_12; }
-		
-		//{Simple}
-		public Action getSimpleAction_12_0() { return cSimpleAction_12_0; }
+		public Keyword getAlphaLKeyword_1_0_11() { return cAlphaLKeyword_1_0_11; }
 		
 		//'m'
-		public Keyword getMKeyword_12_1() { return cMKeyword_12_1; }
-		
-		//{Simple} 'n'
-		public Group getGroup_13() { return cGroup_13; }
-		
-		//{Simple}
-		public Action getSimpleAction_13_0() { return cSimpleAction_13_0; }
+		public Keyword getAlphaMKeyword_1_0_12() { return cAlphaMKeyword_1_0_12; }
 		
 		//'n'
-		public Keyword getNKeyword_13_1() { return cNKeyword_13_1; }
-		
-		//{Simple} 'o'
-		public Group getGroup_14() { return cGroup_14; }
-		
-		//{Simple}
-		public Action getSimpleAction_14_0() { return cSimpleAction_14_0; }
+		public Keyword getAlphaNKeyword_1_0_13() { return cAlphaNKeyword_1_0_13; }
 		
 		//'o'
-		public Keyword getOKeyword_14_1() { return cOKeyword_14_1; }
-		
-		//{Simple} 'p'
-		public Group getGroup_15() { return cGroup_15; }
-		
-		//{Simple}
-		public Action getSimpleAction_15_0() { return cSimpleAction_15_0; }
+		public Keyword getAlphaOKeyword_1_0_14() { return cAlphaOKeyword_1_0_14; }
 		
 		//'p'
-		public Keyword getPKeyword_15_1() { return cPKeyword_15_1; }
-		
-		//{Simple} 'q'
-		public Group getGroup_16() { return cGroup_16; }
-		
-		//{Simple}
-		public Action getSimpleAction_16_0() { return cSimpleAction_16_0; }
+		public Keyword getAlphaPKeyword_1_0_15() { return cAlphaPKeyword_1_0_15; }
 		
 		//'q'
-		public Keyword getQKeyword_16_1() { return cQKeyword_16_1; }
-		
-		//{Simple} 'r'
-		public Group getGroup_17() { return cGroup_17; }
-		
-		//{Simple}
-		public Action getSimpleAction_17_0() { return cSimpleAction_17_0; }
+		public Keyword getAlphaQKeyword_1_0_16() { return cAlphaQKeyword_1_0_16; }
 		
 		//'r'
-		public Keyword getRKeyword_17_1() { return cRKeyword_17_1; }
-		
-		//{Simple} 's'
-		public Group getGroup_18() { return cGroup_18; }
-		
-		//{Simple}
-		public Action getSimpleAction_18_0() { return cSimpleAction_18_0; }
+		public Keyword getAlphaRKeyword_1_0_17() { return cAlphaRKeyword_1_0_17; }
 		
 		//'s'
-		public Keyword getSKeyword_18_1() { return cSKeyword_18_1; }
-		
-		//{Simple} 't'
-		public Group getGroup_19() { return cGroup_19; }
-		
-		//{Simple}
-		public Action getSimpleAction_19_0() { return cSimpleAction_19_0; }
+		public Keyword getAlphaSKeyword_1_0_18() { return cAlphaSKeyword_1_0_18; }
 		
 		//'t'
-		public Keyword getTKeyword_19_1() { return cTKeyword_19_1; }
-		
-		//{Simple} 'v'
-		public Group getGroup_20() { return cGroup_20; }
-		
-		//{Simple}
-		public Action getSimpleAction_20_0() { return cSimpleAction_20_0; }
+		public Keyword getAlphaTKeyword_1_0_19() { return cAlphaTKeyword_1_0_19; }
 		
 		//'v'
-		public Keyword getVKeyword_20_1() { return cVKeyword_20_1; }
-		
-		//{Simple} 'w'
-		public Group getGroup_21() { return cGroup_21; }
-		
-		//{Simple}
-		public Action getSimpleAction_21_0() { return cSimpleAction_21_0; }
+		public Keyword getAlphaVKeyword_1_0_20() { return cAlphaVKeyword_1_0_20; }
 		
 		//'w'
-		public Keyword getWKeyword_21_1() { return cWKeyword_21_1; }
-		
-		//{Simple} 'x'
-		public Group getGroup_22() { return cGroup_22; }
-		
-		//{Simple}
-		public Action getSimpleAction_22_0() { return cSimpleAction_22_0; }
+		public Keyword getAlphaWKeyword_1_0_21() { return cAlphaWKeyword_1_0_21; }
 		
 		//'x'
-		public Keyword getXKeyword_22_1() { return cXKeyword_22_1; }
-		
-		//{Simple} 'y'
-		public Group getGroup_23() { return cGroup_23; }
-		
-		//{Simple}
-		public Action getSimpleAction_23_0() { return cSimpleAction_23_0; }
+		public Keyword getAlphaXKeyword_1_0_22() { return cAlphaXKeyword_1_0_22; }
 		
 		//'y'
-		public Keyword getYKeyword_23_1() { return cYKeyword_23_1; }
-		
-		//{Simple} 'z'
-		public Group getGroup_24() { return cGroup_24; }
-		
-		//{Simple}
-		public Action getSimpleAction_24_0() { return cSimpleAction_24_0; }
+		public Keyword getAlphaYKeyword_1_0_23() { return cAlphaYKeyword_1_0_23; }
 		
 		//'z'
-		public Keyword getZKeyword_24_1() { return cZKeyword_24_1; }
+		public Keyword getAlphaZKeyword_1_0_24() { return cAlphaZKeyword_1_0_24; }
 	}
 	public class NonTerminalElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.cyk.mydsl.MyFNC.NonTerminal");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cVarAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final Keyword cVarAKeyword_0_0 = (Keyword)cVarAssignment_0.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Action cNonTerminalAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Keyword cBKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Action cNonTerminalAction_2_0 = (Action)cGroup_2.eContents().get(0);
-		private final Keyword cCKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
-		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final Action cNonTerminalAction_3_0 = (Action)cGroup_3.eContents().get(0);
-		private final Keyword cDKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
-		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
-		private final Action cNonTerminalAction_4_0 = (Action)cGroup_4.eContents().get(0);
-		private final Keyword cEKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
-		private final Action cNonTerminalAction_5_0 = (Action)cGroup_5.eContents().get(0);
-		private final Keyword cFKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Group cGroup_6 = (Group)cAlternatives.eContents().get(6);
-		private final Action cNonTerminalAction_6_0 = (Action)cGroup_6.eContents().get(0);
-		private final Keyword cGKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
-		private final Group cGroup_7 = (Group)cAlternatives.eContents().get(7);
-		private final Action cNonTerminalAction_7_0 = (Action)cGroup_7.eContents().get(0);
-		private final Keyword cHKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Group cGroup_8 = (Group)cAlternatives.eContents().get(8);
-		private final Action cNonTerminalAction_8_0 = (Action)cGroup_8.eContents().get(0);
-		private final Keyword cIKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
-		private final Group cGroup_9 = (Group)cAlternatives.eContents().get(9);
-		private final Action cNonTerminalAction_9_0 = (Action)cGroup_9.eContents().get(0);
-		private final Keyword cJKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
-		private final Group cGroup_10 = (Group)cAlternatives.eContents().get(10);
-		private final Action cNonTerminalAction_10_0 = (Action)cGroup_10.eContents().get(0);
-		private final Keyword cKKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
-		private final Group cGroup_11 = (Group)cAlternatives.eContents().get(11);
-		private final Action cNonTerminalAction_11_0 = (Action)cGroup_11.eContents().get(0);
-		private final Keyword cLKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
-		private final Group cGroup_12 = (Group)cAlternatives.eContents().get(12);
-		private final Action cNonTerminalAction_12_0 = (Action)cGroup_12.eContents().get(0);
-		private final Keyword cMKeyword_12_1 = (Keyword)cGroup_12.eContents().get(1);
-		private final Group cGroup_13 = (Group)cAlternatives.eContents().get(13);
-		private final Action cNonTerminalAction_13_0 = (Action)cGroup_13.eContents().get(0);
-		private final Keyword cNKeyword_13_1 = (Keyword)cGroup_13.eContents().get(1);
-		private final Group cGroup_14 = (Group)cAlternatives.eContents().get(14);
-		private final Action cNonTerminalAction_14_0 = (Action)cGroup_14.eContents().get(0);
-		private final Keyword cOKeyword_14_1 = (Keyword)cGroup_14.eContents().get(1);
-		private final Group cGroup_15 = (Group)cAlternatives.eContents().get(15);
-		private final Action cNonTerminalAction_15_0 = (Action)cGroup_15.eContents().get(0);
-		private final Keyword cPKeyword_15_1 = (Keyword)cGroup_15.eContents().get(1);
-		private final Group cGroup_16 = (Group)cAlternatives.eContents().get(16);
-		private final Action cNonTerminalAction_16_0 = (Action)cGroup_16.eContents().get(0);
-		private final Keyword cQKeyword_16_1 = (Keyword)cGroup_16.eContents().get(1);
-		private final Group cGroup_17 = (Group)cAlternatives.eContents().get(17);
-		private final Action cNonTerminalAction_17_0 = (Action)cGroup_17.eContents().get(0);
-		private final Keyword cRKeyword_17_1 = (Keyword)cGroup_17.eContents().get(1);
-		private final Group cGroup_18 = (Group)cAlternatives.eContents().get(18);
-		private final Action cNonTerminalAction_18_0 = (Action)cGroup_18.eContents().get(0);
-		private final Keyword cTKeyword_18_1 = (Keyword)cGroup_18.eContents().get(1);
-		private final Group cGroup_19 = (Group)cAlternatives.eContents().get(19);
-		private final Action cNonTerminalAction_19_0 = (Action)cGroup_19.eContents().get(0);
-		private final Keyword cUKeyword_19_1 = (Keyword)cGroup_19.eContents().get(1);
-		private final Group cGroup_20 = (Group)cAlternatives.eContents().get(20);
-		private final Action cNonTerminalAction_20_0 = (Action)cGroup_20.eContents().get(0);
-		private final Keyword cVKeyword_20_1 = (Keyword)cGroup_20.eContents().get(1);
-		private final Group cGroup_21 = (Group)cAlternatives.eContents().get(21);
-		private final Action cNonTerminalAction_21_0 = (Action)cGroup_21.eContents().get(0);
-		private final Keyword cWKeyword_21_1 = (Keyword)cGroup_21.eContents().get(1);
-		private final Group cGroup_22 = (Group)cAlternatives.eContents().get(22);
-		private final Action cNonTerminalAction_22_0 = (Action)cGroup_22.eContents().get(0);
-		private final Keyword cXKeyword_22_1 = (Keyword)cGroup_22.eContents().get(1);
-		private final Group cGroup_23 = (Group)cAlternatives.eContents().get(23);
-		private final Action cNonTerminalAction_23_0 = (Action)cGroup_23.eContents().get(0);
-		private final Keyword cYKeyword_23_1 = (Keyword)cGroup_23.eContents().get(1);
-		private final Group cGroup_24 = (Group)cAlternatives.eContents().get(24);
-		private final Action cNonTerminalAction_24_0 = (Action)cGroup_24.eContents().get(0);
-		private final Keyword cZKeyword_24_1 = (Keyword)cGroup_24.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cNonTerminalAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cVarAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Alternatives cVarAlternatives_1_0 = (Alternatives)cVarAssignment_1.eContents().get(0);
+		private final Keyword cVarAKeyword_1_0_0 = (Keyword)cVarAlternatives_1_0.eContents().get(0);
+		private final Keyword cVarBKeyword_1_0_1 = (Keyword)cVarAlternatives_1_0.eContents().get(1);
+		private final Keyword cVarCKeyword_1_0_2 = (Keyword)cVarAlternatives_1_0.eContents().get(2);
+		private final Keyword cVarDKeyword_1_0_3 = (Keyword)cVarAlternatives_1_0.eContents().get(3);
+		private final Keyword cVarEKeyword_1_0_4 = (Keyword)cVarAlternatives_1_0.eContents().get(4);
+		private final Keyword cVarFKeyword_1_0_5 = (Keyword)cVarAlternatives_1_0.eContents().get(5);
+		private final Keyword cVarGKeyword_1_0_6 = (Keyword)cVarAlternatives_1_0.eContents().get(6);
+		private final Keyword cVarHKeyword_1_0_7 = (Keyword)cVarAlternatives_1_0.eContents().get(7);
+		private final Keyword cVarIKeyword_1_0_8 = (Keyword)cVarAlternatives_1_0.eContents().get(8);
+		private final Keyword cVarJKeyword_1_0_9 = (Keyword)cVarAlternatives_1_0.eContents().get(9);
+		private final Keyword cVarKKeyword_1_0_10 = (Keyword)cVarAlternatives_1_0.eContents().get(10);
+		private final Keyword cVarLKeyword_1_0_11 = (Keyword)cVarAlternatives_1_0.eContents().get(11);
+		private final Keyword cVarMKeyword_1_0_12 = (Keyword)cVarAlternatives_1_0.eContents().get(12);
+		private final Keyword cVarNKeyword_1_0_13 = (Keyword)cVarAlternatives_1_0.eContents().get(13);
+		private final Keyword cVarOKeyword_1_0_14 = (Keyword)cVarAlternatives_1_0.eContents().get(14);
+		private final Keyword cVarPKeyword_1_0_15 = (Keyword)cVarAlternatives_1_0.eContents().get(15);
+		private final Keyword cVarQKeyword_1_0_16 = (Keyword)cVarAlternatives_1_0.eContents().get(16);
+		private final Keyword cVarRKeyword_1_0_17 = (Keyword)cVarAlternatives_1_0.eContents().get(17);
+		private final Keyword cVarTKeyword_1_0_18 = (Keyword)cVarAlternatives_1_0.eContents().get(18);
+		private final Keyword cVarUKeyword_1_0_19 = (Keyword)cVarAlternatives_1_0.eContents().get(19);
+		private final Keyword cVarVKeyword_1_0_20 = (Keyword)cVarAlternatives_1_0.eContents().get(20);
+		private final Keyword cVarWKeyword_1_0_21 = (Keyword)cVarAlternatives_1_0.eContents().get(21);
+		private final Keyword cVarXKeyword_1_0_22 = (Keyword)cVarAlternatives_1_0.eContents().get(22);
+		private final Keyword cVarYKeyword_1_0_23 = (Keyword)cVarAlternatives_1_0.eContents().get(23);
+		private final Keyword cVarZKeyword_1_0_24 = (Keyword)cVarAlternatives_1_0.eContents().get(24);
 		
 		//NonTerminal:
-		//    var= 'A'|{NonTerminal} 'B'|{NonTerminal} 'C'|{NonTerminal} 'D'|{NonTerminal} 'E'|{NonTerminal} 'F'|{NonTerminal} 'G'|{NonTerminal} 'H'|{NonTerminal} 'I'|{NonTerminal} 'J'|{NonTerminal} 'K'|{NonTerminal} 'L'|
-		//    {NonTerminal} 'M'|{NonTerminal} 'N'|{NonTerminal} 'O'|{NonTerminal} 'P'|{NonTerminal} 'Q'|{NonTerminal} 'R'|{NonTerminal} 'T'|{NonTerminal} 'U'|{NonTerminal} 'V'|{NonTerminal} 'W'|{NonTerminal} 'X'|{NonTerminal} 'Y'|{NonTerminal} 'Z'
+		//    {NonTerminal}var=('A'|'B'|'C'|'D'|'E'|'F'|'G'|'H'|'I'|'J'|'K'|'L'|
+		//    'M'|'N'|'O'|'P'|'Q'|'R'|'T'|'U'|'V'|'W'|'X'|'Y'|'Z')
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//var= 'A'|{NonTerminal} 'B'|{NonTerminal} 'C'|{NonTerminal} 'D'|{NonTerminal} 'E'|{NonTerminal} 'F'|{NonTerminal} 'G'|{NonTerminal} 'H'|{NonTerminal} 'I'|{NonTerminal} 'J'|{NonTerminal} 'K'|{NonTerminal} 'L'|
-		//{NonTerminal} 'M'|{NonTerminal} 'N'|{NonTerminal} 'O'|{NonTerminal} 'P'|{NonTerminal} 'Q'|{NonTerminal} 'R'|{NonTerminal} 'T'|{NonTerminal} 'U'|{NonTerminal} 'V'|{NonTerminal} 'W'|{NonTerminal} 'X'|{NonTerminal} 'Y'|{NonTerminal} 'Z'
-		public Alternatives getAlternatives() { return cAlternatives; }
+		//{NonTerminal}var=('A'|'B'|'C'|'D'|'E'|'F'|'G'|'H'|'I'|'J'|'K'|'L'|
+		//'M'|'N'|'O'|'P'|'Q'|'R'|'T'|'U'|'V'|'W'|'X'|'Y'|'Z')
+		public Group getGroup() { return cGroup; }
 		
-		//var= 'A'
-		public Assignment getVarAssignment_0() { return cVarAssignment_0; }
+		//{NonTerminal}
+		public Action getNonTerminalAction_0() { return cNonTerminalAction_0; }
+		
+		//var=('A'|'B'|'C'|'D'|'E'|'F'|'G'|'H'|'I'|'J'|'K'|'L'|
+		//    'M'|'N'|'O'|'P'|'Q'|'R'|'T'|'U'|'V'|'W'|'X'|'Y'|'Z')
+		public Assignment getVarAssignment_1() { return cVarAssignment_1; }
+		
+		//('A'|'B'|'C'|'D'|'E'|'F'|'G'|'H'|'I'|'J'|'K'|'L'|
+		//    'M'|'N'|'O'|'P'|'Q'|'R'|'T'|'U'|'V'|'W'|'X'|'Y'|'Z')
+		public Alternatives getVarAlternatives_1_0() { return cVarAlternatives_1_0; }
 		
 		//'A'
-		public Keyword getVarAKeyword_0_0() { return cVarAKeyword_0_0; }
-		
-		//{NonTerminal} 'B'
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//{NonTerminal}
-		public Action getNonTerminalAction_1_0() { return cNonTerminalAction_1_0; }
+		public Keyword getVarAKeyword_1_0_0() { return cVarAKeyword_1_0_0; }
 		
 		//'B'
-		public Keyword getBKeyword_1_1() { return cBKeyword_1_1; }
-		
-		//{NonTerminal} 'C'
-		public Group getGroup_2() { return cGroup_2; }
-		
-		//{NonTerminal}
-		public Action getNonTerminalAction_2_0() { return cNonTerminalAction_2_0; }
+		public Keyword getVarBKeyword_1_0_1() { return cVarBKeyword_1_0_1; }
 		
 		//'C'
-		public Keyword getCKeyword_2_1() { return cCKeyword_2_1; }
-		
-		//{NonTerminal} 'D'
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//{NonTerminal}
-		public Action getNonTerminalAction_3_0() { return cNonTerminalAction_3_0; }
+		public Keyword getVarCKeyword_1_0_2() { return cVarCKeyword_1_0_2; }
 		
 		//'D'
-		public Keyword getDKeyword_3_1() { return cDKeyword_3_1; }
-		
-		//{NonTerminal} 'E'
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//{NonTerminal}
-		public Action getNonTerminalAction_4_0() { return cNonTerminalAction_4_0; }
+		public Keyword getVarDKeyword_1_0_3() { return cVarDKeyword_1_0_3; }
 		
 		//'E'
-		public Keyword getEKeyword_4_1() { return cEKeyword_4_1; }
-		
-		//{NonTerminal} 'F'
-		public Group getGroup_5() { return cGroup_5; }
-		
-		//{NonTerminal}
-		public Action getNonTerminalAction_5_0() { return cNonTerminalAction_5_0; }
+		public Keyword getVarEKeyword_1_0_4() { return cVarEKeyword_1_0_4; }
 		
 		//'F'
-		public Keyword getFKeyword_5_1() { return cFKeyword_5_1; }
-		
-		//{NonTerminal} 'G'
-		public Group getGroup_6() { return cGroup_6; }
-		
-		//{NonTerminal}
-		public Action getNonTerminalAction_6_0() { return cNonTerminalAction_6_0; }
+		public Keyword getVarFKeyword_1_0_5() { return cVarFKeyword_1_0_5; }
 		
 		//'G'
-		public Keyword getGKeyword_6_1() { return cGKeyword_6_1; }
-		
-		//{NonTerminal} 'H'
-		public Group getGroup_7() { return cGroup_7; }
-		
-		//{NonTerminal}
-		public Action getNonTerminalAction_7_0() { return cNonTerminalAction_7_0; }
+		public Keyword getVarGKeyword_1_0_6() { return cVarGKeyword_1_0_6; }
 		
 		//'H'
-		public Keyword getHKeyword_7_1() { return cHKeyword_7_1; }
-		
-		//{NonTerminal} 'I'
-		public Group getGroup_8() { return cGroup_8; }
-		
-		//{NonTerminal}
-		public Action getNonTerminalAction_8_0() { return cNonTerminalAction_8_0; }
+		public Keyword getVarHKeyword_1_0_7() { return cVarHKeyword_1_0_7; }
 		
 		//'I'
-		public Keyword getIKeyword_8_1() { return cIKeyword_8_1; }
-		
-		//{NonTerminal} 'J'
-		public Group getGroup_9() { return cGroup_9; }
-		
-		//{NonTerminal}
-		public Action getNonTerminalAction_9_0() { return cNonTerminalAction_9_0; }
+		public Keyword getVarIKeyword_1_0_8() { return cVarIKeyword_1_0_8; }
 		
 		//'J'
-		public Keyword getJKeyword_9_1() { return cJKeyword_9_1; }
-		
-		//{NonTerminal} 'K'
-		public Group getGroup_10() { return cGroup_10; }
-		
-		//{NonTerminal}
-		public Action getNonTerminalAction_10_0() { return cNonTerminalAction_10_0; }
+		public Keyword getVarJKeyword_1_0_9() { return cVarJKeyword_1_0_9; }
 		
 		//'K'
-		public Keyword getKKeyword_10_1() { return cKKeyword_10_1; }
-		
-		//{NonTerminal} 'L'
-		public Group getGroup_11() { return cGroup_11; }
-		
-		//{NonTerminal}
-		public Action getNonTerminalAction_11_0() { return cNonTerminalAction_11_0; }
+		public Keyword getVarKKeyword_1_0_10() { return cVarKKeyword_1_0_10; }
 		
 		//'L'
-		public Keyword getLKeyword_11_1() { return cLKeyword_11_1; }
-		
-		//{NonTerminal} 'M'
-		public Group getGroup_12() { return cGroup_12; }
-		
-		//{NonTerminal}
-		public Action getNonTerminalAction_12_0() { return cNonTerminalAction_12_0; }
+		public Keyword getVarLKeyword_1_0_11() { return cVarLKeyword_1_0_11; }
 		
 		//'M'
-		public Keyword getMKeyword_12_1() { return cMKeyword_12_1; }
-		
-		//{NonTerminal} 'N'
-		public Group getGroup_13() { return cGroup_13; }
-		
-		//{NonTerminal}
-		public Action getNonTerminalAction_13_0() { return cNonTerminalAction_13_0; }
+		public Keyword getVarMKeyword_1_0_12() { return cVarMKeyword_1_0_12; }
 		
 		//'N'
-		public Keyword getNKeyword_13_1() { return cNKeyword_13_1; }
-		
-		//{NonTerminal} 'O'
-		public Group getGroup_14() { return cGroup_14; }
-		
-		//{NonTerminal}
-		public Action getNonTerminalAction_14_0() { return cNonTerminalAction_14_0; }
+		public Keyword getVarNKeyword_1_0_13() { return cVarNKeyword_1_0_13; }
 		
 		//'O'
-		public Keyword getOKeyword_14_1() { return cOKeyword_14_1; }
-		
-		//{NonTerminal} 'P'
-		public Group getGroup_15() { return cGroup_15; }
-		
-		//{NonTerminal}
-		public Action getNonTerminalAction_15_0() { return cNonTerminalAction_15_0; }
+		public Keyword getVarOKeyword_1_0_14() { return cVarOKeyword_1_0_14; }
 		
 		//'P'
-		public Keyword getPKeyword_15_1() { return cPKeyword_15_1; }
-		
-		//{NonTerminal} 'Q'
-		public Group getGroup_16() { return cGroup_16; }
-		
-		//{NonTerminal}
-		public Action getNonTerminalAction_16_0() { return cNonTerminalAction_16_0; }
+		public Keyword getVarPKeyword_1_0_15() { return cVarPKeyword_1_0_15; }
 		
 		//'Q'
-		public Keyword getQKeyword_16_1() { return cQKeyword_16_1; }
-		
-		//{NonTerminal} 'R'
-		public Group getGroup_17() { return cGroup_17; }
-		
-		//{NonTerminal}
-		public Action getNonTerminalAction_17_0() { return cNonTerminalAction_17_0; }
+		public Keyword getVarQKeyword_1_0_16() { return cVarQKeyword_1_0_16; }
 		
 		//'R'
-		public Keyword getRKeyword_17_1() { return cRKeyword_17_1; }
-		
-		//{NonTerminal} 'T'
-		public Group getGroup_18() { return cGroup_18; }
-		
-		//{NonTerminal}
-		public Action getNonTerminalAction_18_0() { return cNonTerminalAction_18_0; }
+		public Keyword getVarRKeyword_1_0_17() { return cVarRKeyword_1_0_17; }
 		
 		//'T'
-		public Keyword getTKeyword_18_1() { return cTKeyword_18_1; }
-		
-		//{NonTerminal} 'U'
-		public Group getGroup_19() { return cGroup_19; }
-		
-		//{NonTerminal}
-		public Action getNonTerminalAction_19_0() { return cNonTerminalAction_19_0; }
+		public Keyword getVarTKeyword_1_0_18() { return cVarTKeyword_1_0_18; }
 		
 		//'U'
-		public Keyword getUKeyword_19_1() { return cUKeyword_19_1; }
-		
-		//{NonTerminal} 'V'
-		public Group getGroup_20() { return cGroup_20; }
-		
-		//{NonTerminal}
-		public Action getNonTerminalAction_20_0() { return cNonTerminalAction_20_0; }
+		public Keyword getVarUKeyword_1_0_19() { return cVarUKeyword_1_0_19; }
 		
 		//'V'
-		public Keyword getVKeyword_20_1() { return cVKeyword_20_1; }
-		
-		//{NonTerminal} 'W'
-		public Group getGroup_21() { return cGroup_21; }
-		
-		//{NonTerminal}
-		public Action getNonTerminalAction_21_0() { return cNonTerminalAction_21_0; }
+		public Keyword getVarVKeyword_1_0_20() { return cVarVKeyword_1_0_20; }
 		
 		//'W'
-		public Keyword getWKeyword_21_1() { return cWKeyword_21_1; }
-		
-		//{NonTerminal} 'X'
-		public Group getGroup_22() { return cGroup_22; }
-		
-		//{NonTerminal}
-		public Action getNonTerminalAction_22_0() { return cNonTerminalAction_22_0; }
+		public Keyword getVarWKeyword_1_0_21() { return cVarWKeyword_1_0_21; }
 		
 		//'X'
-		public Keyword getXKeyword_22_1() { return cXKeyword_22_1; }
-		
-		//{NonTerminal} 'Y'
-		public Group getGroup_23() { return cGroup_23; }
-		
-		//{NonTerminal}
-		public Action getNonTerminalAction_23_0() { return cNonTerminalAction_23_0; }
+		public Keyword getVarXKeyword_1_0_22() { return cVarXKeyword_1_0_22; }
 		
 		//'Y'
-		public Keyword getYKeyword_23_1() { return cYKeyword_23_1; }
-		
-		//{NonTerminal} 'Z'
-		public Group getGroup_24() { return cGroup_24; }
-		
-		//{NonTerminal}
-		public Action getNonTerminalAction_24_0() { return cNonTerminalAction_24_0; }
+		public Keyword getVarYKeyword_1_0_23() { return cVarYKeyword_1_0_23; }
 		
 		//'Z'
-		public Keyword getZKeyword_24_1() { return cZKeyword_24_1; }
+		public Keyword getVarZKeyword_1_0_24() { return cVarZKeyword_1_0_24; }
 	}
 	public class BinaryElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.cyk.mydsl.MyFNC.Binary");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cFirstAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cFirstNonTerminalParserRuleCall_0_0 = (RuleCall)cFirstAssignment_0.eContents().get(0);
-		private final Assignment cSecondAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cSecondNonTerminalParserRuleCall_1_0 = (RuleCall)cSecondAssignment_1.eContents().get(0);
+		private final Action cBinaryAction_0 = (Action)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Assignment cFirstAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cFirstNonTerminalParserRuleCall_1_0_0 = (RuleCall)cFirstAssignment_1_0.eContents().get(0);
+		private final Assignment cSecondAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cSecondNonTerminalParserRuleCall_1_1_0 = (RuleCall)cSecondAssignment_1_1.eContents().get(0);
 		
 		//Binary:
-		//    first=NonTerminal second=NonTerminal
+		//    {Binary}(first=NonTerminal second=NonTerminal)
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//first=NonTerminal second=NonTerminal
+		//{Binary}(first=NonTerminal second=NonTerminal)
 		public Group getGroup() { return cGroup; }
 		
+		//{Binary}
+		public Action getBinaryAction_0() { return cBinaryAction_0; }
+		
+		//(first=NonTerminal second=NonTerminal)
+		public Group getGroup_1() { return cGroup_1; }
+		
 		//first=NonTerminal
-		public Assignment getFirstAssignment_0() { return cFirstAssignment_0; }
+		public Assignment getFirstAssignment_1_0() { return cFirstAssignment_1_0; }
 		
 		//NonTerminal
-		public RuleCall getFirstNonTerminalParserRuleCall_0_0() { return cFirstNonTerminalParserRuleCall_0_0; }
+		public RuleCall getFirstNonTerminalParserRuleCall_1_0_0() { return cFirstNonTerminalParserRuleCall_1_0_0; }
 		
 		//second=NonTerminal
-		public Assignment getSecondAssignment_1() { return cSecondAssignment_1; }
+		public Assignment getSecondAssignment_1_1() { return cSecondAssignment_1_1; }
 		
 		//NonTerminal
-		public RuleCall getSecondNonTerminalParserRuleCall_1_0() { return cSecondNonTerminalParserRuleCall_1_0; }
+		public RuleCall getSecondNonTerminalParserRuleCall_1_1_0() { return cSecondNonTerminalParserRuleCall_1_1_0; }
 	}
 	public class InputStringElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.cyk.mydsl.MyFNC.InputString");
@@ -941,7 +593,7 @@ public class MyFNCGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//Initial:
-	//    left= 'S' '->' rigth+=(Lambda)('|' + rigth+=Rigth)*;
+	//    left= 'S' '->' rigth+=(Rigth)('|' + rigth+=Rigth)*;
 	public InitialElements getInitialAccess() {
 		return pInitial;
 	}
@@ -973,7 +625,7 @@ public class MyFNCGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//Rigth:
-	//    Simple | Binary
+	//    simple = Simple |binary = Binary
 	//;
 	public RigthElements getRigthAccess() {
 		return pRigth;
@@ -984,8 +636,8 @@ public class MyFNCGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//Simple:
-	//    alpha= 'a'|{Simple} 'b'|{Simple} 'c'|{Simple} 'd'|{Simple} 'e'|{Simple} 'f'|{Simple} 'g'|{Simple} 'h'|{Simple} 'i'|{Simple} 'j'|{Simple} 'k'|{Simple} 'l'|
-	//    {Simple} 'm'|{Simple} 'n'|{Simple} 'o'|{Simple} 'p'|{Simple} 'q'|{Simple} 'r'|{Simple} 's'|{Simple} 't'|{Simple} 'v'|{Simple} 'w'|{Simple} 'x'|{Simple} 'y'|{Simple} 'z'
+	//    {Simple}alpha= ('a'|'b'|'c'|'d'|'e'|'f'|'g'|'h'|'i'|'j'|'k'|'l'|
+	//    'm'|'n'|'o'|'p'|'q'|'r'|'s'|'t'|'v'|'w'|'x'|'y'|'z')
 	//;
 	public SimpleElements getSimpleAccess() {
 		return pSimple;
@@ -996,8 +648,8 @@ public class MyFNCGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//NonTerminal:
-	//    var= 'A'|{NonTerminal} 'B'|{NonTerminal} 'C'|{NonTerminal} 'D'|{NonTerminal} 'E'|{NonTerminal} 'F'|{NonTerminal} 'G'|{NonTerminal} 'H'|{NonTerminal} 'I'|{NonTerminal} 'J'|{NonTerminal} 'K'|{NonTerminal} 'L'|
-	//    {NonTerminal} 'M'|{NonTerminal} 'N'|{NonTerminal} 'O'|{NonTerminal} 'P'|{NonTerminal} 'Q'|{NonTerminal} 'R'|{NonTerminal} 'T'|{NonTerminal} 'U'|{NonTerminal} 'V'|{NonTerminal} 'W'|{NonTerminal} 'X'|{NonTerminal} 'Y'|{NonTerminal} 'Z'
+	//    {NonTerminal}var=('A'|'B'|'C'|'D'|'E'|'F'|'G'|'H'|'I'|'J'|'K'|'L'|
+	//    'M'|'N'|'O'|'P'|'Q'|'R'|'T'|'U'|'V'|'W'|'X'|'Y'|'Z')
 	//;
 	public NonTerminalElements getNonTerminalAccess() {
 		return pNonTerminal;
@@ -1008,7 +660,7 @@ public class MyFNCGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//Binary:
-	//    first=NonTerminal second=NonTerminal
+	//    {Binary}(first=NonTerminal second=NonTerminal)
 	//;
 	public BinaryElements getBinaryAccess() {
 		return pBinary;
